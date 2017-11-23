@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>环球集货仓-个人资料</title>
+		<link rel="stylesheet" href="../css/mui.css" />
+		<link rel="stylesheet" href="../css/base.css" />
+
+		<style>
+			.mui-navigate-right {
+				font-size: 0.28rem;
+				color: #333333;
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.mui-table-view-cell {
+				height: 1.2rem;
+			}
+			
+			.mui-navigate-right span {
+				color: #999999;
+				float: right;
+				margin-right: 0.5rem;
+			}
+			
+			.mui-navigate-right div {
+				display: inline;
+			}
+			
+			.mui-navigate-right .photo {
+				display: inline-block;
+			}
+			
+			.mui-navigate-right .photo img {
+				width: 0.8rem;
+				height: 0.8rem;
+			}
+			
+			.mui-table-view-cell>a:not(.mui-btn) {
+				margin: 0;
+			}
+			
+			.mui-table-view {
+				margin-top: 0.2rem;
+			}
+			
+			.mui-switch.mui-active {
+				border-color: #090823;
+				background-color: #090823;
+			}
+			
+			.mui-switch {
+				width: 50px;
+				height: 27px;
+			}
+			
+			.mui-switch .mui-switch-handle {
+				width: 21px;
+				height: 25px;
+			}
+			
+			.mui-switch.mui-active:before {
+				left: 3px;
+			}
+			
+			.mui-input-row .mui-switch {
+				margin-right: 0;
+			}
+			
+			.mui-switch.mui-active .mui-switch-handle {
+				-webkit-transform: translate(43px, 0);
+				transform: translate(30px, 0);
+			}
+			
+			.mui-switch:before {
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--header start-->
+		<header class="mui-bar mui-bar-nav" style="box-shadow: none;height: 1rem;background: #fff">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#1b1835"></a>
+			<h1 class="mui-title" style="color:#1b1835;">个人资料</h1>
+		</header>
+		<!--header end-->
+		<!--main start-->
+		<div class="main" style="margin-top: 1.01rem">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" style="height: 1.5rem">
+					<a class="mui-navigate-right" href="#sheet" id="openSheet" class="mui-btn mui-btn-primary mui-btn-block">
+						<div class="photo">
+							<img src="../images/iocn_porfile_portrait.png" alt="">
+						</div>
+						<span style="margin-top: 0.25rem">修改头像</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell upNameId">
+					<a class="mui-navigate-right">
+						<div>修改昵称</div>
+						<span>江青子</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell upPhoneId">
+					<a class="mui-navigate-right">
+						<div>修改绑定手机</div>
+						<span>130****2020</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell upPasswordId">
+					<a class="mui-navigate-right">
+						<div>支付密码设置</div>
+						<span>修改/设置支付密码</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div>我的邀请码</div>
+						<span style="margin-right: 1.5rem">MKLCDVxvrrb</span>
+						<button type="button" class="mui-btn mui-btn-blue" style="background: #333333;border-radius: 0.25rem;height:0.5rem;line-height:0.2rem;border:none">复制</button>
+					</a>
+				</li>
+
+			</ul>
+			<div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action ">
+				<!-- 可选择菜单 -->
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#" style="color: #090723">从相册选择照片</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#" style="color: #090723">拍照</a>
+					</li>
+				</ul>
+				<!-- 取消菜单 -->
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#sheet1" style="color: #090723">取消</a>
+					</li>
+				</ul>
+			</div>
+
+			<!--main end-->
+	</body>
+	<script src="../js/rem.js"></script>
+	<script src="../js/jQuery.js"></script>
+	<script src="../js/mui.js"></script>
+	<script type="text/javascript" src="../js/controller.js" ></script>
+</html>

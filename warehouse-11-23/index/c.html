@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link rel="stylesheet" href="../css/mui.css" />
+     <script src="../js/mui.js"></script>
+</head>
+<body>
+
+</body>
+<script src="../js/common.js"></script>
+<script>
+    function Base64() {
+
+        // private property
+        _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+        // public method for encoding
+        this.encode = function (input) {
+            var output = "";
+            var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+            var i = 0;
+            input = _utf8_encode(input);
+            while (i < input.length) {
+                chr1 = input.charCodeAt(i++);
+                chr2 = input.charCodeAt(i++);
+                chr3 = input.charCodeAt(i++);
+                enc1 = chr1 >> 2;
+                enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                enc4 = chr3 & 63;
+                if (isNaN(chr2)) {
+                    enc3 = enc4 = 64;
+                } else if (isNaN(chr3)) {
+                    enc4 = 64;
+                }
+                output = output +
+                    _keyStr.charAt(enc1) + _keyStr.charAt(enc2) +
+                    _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
+            }
+            return output;
+        }
+
+        // public method for decoding
+        this.decode = function (input) {
+            var output = "";
+            var chr1, chr2, chr3;
+            var enc1, enc2, enc3, enc4;
+            var i = 0;
+            input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+            while (i < input.length) {
+                enc1 = _keyStr.indexOf(input.charAt(i++));
+                enc2 = _keyStr.indexOf(input.charAt(i++));
+                enc3 = _keyStr.indexOf(input.charAt(i++));
+                enc4 = _keyStr.indexOf(input.charAt(i++));
+                chr1 = (enc1 << 2) | (enc2 >> 4);
+                chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                chr3 = ((enc3 & 3) << 6) | enc4;
+                output = output + String.fromCharCode(chr1);
+                if (enc3 != 64) {
+                    output = output + String.fromCharCode(chr2);
+                }
+                if (enc4 != 64) {
+                    output = output + String.fromCharCode(chr3);
+                }
+            }
+            output = _utf8_decode(output);
+            return output;
+        }
+
+        // private method for UTF-8 encoding
+        _utf8_encode = function (string) {
+            string = string.replace(/\r\n/g,"\n");
+            var utftext = "";
+            for (var n = 0; n < string.length; n++) {
+                var c = string.charCodeAt(n);
+                if (c < 128) {
+                    utftext += String.fromCharCode(c);
+                } else if((c > 127) && (c < 2048)) {
+                    utftext += String.fromCharCode((c >> 6) | 192);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                } else {
+                    utftext += String.fromCharCode((c >> 12) | 224);
+                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+
+            }
+            return utftext;
+        }
+
+        // private method for UTF-8 decoding
+        _utf8_decode = function (utftext) {
+            var string = "";
+            var i = 0;
+            var c = c1 = c2 = 0;
+            while ( i < utftext.length ) {
+                c = utftext.charCodeAt(i);
+                if (c < 128) {
+                    string += String.fromCharCode(c);
+                    i++;
+                } else if((c > 191) && (c < 224)) {
+                    c2 = utftext.charCodeAt(i+1);
+                    string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                    i += 2;
+                } else {
+                    c2 = utftext.charCodeAt(i+1);
+                    c3 = utftext.charCodeAt(i+2);
+                    string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                    i += 3;
+                }
+            }
+            return string;
+        }
+    }
+    var base = new Base64();
+    str = base.decode("eyJjb2RlIjoiMDAwMDA4IiwibXNnIjoiXHU2MjEwXHU1MjlmXHU4M2I3XHU1M2Q2XHU2NTcwXHU2MzZlXHVmZjAxIiwicHJvZHVjdGluZm9zIjpbeyJicmFuZG5hbWUiOiJcdTk2M2ZcdThmZWFcdThmYmVcdTY1YWYiLCJicmFuZGxvZ28iOiJodHRwOlwvXC93d3cucHVibGljLmNvbVwvXC9iYWNrZW5kXC9kaXN0XC9pbWdcL3VzZXIyLTE2MHgxNjAuanBnIiwiZ29vZG5hbWUiOiJcdTZkNGJcdThiZDVcdTRlYTdcdTU0YzFcdTRlMDAiLCJnb29kc19wcmljZSI6IjY1NSIsImRlc2NyaXB0aW9uIjoiJmx0O3AmZ3Q7NzY3Njc2Jmx0O1wvcCZndDsiLCJtYXJrZXRwcmljZSI6IjY1Ni4wMCIsImdvb2RzX290aGVyX2ltZzEiOiIiLCJnb29kc19vdGhlcl9pbWcyIjoiMjAxNy0xMS0wN1wvNWEwMTgwMjgyMTNiOC5qcGciLCJnb29kc19vdGhlcl9pbWczIjoiMjAxNy0xMS0wN1wvNWEwMTgwMjM0MjIyMS5qcGciLCJnb29kc19vdGhlcl9pbWc0IjoiMjAxNy0xMS0wN1wvNWEwMTgwMjViMmMyMS5qcGcifV0sInByZXNlbnRwcm9kdWN0aW5mb3MiOlt7ImJyYW5kbmFtZSI6Ilx1OTYzZlx1OGZlYVx1OGZiZVx1NjVhZiIsImJyYW5kbG9nbyI6Imh0dHA6XC9cL3d3dy5wdWJsaWMuY29tXC9cL2JhY2tlbmRcL2Rpc3RcL2ltZ1wvdXNlcjItMTYweDE2MC5qcGciLCJnb29kbmFtZSI6Ilx1NmQ0Ylx1OGJkNVx1NGVhN1x1NTRjMVx1NGUwMCIsImdvb2RzX3ByaWNlIjoiNjU1IiwiZGVzY3JpcHRpb24iOiImbHQ7cCZndDs3Njc2NzYmbHQ7XC9wJmd0OyIsIm1hcmtldHByaWNlIjoiNjU2LjAwIiwiZ29vZHNfb3RoZXJfaW1nMSI6IiIsImdvb2RzX290aGVyX2ltZzIiOiIyMDE3LTExLTA3XC81YTAxODAyODIxM2I4LmpwZyIsImdvb2RzX290aGVyX2ltZzMiOiIyMDE3LTExLTA3XC81YTAxODAyMzQyMjIxLmpwZyIsImdvb2RzX290aGVyX2ltZzQiOiIyMDE3LTExLTA3XC81YTAxODAyNWIyYzIxLmpwZyJ9XSwicHJldmlld3Byb2R1Y3RpbmZvcyI6W10sIm5vdGUiOiJcdThiZTVcdTYzYTVcdTUzZTNcdThiZjRcdTY2MGVodHRwOlwvXC8xMTguMzEuNDUuMjMxXC9hcGkucGhwXC9Ib21lXC9JbmRleFwvaG9tZSJ9");
+    console.log(str)
+</script>
+</html>
