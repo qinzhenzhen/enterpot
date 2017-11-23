@@ -1,0 +1,108 @@
+.pay{
+    width: 100%;
+    height: 2.52rem;
+    float: left;
+    padding: 0.04rem 0.24rem;
+    border-top:0.01rem solid #efefef;
+    margin-top:1rem;
+    background: #fff;
+}
+h5{
+    color:#333333;
+
+}
+.pay .pays{
+    width: 90%;
+    float: left;
+    margin-top: 0.45rem;
+    margin-left: 5%;
+    position: relative;
+}
+.pay img{
+    width: 0.25rem;
+    height: 0.3rem;
+    float: left;
+    z-index: 99;
+}
+.pay input{
+    float: left;
+    margin-left: 0.3rem;
+    border: none;
+    margin-top: -0.5rem;
+}
+.pay .pays:after{
+    display: block;
+    content: "";
+    height: 0.02rem;
+    width: 100%;
+    position: absolute;
+    bottom:0.3rem;
+    left:0;
+    right:0;
+    margin:auto;
+    background: #efefef;
+}
+.payStyle{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    float: left;
+    margin-top: 0.2rem;
+    padding: 0.04rem 0;
+}
+.payStyle h5{
+    height: 1rem;
+    padding: 0 0.24rem;
+    line-height: 1rem;
+}
+.payStyle .payMethod{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: -0.15rem;
+}
+.payStyle .payMethod li{
+    width: 100%;
+    height: 1.45rem;
+    padding: 0.3rem 0.24rem;
+    border-top:0.01rem solid #efefef;
+}
+.method img{
+    width: 0.8rem;
+    height: 0.8rem;
+    float: left;
+    margin: 0 0.4rem;
+}
+.method .pays{
+    float: left;
+}
+.method .pays p{
+    margin-bottom: 0.1rem;
+    font-size: 0.28rem;
+}
+.choose{
+    float: right;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url('../images/btn_choice_defaul.png')center center no-repeat;
+    background-size: 100%;
+    margin-right: 0.24rem;
+    margin-top: 0.125rem;
+}
+.choose.active{
+    background: url('../images/btn_choice_selected.png')center center no-repeat;
+    background-size: 100%;
+}
+.paycode{
+    display: block;
+    width: 92%;
+    height: 0.8rem;
+    background: #090723;
+    text-align: center;
+    float: left;
+    margin: 1rem 4%;
+    border-radius: 0.2rem;
+    line-height: 0.8rem;
+    color:#fff;
+}
+

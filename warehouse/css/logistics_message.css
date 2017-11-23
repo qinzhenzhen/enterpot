@@ -1,0 +1,93 @@
+.postpone-group{
+	margin-bottom: 10px;
+}
+.postpone-group .address-box{
+	padding-left:44px;
+}
+.postpone-group .postpone-icon{
+	position: absolute;
+	top:50%;
+	margin-top:-12px;
+	left:15px;
+	width:24px;
+	height:24px;
+	background: url(../images/log_iocn_logistics.png) center no-repeat;	
+	background-size: 24px;
+}
+
+.postpone-group .text{
+	color: #6B78A2;
+}
+
+.postpone-group .time{
+	color:#999999;
+	font-size: .2rem;
+}
+
+/*********************/
+.hint-group{
+	background: #6878A2;
+	line-height: 60px;
+}
+
+.hint-group p{
+	color: #FFFFFF;
+	line-height: 60px;
+	padding-left:20px;
+	margin: 0;
+}
+
+.postpone-group{
+	margin-bottom: 0;
+}
+
+.postpone-group .title{
+	font-size: .3rem;
+	font-weight: 500;
+	line-height: .4rem;
+	color:#666666;
+}
+
+.postpone-group .text{
+	font-size: .24rem;
+	color:#777777;
+	margin: 0;
+}
+
+.message-box.on-load .title{
+	color:#090723;
+	font-weight: 600;
+}
+
+.postpone-group .order-table-view-cell{
+	padding:20px;
+	position: relative;
+}
+.postpone-group .order-table-view-cell .message-box{
+	padding-left:30px;
+	padding-bottom: 30px;
+	position: relative;
+}
+.postpone-group .order-table-view-cell .message-box .order-icon{
+	position: absolute;
+	width:15px;
+	height: 15px;
+	top:0px;
+	left:0px;
+	background: #6B78A2;
+	border-radius: 100%;
+}
+
+.postpone-group .mui-table-view:before ,.postpone-group .mui-table-view:after{
+	background-color:#FFFFFF;
+}
+
+.postpone-group .order-table-view-cell .message-box:after{
+	position: absolute;
+	content: "";
+	width:1px;
+	top:0px;
+	left:7px;
+	bottom: -50px;
+	background:#6B78A2 ;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>确认订单</title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+		<link rel="stylesheet" href="../css/recycle_inventory.css" />
+	</head>
+
+	<body>
+		<!--header start-->
+		<header class="mui-bar mui-bar-nav up-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title up-title">确认订单</h1>
+		</header>
+		<div class="address-group addressId" id="address">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<div class="display_flex">
+								<div class="flex_0">
+									<span class="mui-icon mui-icon-location"></span>
+								</div>
+								<div class="flex_1 address-box">
+									<h1 class="name"><span id="addressName">xx </span><span class="phone" id="addressPhone">135xxx5165</span> <span class="address-icon"></span></h1>
+									<p class="address mui-ellipsis-2">
+										地址：<span id="addressText"></span>
+									</p>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		<!--header end-->
+		<!--cont start-->
+		<div class="mui-content my-cart-content pad50 mui-scroll-wrapper">
+			<div class="mui-scroll">		
+
+			<!--cont-list start-->
+			<div class="cart-list-group ">
+				<div id="cartList">
+					<!--<div class="list">
+					<div class="list-head display_flex">
+						<div class="flex_1">
+							<h1 class="title">ZARA</h1>
+						</div>						
+					</div>
+					<ul class="mui-table-view up-table-wiew">
+						<li class="my-table-view-cell mui-media notarize_table-view-cell">
+							<a href="javascript:;">
+								<div class="row display_flex">
+									<div class="content flex_4">
+										<img class="mui-media-object mui-pull-left" src="../images/cart/image1.png">
+										<div class="mui-media-body">
+											<h1 class="title mui-ellipsis-2">ZARA 2017秋冬新品全场免运费 浏览时下流行趋势，购购买1000件</h1>
+											<p class="mui-ellipsis style"><span>XXL</span><span>绿色（3个仓库发货）</span></p>
+										</div>
+									</div>
+									<div class="flex_1 price-group">
+										<h1 class="price"><i class="price-icon">￥</i>1811.00</h1>
+										<p class="sum">x<span>200</span></p>
+									</div>
+								</div>
+							</a>
+						</li>
+						
+						<li class="mui-table-view-cell">
+							<a>
+								<form class="mui-input-group up-input-group">
+								    <div class="mui-input-row">
+								        <label>备注</label>
+								        <input type="text" class="mui-input-clear" placeholder="这里可填写订单要求哦O(n_n)O">
+								    </div>
+								</form>
+							</a>
+							
+						</li>
+
+					</ul>
+				</div>-->
+
+					<!--<div class="list">
+					<div class="list-head display_flex">
+						<div class="flex_1">
+							<h1 class="title">ZARA</h1>
+						</div>						
+					</div>
+					<ul class="mui-table-view up-table-wiew">
+						<li class="my-table-view-cell mui-media notarize_table-view-cell">
+							<a href="javascript:;">
+								<div class="row display_flex">
+									<div class="content flex_4">
+										<img class="mui-media-object mui-pull-left" src="../images/cart/image1.png">
+										<div class="mui-media-body">
+											<h1 class="title mui-ellipsis-2">ZARA 2017秋冬新品全场免运费 浏览时下流行趋势，购购买1000件</h1>
+											<p class="mui-ellipsis style"><span>XXL</span><span>绿色（3个仓库发货）</span></p>
+										</div>
+									</div>
+									<div class="flex_1 price-group">
+										<h1 class="price"><i class="price-icon">￥</i>1811.00</h1>
+										<p class="sum">x<span>200</span></p>
+									</div>
+								</div>
+							</a>
+						</li>
+						
+						<li class="mui-table-view-cell">
+							<a>
+								<form class="mui-input-group up-input-group">
+								    <div class="mui-input-row">
+								        <label>备注</label>
+								        <input type="text" class="mui-input-clear" placeholder="这里可填写订单要求哦O(n_n)O">
+								    </div>
+								</form>
+							</a>
+							
+						</li>
+
+					</ul>
+				</div>-->
+				</div>
+				<div class="list">
+					<ul class="mui-table-view up-table-wiew">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right notarize_order_invoiceId">
+								<h2 class="h2-title">发票<span class="cont">不开发票</span></h2>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right discount-couponId">
+								<h2 class="h2-title">优惠卷<span class="cont">暂无可用</span></h2>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="list">
+					<ul class="mui-table-view up-table-wiew notarize-cost">
+						<li class="my-table-view-cell">
+							<a>
+								<h2 class="h2-title">商品金额<span class="cont" id="sum">9000.00</span></h2>
+							</a>
+						</li>
+						<li class="my-table-view-cell">
+							<a>
+								<h2 class="h2-title">运费<span class="cont" id="freight">200.00</span></h2>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<!--cont end-->
+		</div>
+		<div class="submit-group display_flex">
+			<div class="flex_1">
+				<h1 class="cont">实付款 <i class="price-icon">￥</i><span id="orderSum">1500.00</span></h1>
+			</div>
+			<a class="submit-btn qzzOrderId">确认支付</a>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/rem.js"></script>
+	<script src="../js/jQuery.js"></script>
+	<script src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/tools.js"></script>
+	<script type="text/javascript" src="../js/address.js"></script>
+	<script type="text/javascript" src="../js/controller.js"></script>
+	<script type="text/javascript" src="../js/notarize_order.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		setDivHeight();
+
+		function setDivHeight() {
+			//获取DIV高度			
+			var h = document.getElementById("address").offsetHeight;
+			document.getElementById("cartList").style.marginTop = +h + 10 + "px";
+		}
+	</script>
+
+</html>

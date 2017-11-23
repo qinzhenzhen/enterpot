@@ -1,0 +1,98 @@
+i,em{font-style: normal;}
+.pay-top-group{
+	background: #FFFFFF;
+	border-bottom:1px solid #ccc;
+}
+
+.pay-top-group .pay-top-group-time{
+	padding: 10px;
+	border-bottom:1px solid #ccc;
+}
+
+.pay-top-group .pay-top-group-time .text{
+	width:100%;
+	/*font-size: .3rem;*/
+	text-align: center;
+	padding:10px 0 5px 0;
+	margin: 0;
+}
+
+.pay-top-group .pay-top-group-time .time-group{
+	width:50%;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+}
+.pay-top-group .pay-top-group-time .time-group > p{
+	margin: 0 auto;
+	width:120px;	
+}
+
+.pay-top-group .pay-top-group-time .time-group > p i{
+	display:block;
+	float:left;
+	width:20px;
+	height:24px;
+	background: #000000;
+	color: #FFFFFF;
+	border-radius:3px;
+	font-size: .24rem;
+	line-height: 24px;
+	text-align: center;
+	margin-left: 5px;
+}
+
+.pay-top-group .pay-top-group-time .time-group > p i.time-icon{
+	width:10px;
+	background: #fff;
+	color:#000000;
+}
+
+.pay-top-group .pay-top-group-time .price{
+	width:100%;
+	text-align: center;
+	font-weight: 500;
+	padding: 10px 0;
+}
+
+.pay-top-group .pay-top-group-time .price .price-icon{
+	font-size: .2rem;
+}
+
+.pay-top-group .pay-top-group-order{
+	padding:10px 15px;
+}
+
+.pay-top-group .pay-top-group-order >p{
+	margin: 0;
+}
+.pay-top-group .pay-top-group-order >p em.sum{
+	float:right;
+}
+.clearfix {
+	/*兼容 IE*/
+	zoom: 1;
+}
+
+.clearfix:after {
+	/*最简方式*/
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.pay-cont-group{
+	position: relative;
+	background:#FFFFFF;
+	margin-top:10px;
+}
+
+.pay-cont-group p{
+	padding:10px;
+	margin: 0;
+}
+
+
+.mui-table-view-radio .mui-table-view-cell .mui-navigate-right:after{
+	background: #000000;
+}

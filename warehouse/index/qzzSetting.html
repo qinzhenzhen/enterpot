@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>环球集货仓-设置</title>
+    <link rel="stylesheet" href="../css/mui.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <script src="../js/rem.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/mui.js"></script>
+    <style>
+        .mui-navigate-right{
+            font-size: 0.24rem;
+            color: #070923;
+        }
+        .mui-table-view{
+            margin-top: 0.2rem;
+        }
+        .mui-switch.mui-active {
+            border-color: #090823;
+            background-color: #090823;
+        }
+        .mui-switch{
+            width: 50px;
+            height: 27px;
+        }
+        .mui-switch .mui-switch-handle {
+            width: 21px;
+            height: 25px;
+        }
+       .mui-switch.mui-active:before {
+            left: 3px;
+        }
+        .mui-input-row .mui-switch{
+            margin-right: 0;
+        }
+        .mui-switch.mui-active .mui-switch-handle {
+            -webkit-transform: translate(43px, 0);
+            transform: translate(30px, 0);
+        }
+        .pay {
+            display: block;
+            width: 92%;
+            height: 0.8rem;
+            background: #090723;
+            text-align: center;
+            float: left;
+            margin: 1rem 4%;
+            border-radius: 0.2rem;
+            color: #fff;
+            font-size: 0.28rem;
+        }
+        .mui-switch:before{
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<!--header start-->
+<header class="mui-bar mui-bar-nav" style="box-shadow: none;height: 1rem;background: #fff">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#1b1835"></a>
+    <h1 class="mui-title" style="color:#1b1835;">设置</h1>
+</header>
+<!--header end-->
+<!--main start-->
+<div class="main" style="margin-top: 1.2rem">
+    <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    消息推送
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    同步商品数据
+                </a>
+            </li>
+        </ul>
+     <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                清理缓存
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <div class="mui-input-row">
+                <a class="mui-navigate-right">
+                    下单备注开发
+                </a>
+                 <div class="mui-switch mui-active">
+                      <div class="mui-switch-handle"></div>
+                 </div>
+            </div>
+        </li>
+    </ul>
+     <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                使用条款
+            </a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">
+                关于环球
+            </a>
+        </li>
+    </ul>
+</div>
+<button class="pay">
+    注销登录
+</button>
+<!--main end-->
+</body>
+<script>
+    $(".pay").click(function () {
+        var mobile=window.localStorage ? localStorage.getItem('loginName'):"{}";
+        if(window.localStorage){
+            localStorage.clear();
+            location.href="index.html";
+        }
+    })
+</script>
+</html>

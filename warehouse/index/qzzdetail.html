@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>环球集货仓-品牌专区</title>
+    <link rel="stylesheet" href="../css/mui.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <script src="../js/rem.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js "></script>
+    <script src="../js/mui.js"></script>
+    <link rel="stylesheet" href="../css/qzzindex.css">
+    <link rel="stylesheet" href="../css/bottom.css">
+    <style>
+        body{
+           width: 100%;
+            height: auto;
+            background: #fff;
+        }
+        .search{
+            width: 0.4rem;
+            height: 0.4rem;
+            float: right;
+            margin-top: 0.25rem;
+        }
+        .search img{
+            width: 100%;
+            height: 100%;
+        }
+        .doing #times{
+            margin-top: -0.55rem;
+        }
+    </style>
+</head>
+<body>
+   <!--header start-->
+      <header class="mui-bar mui-bar-nav" style="background: #fff;box-shadow: none">
+          <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+          <h1 class="mui-title">ASAS</h1>
+          <div class="search" style="display: none">
+                  <img src="../images/nav_button_search.png" alt="">
+          </div>
+      </header>
+<!--header end-->
+<!--detail start-->
+   <div class="main theMain">
+       <ul class="navs tabUl">
+           <li class="one active " id="detailOne">
+               <a href="javascript:;">
+                   <img src="../images/tab_icon_whole.png" alt="">
+                   <span>全部</span>
+               </a>
+           </li>
+           <li class="one " id="detailOne">
+               <a href="javascript:;">
+                   <img src="../images/tab_icon_finish.png" alt="">
+                   <span>售完</span>
+               </a>
+           </li>
+       </ul>
+       <div class="list">
+           <div class="every ">
+               <ul class="all style active">
+
+               </ul>
+               <ul class="doing style">
+
+               </ul>
+           </div>
+       </div>
+   </div>
+<!--detail end-->
+   <!--footer start-->
+   <footer>
+       <div class="footer-main">
+           <a href="javascript:;" class="setting">
+               <div class="pics a "></div>
+               <div class="intros">首页</div>
+           </a>
+           <a href="javascript:;" class="setting">
+               <div class="pics b active"></div>
+               <div class="intros">关注</div>
+           </a>
+           <a href="javascript:;" class="setting">
+               <div class="pics c"></div>
+               <div class="intros">购物车</div>
+           </a>
+           <a href="javascript:;" class="setting">
+               <div class="pics d"></div>
+               <div class="intros">我的</div>
+           </a>
+       </div>
+   </footer>
+   <!--footer end-->
+<!--mask start-->
+   <div class="mask">
+   </div>
+   <!--share start-->
+   <div class="shareTo">
+       <div class="p">分享到</div>
+       <ul class="shareStyle">
+           <li class="qq">
+               <img src="../images/btn_qq.png" alt="">
+               <span>QQ</span>
+           </li>
+           <li class="qq">
+               <img src="../images/btn_pyq.png" alt="">
+               <span>朋友圈</span>
+           </li>
+           <li class="qq">
+               <img src="../images/btn_weixing.png" alt="">
+               <span>微信</span>
+           </li>
+           <li class="qq">
+               <img src="../images/btn_wb.png" alt="">
+               <span>微博</span>
+           </li>
+           <li class="qq">
+               <img src="../images/btn_tb.png" alt="">
+               <span>淘宝</span>
+           </li>
+           <li class="qq">
+               <img src="../images/btn_rr.png" alt="">
+               <span>人人</span>
+           </li>
+       </ul>
+       <div class="cancel">
+            <span>取消</span>
+       </div>
+   </div>
+   <!--share end-->
+   <!--mask end-->
+</body>
+<script src="../js/common.js"></script>
+<script type="text/javascript" src="../js/controller.js" ></script>
+<script>
+    //    var b = new Base64();
+    !(function ($) {
+        var g={
+            init: function() {
+                var _t = this;
+                //调用tab
+                _t.tab();
+                /*产品详情*/
+                _t.attention();
+            },
+            //调用tab
+            tab: function() {
+                var _t = this;
+                $(".main .navs li").click(function () {
+                    var index=$(this).index();
+                    $(".main .navs li") .filter(".active").removeClass('active').end().eq(index).addClass('active');
+                    $(".main .list .every .style") .filter(".active").removeClass('active').end().eq(index).addClass('active');
+                })
+            },
+            attention:function () {
+                var _t = this;
+                var mobile=window.localStorage ? localStorage.getItem('loginName'):"{}";
+                $.ajax({
+                    type: 'post',
+                    url: indexUrl,
+                    data:{loginName:mobile}
+                })
+                    .done(function(data) {
+                        var data = JSON.parse(data);
+                        console.log(data);
+                        //品牌详情
+                        var brandQuality=data.productinfos;
+                        for(var i=0;i<brandQuality.length;i++){
+                            //logo
+                            var logoImg="<div class='logo'><img src='"+imgUrl+brandQuality[i].brandlogo+"' alt='' style=' width: 100%;height: 100%;'></div>";
+                            //品牌名称
+                            var brandName="<ul class='coll'><li class='brand'>"+brandQuality[i].brandname+"</li><li class='col' type='"+brandQuality[i].is_favorite+" ' productid='"+brandQuality[i].id+"'></li></ul>";
+                            //描述
+                            var description="<div class='con'><span>"+brandQuality[i].description+"</span></div>";
+                            //图片详情
+                            var brandDetail="<ul class='display'><li><img src='"+imgUrl+brandQuality[i].goods_other_img1+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img2+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img3+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img4+"' alt='' id='img'></li></ul>";
+                            //市场价  会员价
+                            var marketPrice="<div class='act'><div id='prices'><div class='original'><img src='../images/icon_￥.png' alt=''><span>"+brandQuality[i].marketprice+"</span></div>"+"<div class='count'><span>会员价："+brandQuality[i].marketprice+"</span></div></div>"+"<div class=\"shareId\"><img src='../images/button_share.png' alt=''><span  sid='+brandQuality[i].id+'>分享</span></div></div>";
+                            var pushTime="<div id='times'>上午&nbsp;&nbsp;11.00</div>";
+                            var remarks="<div class='remarks'><span>心外膜额个我旁边看热不寂寞</span><span>发布和人力，】【 管理【人，太难【他</span></div>";
+                            var perfom="<div class='perfom'><div id='joinShop' class='change' gid='"+brandQuality[i].id+" '>加入购物车</div><div class='special change' gid='"+brandQuality[i].id+" '>购买</div></div>";
+                            var starttime=brandQuality[i].startdate;
+                            var endtime=brandQuality[i].enddate;
+                            //判断时间大小
+                            if(
+                                (new Date(starttime.replace(/-/g,"\/"))) < (new Date(currentTime.replace(/-/g,"\/")))&&
+                                (new Date(endtime.replace(/-/g,"\/"))) > (new Date(currentTime.replace(/-/g,"\/")))
+                            ){
+                                var detail=logoImg+brandName+description+brandDetail+marketPrice+pushTime+remarks+perfom;
+                                var li="<li class='one'id='one'>"+detail+"</li>";
+                                $(".doing").append(li);
+                            }else if((new Date(starttime.replace(/-/g,"\/"))) >= (new Date(currentTime.replace(/-/g,"\/")))){
+                                perfom=" <div class='perfom'><div class='date'>开始倒计时&nbsp;<span id='hour'></span>:&nbsp;&nbsp;<span id='minute'></span>:&nbsp;&nbsp;<span id='second'></span></div><div class='special'>品牌专区</div></div>";
+                                var detail=logoImg+brandName+description+brandDetail+marketPrice+pushTime+remarks+perfom;
+                                var li="<li class='one'id='one'>"+detail+"</li>";
+                                $(".being").append(li);
+                                //秒杀
+                                function getTime(){
+                                    var now = new Date();
+                                    var being=starttime.replace(/[-:\s]/g,",");
+                                    var t=starttime.replace("\"","");
+                                    var after=new Date(t);
+                                    var cha=after.getTime()-now.getTime();
+                                    var hour=Math.floor(cha/(1000*60*60));
+                                    $(".date #hour").text(hour<10?'0'+hour:hour);
+                                    var minute=Math.floor(cha/(1000*60)%60);
+                                    $(".date #minute").html(minute<10?"0"+minute:minute);
+                                    var second=Math.floor(cha/1000%60);
+                                    $(".date #second").html(second<10?"0"+second:second);
+                                }
+                                getTime();
+                                setInterval(getTime,1000)
+                            }
+                            $(".all").append(li);
+                        }
+                    })
+            }
+        };
+        $(function () {
+            g.init();
+        })
+    })($);
+
+</script>
+<script src="../js/main.js"></script>
+<script src="../js/mainattention.js"></script>
+
+</html>
