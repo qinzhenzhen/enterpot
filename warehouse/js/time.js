@@ -1,6 +1,5 @@
 $(function() {
     //秒杀
-
     function leftTimer(year, month, day, hour, minute, second) {
         var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
         //var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
@@ -26,8 +25,6 @@ $(function() {
         s2 = seconds > 0 ? seconds.substring(1, 2) : 0;
 
         $(".setTimeId").html("<span>" + h1 + "</span>&nbsp;<span>" + h2 + "</span>&nbsp;:&nbsp;<span>" + s1 + "</span>&nbsp;<span>" + s2 + "</span>");
-        $(".date").html("开始倒计时&nbsp;<span id='hour'>" + hours + "</span>:&nbsp;&nbsp;<span id='minute'>" + minutes + "</span>:&nbsp;&nbsp;<span id='second'>" + seconds + "</span>");
-
     }
 
     function checkTime(i) { //将0-9的数字前面加上0，例1变为01

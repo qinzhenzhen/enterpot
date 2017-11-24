@@ -107,7 +107,10 @@
 		},
 		"Payment": {
 			"description": "支付"
-		}
+		},
+		"Share": {
+			"description": "社交分享"
+		},"OAuth":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -116,7 +119,33 @@
 		},
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
-		"distribute": {"plugins":{"payment":{"weixin":{"description":"微信支付","appid":"H52460A40"},"alipay":{"description":"阿里支付","scheme":""},"appleiap":{"description":"Apple应用内支付"}}},
+		"distribute": {
+			"plugins": {
+				"oauth": {"qq":{"appid":""},"sina":{"appkey":"","appsecret":"","redirect_uri":""},"weixin":{"appid":"wx6aacc074a6c12d13","appsecret":" 14fb29bc7789bd4e670f36e1cd4a2062"}
+					
+					
+				},
+				"share": {
+					"weixin": {
+						"appid": "wx6aacc074a6c12d13",
+						"appsecret": " 14fb29bc7789bd4e670f36e1cd4a2062",
+						"description": "可选，微信分享"
+					}
+				},
+				"payment": {
+					"weixin": {
+						"description": "微信支付",
+						"appid": "wx6aacc074a6c12d13"
+					},
+					"alipay": {
+						"description": "阿里支付",
+						"scheme": ""
+					},
+					"appleiap": {
+						"description": "Apple应用内支付"
+					}
+				}
+			},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
@@ -209,13 +238,26 @@
 					"appid": "",/*微信开放平台申请应用的AppID值*/
 					"description": "微信支付"
 				},
-				"appleiap":{
+				"appleiap": {
 					"description": "app内部支付"
 				}
 			},
-			"share": {/*配置应用使用分享功能，参考http://ask.dcloud.net.cn/article/27*/
-				
-				"description": "分享"
+			"oauth": {
+				"weixin": {
+					"appid": "",/*微信开放平台申请应用的AppID值*/
+					"appsecret": "",/*微信开放平台申请应用的AppSecret值*/
+					"description": "微信登录"
+				},
+				"qq": {
+					"appid": "",/*腾讯QQ开放平台申请应用的AppID值*/
+					"description": "QQ登录"
+				},
+				"sina": {
+					"appkey": "",/*新浪微博平台应用appkey*/
+					"appsecret": "",/*新浪微博平台应用appsecret*/
+					"redirect_uri": "",/*新浪微博平台应用授权回调页地址*/
+					"description": "新浪微博登录"
+				}
 			}
 		}
 	},

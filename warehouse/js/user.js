@@ -1,6 +1,7 @@
 $(function() {	
 	var loginName = localStorage.getItem("loginName");
-	if(!loginName) {
+	var user = JSON.parse(localStorage.getItem("user"));
+	if(!user.id) {
 		var btnArray = ['取消', '前往'];
 		mui.confirm('您还未登录，请前往登录', '登录', btnArray, function(e) {
 			if(e.index == 1) {
@@ -16,16 +17,17 @@ $(function() {
 			type: 'post',
 			url: ownUrl,
 			data: {
-				loginName: loginName
+				loginName: user.id
 			}
 		})
 		.done(function(data) {
 			var data = JSON.parse(data);
 			//console.log(data)
 			if(data.code == 000008) {
-				localStorage.setItem("vip",data.userinfo.vip);
-				localStorage.setItem("usermoney",data.userinfo.usermoney);
-				localStorage.setItem("userid",data.userinfo.userid);
+				user.vip = data.userinfo.vip;
+				user.usermoney = data.userinfo.usermoney;
+				localStorage.setItem("user", JSON.stringify(user));
+				
 			}
 		})
 })

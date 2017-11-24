@@ -17,16 +17,16 @@ header .phone{
      z-index: 999;
  }
 header .setup{
-    width: 0.54rem;
-    height: 0.54rem;
+    width: 0.65rem;
+    height: 0.65rem;
     position: absolute;
     right:0.21rem;
-    top:0.66rem;
+    top:0.65rem;
     z-index: 999;
 }
 header .new{
-    width: 0.54rem;
-    height: 0.54rem;
+    width: 0.58rem;
+    height: 0.58rem;
     position: absolute;
     left:0.21rem;
     top:0.54rem;
@@ -151,7 +151,12 @@ header .edit{
     height: 100%;
     position: relative;
 }
-.state .content .s-top li img{
+.state .content .s-top li .img{
+    font-size: 0.45rem;
+    text-align: center;
+    color: #090723;
+    line-height: 0.39rem;
+    font-weight: 800;
     width: 0.4rem;
     height:0.39rem;
     min-height: 0.39rem;
@@ -190,6 +195,11 @@ header .edit{
     height:0.25rem;
     margin: 0 0.24rem;
     float:left;
+    font-size:0.27rem;
+    text-align: center;
+    color: #090723;
+    line-height: 0.25rem;
+    font-weight: 700;
 }
 .state .content .s-bottom .xing span{
     display: block;
@@ -210,6 +220,10 @@ header .edit{
 .state .content .s-bottom .xing .grade .hollow{
     width: 0.25rem;
     height:0.25rem;
+    font-size: 0.25rem;
+    color: #090723;
+    text-align: center;
+    line-height: 0.25rem;
 }
 .state .content .s-bottom .xing .back{
     width: auto;

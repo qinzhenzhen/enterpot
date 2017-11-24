@@ -20,6 +20,9 @@
 			<a class=" mui-icon  mui-pull-right up-bar-nav-btn">全部清空</a>
 		</header>
 		<!--header end-->
+
+		<div class=" mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
 		<!--cont start-->
 		<div class="mui-content my-cart-content">
 			<!--cont-list start-->
@@ -214,9 +217,21 @@
 			</div>
 		</div>
 		<!--cont end-->
+			</div>
+		</div>
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script src="../js/rem.js"></script>
 	<script src="../js/jQuery.js"></script>
+	<script>
+        mui.init();
+        (function($) {
+            $(".mui-scroll-wrapper").scroll({
+                bounce: false, //滚动条是否有弹力默认是true
+                indicators: false, //是否显示滚动条,默认是true
+            });
+
+        })(mui);
+	</script>
 
 </html>

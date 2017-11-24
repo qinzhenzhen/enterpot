@@ -30,11 +30,9 @@
 <!--header end-->
 <!--保存并使用开始-->
 <a class="add" id="addAddress">
-    <img src="../images/true.png" alt="">
-    <span>保存并使用</span>
+    保存并使用
 </a>
 <!--保存并使用结束-->
-
 <!--内容开始-->
 <div class="content">
     <div class="user">
@@ -81,13 +79,13 @@
 <script type="text/javascript" src="../js/controller.js" ></script>
 <script type="text/javascript" src="../js/address.js" ></script>
 <script>
-/*$(".address .bottom .delete").click(function () {
-//    var index=$(".address").index(this);
-    $(this).parent().parent().css("display","none");
-})
-    $(".user .img").click(function () {
-        $(this).toggleClass("active");
-    })
-*/
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
+
+    })(mui);
 </script>
 </html>

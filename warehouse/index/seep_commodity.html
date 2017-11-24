@@ -24,7 +24,6 @@
 			<div class="hint-group">
 				<p><i class="lack-lion seep-icon"></i>商品补发中</p>
 			</div>
-
 			<!--cont-list start-->
 			<div class="cart-list-group mh70" id="cartList">
 				<div class="address-group up-address-group" id="address">
@@ -46,8 +45,9 @@
 						</li>
 					</ul>
 				</div>
-
-				<div class="postpone-group">
+				<div class=" mui-content mui-scroll-wrapper" style="margin-bottom: 50px;margin-top:184px">
+					<div class="mui-scroll">
+				<div class="postpone-group" style="margin-top: -8px">
 					<ul class="mui-table-view">
 						<li class="mui-table-view-cell">
 							<a class="mui-navigate-right">
@@ -62,6 +62,7 @@
 						</li>
 					</ul>
 				</div>
+
 				<div class="list">
 					<div class="list-head display_flex">
 						<div class="flex_1">
@@ -135,7 +136,10 @@
 
 			</div>
 		</div>
+			</div>
+		</div>
 		<!--cont end-->
+
 		<div class="submit-group">
 			<a class="service-btn onClick">在线客服</a>
 		</div>
@@ -145,5 +149,14 @@
 	<script src="../js/jQuery.js"></script>
 	<script type="text/javascript" src="../js/tools.js" ></script>
 	<script type="text/javascript" src="../js/address.js" ></script>
+	<script>
+        mui.init();
+        (function($) {
+            $(".mui-scroll-wrapper").scroll({
+                bounce: false, //滚动条是否有弹力默认是true
+                indicators: false, //是否显示滚动条,默认是true
+            });
 
+        })(mui);
+	</script>
 </html>

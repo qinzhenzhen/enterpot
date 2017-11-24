@@ -118,9 +118,11 @@
             line-height: 0.3rem;
             color:#ff5252;
         }
+        .mui-bar-nav ~ .mui-content{
+             padding-top: 0;
+        }
     </style>
 </head>
-<body>
 <body>
 <!--header start-->
 <header class="mui-bar mui-bar-nav" style="box-shadow: none;height: 1rem;background: #fff">
@@ -128,69 +130,83 @@
     <h1 class="mui-title" style="color:#1b1835;">修改绑定手机</h1>
 </header>
 <!--header end-->
-<!--main start-->
-<div class="bound">
-    <span>验证成功</span>
+<div class=" mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <!--main start-->
+        <div class="bound">
+            <span>验证成功</span>
+        </div>
+        <form action="" id="login-form">
+            <div class="user">
+                <h5>设置新密码</h5>
+                <!--<h5>请设置环球集货支付密码</h5>-->
+                <ul class="pass">
+                    <li>
+                        <input type="password" value="1">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                </ul>
+                <p>请输入6位新支付密码</p>
+            </div>
+            <div class="user">
+                <h5>确认新密码</h5>
+                <!--<h5>请设置环球集货支付密码</h5>-->
+                <ul class="pass">
+                    <li>
+                        <input type="password" value="1">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                    <li>
+                        <input type="password">
+                    </li>
+                </ul>
+                <p>请再次输入6位新支付密码</p>
+            </div>
+            <div class="error_alert erron_alert">
+                <span class="error">* 新密码和确认密码不一致</span>
+            </div>
+            <div class="login-btn">
+                <input type="submit" value="下一步">
+            </div>
+        </form>
+        <!--main end-->
+    </div>
 </div>
-<form action="" id="login-form">
-    <div class="user">
-        <h5>设置新密码</h5>
-        <!--<h5>请设置环球集货支付密码</h5>-->
-        <ul class="pass">
-            <li>
-                <input type="password" value="1">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-        </ul>
-        <p>请输入6位新支付密码</p>
-    </div>
-    <div class="user">
-        <h5>确认新密码</h5>
-        <!--<h5>请设置环球集货支付密码</h5>-->
-        <ul class="pass">
-            <li>
-                <input type="password" value="1">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-            <li>
-                <input type="password">
-            </li>
-        </ul>
-        <p>请再次输入6位新支付密码</p>
-    </div>
-    <div class="error_alert erron_alert">
-        <span class="error">* 新密码和确认密码不一致</span>
-    </div>
-    <div class="login-btn">
-        <input type="submit" value="下一步">
-    </div>
-</form>
-<!--main end-->
 
 </body>
+<script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
+
+    })(mui);
+</script>
 </html>

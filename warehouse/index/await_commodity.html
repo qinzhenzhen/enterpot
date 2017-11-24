@@ -45,7 +45,8 @@
 				<p class="await-log"><i class="lack-lion await-lion"></i>等待支付</p>
 				<p class="await-time">剩余：<span>01小时44分钟</span></p>
 			</div>
-
+			<div class=" mui-content mui-scroll-wrapper" style="margin-top: 40px;margin-bottom: 50px">
+				<div class="mui-scroll">
 			<!--cont-list start-->
 			<div class="cart-list-group mh70" id="cartList">
 				<div class="address-group up-address-group" id="address">
@@ -120,9 +121,9 @@
 				</div>
 
 			</div>
-		</div>
-
 		<!--cont end-->
+				</div>
+			</div>
 		<div class="submit-group">
 			<a class="service-btn" typeId="0">付款</a>
 			<a class="service-btn onClick" typeId="1">取消订单</a>		
@@ -139,6 +140,13 @@
 		mui.init({
 			swipeBack: true //启用右滑关闭功能
 		});
+        (function($) {
+            $(".mui-scroll-wrapper").scroll({
+                bounce: false, //滚动条是否有弹力默认是true
+                indicators: false, //是否显示滚动条,默认是true
+            });
+
+        })(mui);
 
 	</script>
 </html>

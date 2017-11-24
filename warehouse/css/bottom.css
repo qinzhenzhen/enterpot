@@ -32,25 +32,12 @@ footer {
     line-height: 0.62rem;
     float: left;
     margin-left: 0.1rem;
-}
-.footer-main .setting .a{
-    background: url('../images/tab_button_home_default.png')center center no-repeat;
-    background-size: 100%;
-
-}
-.footer-main .setting .b{
-    background: url('../images/tab_button_follow_default.png')center center no-repeat;
-    background-size: 100%;
-
+    font-size: 0.45rem;
+    color: #090723;
+    font-weight: 700;
 }
 .footer-main .setting .c{
-    background: url('../images/tab_button_Shoppingcart_default.png')center center no-repeat;
-    background-size: 100%;
-
-}
-.footer-main .setting .d{
-    background: url('../images/tab_my_Shoppingcart_default.png')center center no-repeat;
-    background-size: 100%;
+    font-size: 0.55rem;
 
 }
 .footer-main .setting .a.active{

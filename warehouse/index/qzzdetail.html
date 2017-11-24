@@ -12,6 +12,7 @@
     <script src="http://code.jquery.com/jquery-3.2.1.min.js "></script>
     <script src="../js/mui.js"></script>
     <link rel="stylesheet" href="../css/qzzindex.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
     <link rel="stylesheet" href="../css/bottom.css">
     <style>
         body{
@@ -31,6 +32,9 @@
         }
         .doing #times{
             margin-top: -0.55rem;
+        }
+        .mui-content{
+            background-color: #fff;
         }
     </style>
 </head>
@@ -80,19 +84,19 @@
    <footer>
        <div class="footer-main">
            <a href="javascript:;" class="setting">
-               <div class="pics a "></div>
+               <div class="pics a iconfont icon-icon"></div>
                <div class="intros">首页</div>
            </a>
            <a href="javascript:;" class="setting">
-               <div class="pics b active"></div>
+               <div class="pics b iconfont icon-guanzhu"></div>
                <div class="intros">关注</div>
            </a>
            <a href="javascript:;" class="setting">
-               <div class="pics c"></div>
+               <div class="pics c iconfont icon-gouwuche"></div>
                <div class="intros">购物车</div>
            </a>
            <a href="javascript:;" class="setting">
-               <div class="pics d"></div>
+               <div class="pics d iconfont icon-wode"></div>
                <div class="intros">我的</div>
            </a>
        </div>
@@ -139,6 +143,7 @@
 </body>
 <script src="../js/common.js"></script>
 <script type="text/javascript" src="../js/controller.js" ></script>
+<script src="../js/detail.js"></script>
 <script>
     mui.init();
     (function($) {
@@ -148,150 +153,6 @@
         });
 
     })(mui);
-    !(function ($) {
-        var g={
-            init: function() {
-                var _t = this;
-                //调用tab
-                _t.tab();
-                /*产品详情*/
-                _t.attention();
-            },
-            //调用tab
-            tab: function() {
-                var _t = this;
-                $(".main .navs li").click(function () {
-                    var index=$(this).index();
-                    $(".main .navs li") .filter(".active").removeClass('active').end().eq(index).addClass('active');
-                    $(".main .list .every .style") .filter(".active").removeClass('active').end().eq(index).addClass('active');
-                })
-            },
-            attention:function () {
-                var _t = this;
-                var mobile=window.localStorage ? localStorage.getItem('loginName'):"{}";
-                //定义日期格式
-                Date.prototype.Format = function(format) {
-
-                    var o = {
-
-                        "M+": this.getMonth() + 1, //month
-
-                        "d+": this.getDate(), //day
-
-                        "h+": this.getHours(), //hour
-
-                        "m+": this.getMinutes(), //minute
-
-                        "s+": this.getSeconds(), //second
-
-                        "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
-
-                        "S": this.getMilliseconds() //millisecond
-
-                    }
-
-                    if(/(y+)/.test(format)) {
-
-                        format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-
-                    }
-
-                    for(var k in o) {
-
-                        if(new RegExp("(" + k + ")").test(format)) {
-
-                            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
-
-                        }
-
-                    }
-
-                    return format;
-
-                }
-                var date = new Date();
-                var currentTime = date.Format("yyyy-MM-dd hh:mm:ss");
-                var brandid = localStorage.getItem("brandid");
-                $.ajax({
-                    type: 'post',
-                    url: "http://118.31.45.231/api.php/Home/Brandsgoods/index",
-                    data:{
-                          brandid:brandid ,
-                          loginName:mobile
-                    }
-                })
-                    .done(function(data) {
-                        var data = JSON.parse(data);
-                        console.log(data);
-                        //品牌详情
-                        var brandQuality=data.productinfo;
-
-                        for(var i=0;i<brandQuality.length;i++){
-                            if(brandQuality[i].is_favorite == undefined){
-                                brandQuality[i].is_favorite == 0;
-                            }
-                            //logo
-                            var logoImg="<div class='logo'><img src='"+imgUrl+brandQuality[i].brandlogo+"' alt='' style=' width: 100%;height: 100%;'></div>";
-                            //品牌名称
-                            var className = "";
-                            if(brandQuality[i].is_favorite > 0) {
-                                className = "col_img2";
-                            } else {
-                                className = "col_img";
-                            }
-                            var brandName="<ul class='coll'><li class='brand'>"+brandQuality[i].brandname+"</li><li class='col " + className + "' type='"+brandQuality[i].is_favorite+" ' productid='"+brandQuality[i].id+"'></li></ul>";
-                            //描述
-                            var description="<div class='con'><span>"+brandQuality[i].description+"</span></div>";
-                            //图片详情
-                            var brandDetail="<ul class='display'><li><img src='"+imgUrl+brandQuality[i].goods_other_img1+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img2+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img3+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img4+"' alt='' id='img'></li></ul>";
-                            //市场价  会员价
-                            var marketPrice="<div class='act'><div id='prices'><div class='original'><img src='../images/icon_01.png' alt=''><span>"+brandQuality[i].marketprice+"</span></div>"+"<div class='count'><span>会员价："+brandQuality[i].marketprice+"</span></div></div>"+"<div class=\"shareId\"><img src='../images/button_share.png' alt=''><span  sid='+brandQuality[i].id+'>分享</span></div></div>";
-                            var pushTime="<div id='times'>上午&nbsp;&nbsp;11.00</div>";
-                            var remarks="<div class='remarks'><span>心外膜额个我旁边看热不寂寞</span><span>发布和人力，】【 管理【人，太难【他</span></div>";
-                                var detail=logoImg+brandName+description+brandDetail+marketPrice+pushTime;
-                                var li="<li class='one'id='one'>"+detail+"</li>";
-                                $(".doing").append(li)
-                            $(".all").append(li);
-                        }
-                        if($(".being:has(li)").length == 0) {
-                            $(".being").html("还没有即将开抢的商品哦").css({
-                                "height": "6rem",
-                                "background": "#fff",
-                                "text-align": "center",
-                                "font-size": "0.24rem"
-                            });
-                        }
-                        if($(".all:has(li)").length == 0) {
-                            $(".doing").html("还没有商品哦").css({
-                                "height": "6rem",
-                                "background": "#fff",
-                                "text-align": "center",
-                                "font-size": "0.24rem"
-                            });
-                        }
-                        //展开全文
-                        $(".con span").each(function() {
-                            var maxwidth = 80; //设置最多显示的字数
-                            var text = $(this).text();
-                            if($(this).text().length > maxwidth) {
-                                $(this).text($(this).text().substring(0, maxwidth));
-                                $(this).html($(this).html() + "..." + "<a href='###' style='color:#6b78a2'> 展开全文</a>"); //如果字数超过最大字数，超出部分用...代替，并且在后面加上点击展开的链接；
-                            }
-                            $(this).find("a").click(function() {
-                                $(this).parent().text(text); //点击“点击展开”，展开全文
-                                var a = "<a href='###' style='color:#6b78a2'>收起</a>";
-                                $(this).html(a);
-
-                            })
-                        })
-                    })
-            }
-        };
-        $(function () {
-            g.init();
-        })
-    })($);
-
 </script>
 <script src="../js/main.js"></script>
 <script src="../js/mainattention.js"></script>

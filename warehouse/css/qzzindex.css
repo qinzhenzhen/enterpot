@@ -2,7 +2,6 @@
     width: 100%;
     height: auto;
     position: relative;
-    background: #fff;
 }
 .news{
     width:95%;
@@ -19,10 +18,8 @@
 .news li{
     width: 0.55rem;
     height: 0.55rem;
-}
-.news li img{
-    width: 100%;
-    height: 100%;
+    font-size: 0.45rem;
+    color: #090723;
 }
 .announce{
     width: 100%;
@@ -67,7 +64,6 @@
     height: auto;
     background: #fff;
     float: left;
-    margin-top: 0.2rem;
     *zoom:1;
  }
 .main .navs{
@@ -177,9 +173,17 @@
     height: auto;
     margin: 0.15rem 0;
 }
+.main .list #one .display_1{
+    width: 83%;
+    float: right;
+    height: auto;
+    margin: 0.15rem 0;
+}
 .main .list #one .display li{
     width: 1.72rem;
     height: 1.72rem;
+    min-height: 1.72rem;
+    min-width: 1.72rem;
     float: left;
     margin-right: 0.11rem;
     margin-bottom: 0.1rem;
@@ -204,7 +208,7 @@
     color: #333333;
     font-size: 0.28rem;
 }
-.main .list #one .act img{
+.main .list #one .act .img{
     width: 0.35rem;
     height: 0.35rem;
     float: left;
@@ -220,6 +224,7 @@
     float: right;
     width: 84%;
     height: 0.5rem;
+    display: none;
 }
 .main .list .remarks span{
     float: left;

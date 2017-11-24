@@ -46,6 +46,8 @@
 				</div>
 			</div>
 			<!--cont-list start-->
+			<div class="mui-content my-cart-content pd100 mui-scroll-wrapper" style="margin-top: 40px;margin-bottom: -10px">
+				<div class="mui-scroll">
 			<div class="cart-list-group" id="cartList">
 				<div class="list">
 					<div class="list-head">
@@ -187,6 +189,8 @@
 					</ul>					
 				</div>
 			</div>
+				</div>
+			</div>
 			<!--cont-list ent-->
 			<!--合计-->
 			<div class="summation-group display_flex">
@@ -213,6 +217,7 @@
 				</div>
 			</div>
 		</div>
+
 		<!--footer start-->
 		<footer class="upfooter">
 			<div class="footer-main">
@@ -243,7 +248,13 @@
 	<script type="text/javascript" src="../js/controller.js" ></script>
 	<script type="text/javascript">
 		mui.init();
+        (function($) {
+            $(".mui-scroll-wrapper").scroll({
+                bounce: false, //滚动条是否有弹力默认是true
+                indicators: false, //是否显示滚动条,默认是true
+            });
 
+        })(mui);
 		(function($) {
 
 			var btnArray = ['确认', '取消'];

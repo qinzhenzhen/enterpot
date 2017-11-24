@@ -61,6 +61,7 @@
     <h1 class="mui-title" style="color:#1b1835;">支付订单</h1>
 </header>
 <!--header end-->
+
 <!--main start-->
 <div class="pay state">
     <ul class="uState">
@@ -121,6 +122,7 @@
 <!--main end-->
 </body>
 <script>
+    mui.init();
     $(".payMethod .method").click(function () {
         var index=$(this).index();
         $(".choose").filter(".active").removeClass('active').end().eq(index).addClass('active');

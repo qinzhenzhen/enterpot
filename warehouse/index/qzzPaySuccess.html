@@ -61,6 +61,9 @@
             color: #555555;
 
         }
+        .mui-bar-nav ~ .mui-content{
+            padding-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -70,18 +73,30 @@
     <h1 class="mui-title" style="color:#1b1835;">支付状态</h1>
 </header>
 <!--header end-->
-<!--main start-->
-<div class="pay">
-    <img src="../images/icon_payment_Success.png" alt="">
-    <p>￥&nbsp;9000</p>
-    <span>支付成功</span>
+<div class=" mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+
+    <!--main start-->
+    <div class="pay">
+        <img src="../images/icon_payment_Success.png" alt="">
+        <p>￥&nbsp;9000</p>
+        <span>支付成功</span>
+    </div>
+    <a class="paycode" href="#">
+       <span>返回主页面</span>
+    </a>
+    <!--main end-->
+    </div>
 </div>
-<a class="paycode" href="#">
-   <span>返回主页面</span>
-</a>
-<!--main end-->
 </body>
 <script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
 
+    })(mui);
 </script>
 </html>

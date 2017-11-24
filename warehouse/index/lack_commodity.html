@@ -24,7 +24,8 @@
 			<div class="hint-group">
 				<p style="width:90px"><i class="lack-lion"></i>平台缺货</p>
 			</div>
-
+			<div class=" mui-content mui-scroll-wrapper" style="margin-top: 40px;margin-bottom: 50px">
+				<div class="mui-scroll">
 			<!--cont-list start-->
 			<div class="cart-list-group mh70" id="cartList">
 				<div class="address-group up-address-group" id="address">
@@ -131,6 +132,8 @@
 				</div>				
 
 			</div>
+				</div>
+			</div>
 		</div>
 		<!--cont end-->
 		<div class="submit-group">
@@ -140,5 +143,14 @@
 	<script src="../js/mui.min.js"></script>
 	<script src="../js/rem.js"></script>
 	<script src="../js/jQuery.js"></script>
+	<script>
+        mui.init();
+        (function($) {
+            $(".mui-scroll-wrapper").scroll({
+                bounce: false, //滚动条是否有弹力默认是true
+                indicators: false, //是否显示滚动条,默认是true
+            });
 
+        })(mui);
+	</script>
 </html>

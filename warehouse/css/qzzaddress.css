@@ -65,7 +65,7 @@
 .content .address .top .down{
     width: 100%;
     height:1.17rem;
-    font-size: 0.36rem;
+    font-size: 0.32rem;
     color:#666;
     float: left;
     padding-left: 0.65rem;
@@ -81,7 +81,7 @@
     width: auto;
     height: 100%;
     line-height: 0.85rem;
-    font-size: 0.38rem;
+    font-size: 0.30rem;
     color:#6a79a3;
     float: right;
     margin-right: 0.43rem;
@@ -90,7 +90,7 @@
     width: auto;
     height: 100%;
     line-height: 0.85rem;
-    font-size: 0.38rem;
+    font-size: 0.30rem;
     color:#666;
     float: right;
     margin-right: 0.9rem;
@@ -108,11 +108,11 @@
     margin: auto;
 }
 .add img{
-    width: 0.6rem;
-    height:0.6rem;
+    width: 0.55rem;
+    height:0.55rem;
     float: left;
     margin-left: 2.3rem;
-    margin-top:0.125rem;
+    margin-top:0.175rem;
 }
 .add span{
     width: auto;
@@ -122,5 +122,5 @@
     float: left;
     color:#fff;
     margin-left: 0.2rem;
-    font-size: 0.4rem;
+    font-size: 0.36rem;
 }

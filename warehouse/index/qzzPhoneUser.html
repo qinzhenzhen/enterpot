@@ -116,6 +116,9 @@
         form.active{
             margin-top: 1rem;
         }
+        .mui-bar-nav ~ .mui-content{
+            padding-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -125,34 +128,48 @@
     <h1 class="mui-title" style="color:#1b1835;">修改绑定手机</h1>
 </header>
 <!--header end-->
-<!--main start-->
- <div class="bound">
-     您已绑定手机&nbsp;<span>120****2353</span>
- </div>
-<form action="" id="login-form">
-    <div class="user">
-        <span>
-            <img src="../images/icon_input_handset.png" alt="">
-        </span>
-        <input type="text" placeholder="请输入您绑定的手机号码" id="txtUser" name="txtUser">
+<div class=" mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+
+    <!--main start-->
+     <div class="bound">
+         您已绑定手机&nbsp;<span>120****2353</span>
+     </div>
+    <form action="" id="login-form">
+        <div class="user">
+            <span>
+                <img src="../images/icon_input_handset.png" alt="">
+            </span>
+            <input type="text" placeholder="请输入您绑定的手机号码" id="txtUser" name="txtUser">
+        </div>
+        <div class="pass user user1">
+            <span>
+                <img src="../images/icon_input_verification.png" alt="">
+            </span>
+            <input type="text" placeholder="请输入手机验证码" id="txtCode" name="txtCode">
+            <input type="button" value="获取验证码" id="cord">
+        </div>
+        <div class="error_alert erron_alert">
+            <span class="error">您输入的验证码/手机号错误</span>
+        </div>
+        <div class="login-btn">
+            <input type="submit" value="下一步">
+        </div>
+    </form>
+    <!--main end-->
     </div>
-    <div class="pass user user1">
-        <span>
-            <img src="../images/icon_input_verification.png" alt="">
-        </span>
-        <input type="text" placeholder="请输入手机验证码" id="txtCode" name="txtCode">
-        <input type="button" value="获取验证码" id="cord">
-    </div>
-    <div class="error_alert erron_alert">
-        <span class="error">您输入的验证码/手机号错误</span>
-    </div>
-    <div class="login-btn">
-        <input type="submit" value="下一步">
-    </div>
-</form>
-<!--main end-->
+</div>
 
 </body>
 <script src="../js/editPhone.js"></script>
+<script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
 
+    })(mui);
+</script>
 </html>

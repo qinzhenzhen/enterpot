@@ -85,57 +85,62 @@ $(function() {
 	//售后" .qzzsaleId" 
 	$('.qzzsaleId').on('click', function() {
 		//window.location.href = "order.html";
-		setLocation.openWindow("qzzsale.html");
+        alert("正在建议中。。。");
+		// setLocation.openWindow("qzzsale.html");
 	});
 
 	//待支付 ".await_commodityId"
 	$('.await_commodityId').on('click', function() {
 		//window.location.href = "await_commodity.html";
-		setLocation.openWindow("await_commodity.html");
+        setLocation.openWindow("order.html");
 	});
 
 	//待发货 ".committed_commodityId"
 	$('.committed_commodityId').on('click', function() {
-		alert("正在建议中。。。");
+        setLocation.openWindow("order.html");
 	});
 
 	//捡货中 ".pick_up_commodityId"
 	$('.pick_up_commodityId').on('click', function() {
-		alert("正在建议中。。。");
+        setLocation.openWindow("order.html");
 	});
 
 	//已发货 ".shipped_commodityId"
 	$('.shipped_commodityId').on('click', function() {
-		alert("正在建议中。。。");
+        setLocation.openWindow("order.html");
 	});
 
 	//已取消 ".cancel_commodityId"
 	$('.cancel_commodityId').on('click', function() {
-		alert("正在建议中。。。");
+        setLocation.openWindow("order.html");
 	});
 
 	//平台缺货 " .lack_commodityId"
 	$('.lack_commodityId').on('click', function() {
 		//window.location.href = "lack_commodity.html";
-		setLocation.openWindow("lack_commodity.html");
+        alert("正在建议中。。。");
+		// setLocation.openWindow("lack_commodity.html");
 	});
 
 	//漏发 " .seep_commodityId"
 	$('.seep_commodityId').on('click', function() {
 		//window.location.href = "seep_commodity.html";
-		setLocation.openWindow("seep_commodity.html");
+        alert("正在建议中。。。");
+		// setLocation.openWindow("seep_commodity.html");
 	});
 
 	//退货中 " .back_commodityId"
 	$('.back_commodityId').on('click', function() {
+        alert("正在建议中。。。");
 		//window.location.href = "back_commodity.html";
-		setLocation.openWindow("back_commodity.html");
+		// setLocation.openWindow("back_commodity.html");
 	});
 
 	//已退货 ".back_on_commodityId"
 	$('.back_on_commodityId').on('click', function() {
+        alert("正在建议中。。。");
 		//window.location.href = "back_on_commodity.html";
-		setLocation.openWindow("back_on_commodity.html");
+		//  setLocation.openWindow("back_on_commodity.html");
 	});
 
 	//回收清单 ".clear_orderId"
@@ -172,14 +177,6 @@ $(function() {
 	$('.qzzeditId').on('click', function() {
 		setLocation.openWindow("qzzedit.html");
 	});
-	//品牌专区 ".special"
-
-	/*$( document ).on('click',"'.specialId'", function() {
-		console.log("111");
-		//window.location.href = "qzzdetail.html";
-		//setLocation.openWindow("qzzdetail.html");
-	});*/
-
 })
 
 var setLocation = {

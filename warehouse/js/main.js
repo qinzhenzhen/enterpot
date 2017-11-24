@@ -1,9 +1,9 @@
 $(function() {
 	//商品信息地址
-	var imgUrl = "http://118.31.45.231:8081/";
-	var shopUrl = "http://118.31.45.231/api.php/Home/Shopdetail/index";
-	var joinUrl = "http://118.31.45.231/api.php/Home/Shopcart/doshopcart"; //加入购物车成功
-	var doOrder = "http://118.31.45.231/api.php/Home/Order/do_order"; //添加到确认订单
+	var imgUrl = "http://118.31.45.231:8081/",
+	    shopUrl = "http://118.31.45.231/api.php/Home/Shopdetail/index",
+	    joinUrl = "http://118.31.45.231/api.php/Home/Shopcart/doshopcart", //加入购物车成功
+	    doOrder = "http://118.31.45.231/api.php/Home/Order/do_order"; //添加到确认订单
 	$(document).on('click', '.perfom .change', function() {
 		var loginName = window.localStorage ? localStorage.getItem('loginName') : null;
 		if(loginName == null) {
@@ -62,9 +62,11 @@ $(function() {
 					//库存
 					var repertory = goodsinfo.once_shop_maxnum;
 					$(".repertory").html("库存&nbsp;&nbsp;：&nbsp;&nbsp;" + repertory);
+					$(".qua .mui-numbox").attr("data-number-max",repertory);
+					console.log(1)
 					//尺码  颜色
-					var size = data.speca;
-					var color = data.specb;
+					var size = data.speca,
+					    color = data.specb;
 					for(var i = 0; i < size.length; i++) {
 						var li = "<li>" + size[0] + "</li>";
 						$(".size .kind").html(li);

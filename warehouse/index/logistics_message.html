@@ -19,6 +19,8 @@
 			<h1 class="mui-title up-title">物流跟踪</h1>
 		</header>
 		<!--header end-->
+		<div class=" mui-content mui-scroll-wrapper" style="margin-top: 40px;">
+			<div class="mui-scroll">
 		<!--cont start-->
 		<div class="mui-content">
 			<div class="postpone-group">
@@ -98,9 +100,20 @@
 			</div>
 		</div>
 		<!--cont end-->
+			</div>
+		</div>
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script src="../js/rem.js"></script>
 	<script src="../js/jQuery.js"></script>
+	<script>
+        mui.init();
+        (function($) {
+            $(".mui-scroll-wrapper").scroll({
+                bounce: false, //滚动条是否有弹力默认是true
+                indicators: false, //是否显示滚动条,默认是true
+            });
 
+        })(mui);
+	</script>
 </html>

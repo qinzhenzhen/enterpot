@@ -33,6 +33,9 @@
             </div>
         </div>
     </div>
+
+    <div class=" mui-content mui-scroll-wrapper" style="margin-top:86px;">
+        <div class="mui-scroll">
     <!--cont-list start-->
     <div class="cart-list-group mui-control-content mui-active" id="item1">
         <div class="list">
@@ -150,11 +153,22 @@
             </ul>
         </div>
     </div>
+        </div>
+    </div>
 </div>
 <!--cont end-->
 </body>
 <script src="../js/mui.min.js"></script>
 <script src="../js/rem.js"></script>
 <script src="../js/jQuery.js"></script>
+<script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
 
+    })(mui);
+</script>
 </html>
