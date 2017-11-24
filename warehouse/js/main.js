@@ -107,9 +107,6 @@ $(function() {
 		var brandid = $(".intro .img").attr("brandid");
 		var id = $(".intro .img").attr("pid");
 		var goodsprice = $("#goodsprice").html();
-		//setCookie("sstyle", sstyle);
-		//setCookie("cstyle", cstyle);
-		//window.location.href = "notarize_order.html?goodsid=" + goodsid + "quality=" + quality + "cstyle=" + cstyle + "sstyle=" + sstyle + "brandid=" + brandid + "id=" + id;
 		$.ajax({
 			type: "POST",
 			url: doOrder,

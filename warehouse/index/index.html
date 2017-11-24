@@ -11,13 +11,11 @@
 		<link rel="stylesheet" href="../css/base.css" />
 		<script src="../js/rem.js"></script>
 		<script src="../js/jQuery.js"></script>
-
 		<script src="../js/mui.js"></script>
 		<script src="../js/mainattention.js"></script>
 		<link rel="stylesheet" href="../css/qzzindex.css" />
 		<link rel="stylesheet" href="../css/bottom.css">
 		<link rel="stylesheet" href="../css/swiper-3.4.2.min.css">
-		<script src="../js/main.js"></script>
 		<style>
 			.original img {
 				width: 0.2rem;
@@ -269,6 +267,7 @@
 		</ul>
 		<!--join shopping cart end-->
 	</body>
+	<script src="../js/main.js"></script>
 	<script src="../js/common.js"></script>
 	<script type="text/javascript" src="../js/controller.js"></script>
 	<script>
@@ -280,6 +279,14 @@
 			});
 
 		})(mui);
+
+		//到品牌专区 ".specialId"
+        $( document ).on('click',".specialId", function() {
+            //console.log("111");
+			var brandid = $(this).attr("brandid");
+			localStorage.setItem("brandid",brandid);
+            setLocation.openWindow("qzzdetail.html");
+        });
 
 		!(function($) {
 			var g = {
@@ -398,8 +405,10 @@
 								var pushTime = "<div id='times'>上午&nbsp;&nbsp;11.00</div>";
 								var remarks = "<div class='remarks'><span>心外膜额个我旁边看热不寂寞</span><span>发布和人力，】【 管理【人，太难【他</span></div>";
 								var perfom = "<div class='perfom'><div id='joinShop' class='change' gid='" + brandQuality[i].id + " '>加入购物车</div><div class='special change' gid='" + brandQuality[i].id + " '>购买</div></div>";
+
 								var starttime = brandQuality[i].startdate;
 								var endtime = brandQuality[i].enddate;
+								console.log(starttime);
 								//判断时间大小
 								if(
 									(new Date(starttime.replace(/-/g, "\/"))) < (new Date(currentTime.replace(/-/g, "\/"))) &&
@@ -409,27 +418,11 @@
 									var li = "<li class='one'id='one'>" + detail + "</li>";
 									$(".doing").append(li);
 								} else if((new Date(starttime.replace(/-/g, "\/"))) >= (new Date(currentTime.replace(/-/g, "\/")))) {
-									perfom = " <div class='perfom'><div class='date'>开始倒计时&nbsp;<span id='hour'></span>:&nbsp;&nbsp;<span id='minute'></span>:&nbsp;&nbsp;<span id='second'></span></div><div class='special'>品牌专区</div></div>";
-									var detail = logoImg + brandName + description + brandDetail + marketPrice + pushTime + remarks + perfom;
-									var li = "<li class='one'id='one'>" + detail + "</li>";
-									$(".being").append(li);
-									//秒杀
-									function getTime() {
-										var now = new Date();
-										var being = starttime.replace(/[-:\s]/g, ",");
-										var t = starttime.replace("\"", "");
-										var after = new Date(t);
-										var cha = after.getTime() - now.getTime();
-										var hour = Math.floor(cha / (1000 * 60 * 60));
-										$(".date #hour").text(hour < 10 ? '0' + hour : hour);
-										var minute = Math.floor(cha / (1000 * 60) % 60);
-										$(".date #minute").html(minute < 10 ? "0" + minute : minute);
-										var second = Math.floor(cha / 1000 % 60);
-										$(".date #second").html(second < 10 ? "0" + second : second);
-									}
-									getTime();
-									setInterval(getTime, 1000)
+                                    perfom=" <div class='perfom'><div class='date'>开始倒计时&nbsp;<span id='hour'></span>:&nbsp;&nbsp;<span id='minute'></span>&nbsp;&nbsp;<span id='second'></span></div><a class='special specialId' brandid = "+brandQuality[i].brandid+">品牌专区</a></div>";
+                                    var detail=logoImg+brandName+description+brandDetail+marketPrice+pushTime+remarks+perfom;
+                                    var li="<li class='one'id='one'>"+detail+"</li>";
 								}
+
 								$(".all").append(li);
 							}
 							if($(".being:has(li)").length == 0) {
@@ -494,23 +487,4 @@
 	<script type="text/javascript" src="../js/downloader_file.js"></script>
 	<script type="text/javascript" src="../js/share.js"></script>
 	<script type="text/javascript" src="../js/user.js"></script>
-	<script>
-		$(document).ready(function() {
-			//do something
-			var flags = $("#one .coll .col").attr("type");
-			if($.trim(flags) == "未关注") {
-				console.log(1)
-				$(this).css({
-					"background": "url('../images/button_follow_default.png')center center no-repeat",
-					"background-size": "100%"
-				});
-			} else if($.trim(flags) == "已关注") {
-				$(this).css({
-					"background": "url('../images/tab_button_follow_selected.png')center center no-repeat",
-					"background-size": "100%"
-				});
-			}
-		})
-	</script>
-
 </html>

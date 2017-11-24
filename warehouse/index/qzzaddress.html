@@ -20,57 +20,69 @@
     <h1 class="mui-title">收货地址</h1>
 </header>
 <!--header end-->
-<!--内容开始-->
-<div class="content" id="addAddressList" style="padding-bottom: 1.9rem;">
-  <!--  <div class="address">
-        <div class="top">
-            <div class="up">
-                <img src="../images/icon_address_personal.png" alt="" class="person">
-                <p class="name">李晓飞</p>
-                <div class="default">默认</div>
-                <div class="phone">13245678991</div>
+<div class=" mui-content mui-scroll-wrapper" style="padding-top: 0;margin-bottom: 2rem">
+    <div class="mui-scroll">
+        <!--内容开始-->
+        <div class="content" id="addAddressList" style="padding-bottom: 1.9rem;">
+          <!--  <div class="address">
+                <div class="top">
+                    <div class="up">
+                        <img src="../images/icon_address_personal.png" alt="" class="person">
+                        <p class="name">李晓飞</p>
+                        <div class="default">默认</div>
+                        <div class="phone">13245678991</div>
+                    </div>
+                    <div class="down">
+                        广州市越秀区广州大道中293号
+                    </div>
+                </div>
+                <div class="bottom" addressid = "1">
+                    <p class="delete deleteAddress">删除</p>
+                    <a class="edit upAddress">编辑</a>
+                </div>
             </div>
-            <div class="down">
-                广州市越秀区广州大道中293号
-            </div>
-        </div>
-        <div class="bottom" addressid = "1">
-            <p class="delete deleteAddress">删除</p>
-            <a class="edit upAddress">编辑</a>
-        </div>
-    </div>
-    <div class="address">
-        <div class="top">
-            <div class="up">
-                <img src="../images/icon_address_personal.png" alt="" class="person">
-                <p class="name">李晓飞</p>
-                <div class="phone">13245678991</div>
-            </div>
-            <div class="down">
-                广州市越秀区广州大道中293号
-            </div>
-        </div>
-        <div class="bottom">
-            <p class="delete">删除</p>
-            <a class="edit upAddress">编辑</a>
-        </div>
-    </div>-->
+            <div class="address">
+                <div class="top">
+                    <div class="up">
+                        <img src="../images/icon_address_personal.png" alt="" class="person">
+                        <p class="name">李晓飞</p>
+                        <div class="phone">13245678991</div>
+                    </div>
+                    <div class="down">
+                        广州市越秀区广州大道中293号
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p class="delete">删除</p>
+                    <a class="edit upAddress">编辑</a>
+                </div>
+            </div>-->
 
+        </div>
+        <!--内容结束-->
+    </div>
 </div>
-<!--内容结束-->
 <!--添加新地址开始-->
 <a class="add qzzeditId">
     <img src="../images/add.png" alt="">
     <span>添加新地址</span>
 </a>
 <!--添加新地址结束-->
+
 </body>
 <script src="../js/common.js"></script>
 <script type="text/javascript" src="../js/tools.js" ></script>
 <script type="text/javascript" src="../js/controller.js" ></script>
 <script type="text/javascript" src="../js/address.js" ></script>
 <script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
 
+    })(mui);
 $(".address .bottom .delete").click(function () {
 //    var index=$(".address").index(this);
     $(this).parent().parent().css("display","none");

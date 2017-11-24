@@ -51,15 +51,28 @@
         <h1 class="mui-title" style="color:#1b1835;">消息列表</h1>
         <div class="set">全部已读</div>
     </header>
-   <!--header end--> 
-   <!--list start-->
-   <ul class="mui-table-view" style="margin-top:1rem;border-top:0.01rem solid #f3f3f3;">
-   </ul>
-   <!--list end-->
+   <!--header end-->
+    <div class=" mui-content mui-scroll-wrapper" style="padding-top: 0">
+        <div class="mui-scroll">
+           <!--list start-->
+           <ul class="mui-table-view" style="margin-top:1rem;border-top:0.01rem solid #f3f3f3;">
+           </ul>
+           <!--list end-->
+        </div>
+    </div>
+
 </body>
 <script src="../js/common.js"></script>
 <script src="../js/controller.js"></script>
 <script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
+
+    })(mui);
     !(function ($) {
         var g={
             init: function() {

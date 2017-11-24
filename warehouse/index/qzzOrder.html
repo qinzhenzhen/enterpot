@@ -83,14 +83,11 @@
 		var now = new Date();
 		var	year = now.getFullYear();
 		var	month = now.getMonth()+1;		
-			now.setMinutes(now.getMinutes()+15); 
+		now.setMinutes(now.getMinutes()+15);
 		var day = now.getDate();
 		var	hour = now.getHours();
 		var	minute = now.getMinutes();
 		var	second = now.getSeconds();
-	
-		//console.log(year+"-"+month+"-"+day+" "+hour+" ："+minute+" ："+second);
-		//console.log(new Date().getYear());
 		leftTimer(year, month, day, hour, minute, second);
 		
 	</script>

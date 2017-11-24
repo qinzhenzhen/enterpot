@@ -19,7 +19,6 @@ $(function() {
 	$('.hintId').on('click', function() {
 		setLocation.openWindow("qzznews.html");
 	});
-
 	//查询 ".selectId"
 	$('.selectId').on('click', function() {
 		alert("正在建议中。。。");
@@ -174,10 +173,12 @@ $(function() {
 		setLocation.openWindow("qzzedit.html");
 	});
 	//品牌专区 ".special"
-	$('.special').on('click', function() {
+
+	/*$( document ).on('click',"'.specialId'", function() {
+		console.log("111");
 		//window.location.href = "qzzdetail.html";
-		setLocation.openWindow("qzzdetail.html");
-	});
+		//setLocation.openWindow("qzzdetail.html");
+	});*/
 
 })
 

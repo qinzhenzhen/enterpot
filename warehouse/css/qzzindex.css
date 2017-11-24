@@ -147,8 +147,10 @@
     padding: 0.23rem 0;
 }
 .main .list #one .coll .col{
+    cursor: pointer;
     width: 0.4rem;
     height: 0.4rem;
+    cursor: pointer;
 
 }
 .col_img{
@@ -211,6 +213,9 @@
     float: left;
     margin-left: 0.2rem;
 }
+.shareId{
+    cursor: pointer;
+}
 .main .list .remarks{
     float: right;
     width: 84%;
@@ -230,6 +235,12 @@
     display: flex;
     margin-top: 0.2rem;
     justify-content: space-between;
+}
+.main .list .perfom .change{
+cursor: pointer;
+}
+.main .list .perfom .special{
+    cursor: pointer;
 }
 .main .list .perfom .date{
     width: 50%;
