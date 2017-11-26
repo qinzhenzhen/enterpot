@@ -196,13 +196,32 @@
 <script type="text/javascript" src="../js/user.js" ></script>
 <script>
 	mui.init();
-	(function($) {
+		(function($) {
 			$(".mui-scroll-wrapper").scroll({
 				bounce: false, //滚动条是否有弹力默认是true
 				indicators: false, //是否显示滚动条,默认是true
 			});
 
 		})(mui);
+
+		var user = JSON.parse(localStorage.getItem("user"));
+		var name = user.name || "暂无";
+		var phone = user.phone || "";
+		var login_img = user.login_img || "../images/icom_headportrait@2x.png";
+		var vip = user.vip || 0;
+		var usercode = user.usercode;
+
+		//alert(usercode);
+		$(".c-top .name").html(name);
+		$(".phone").attr("src", login_img);
+		$(".c-bottom .num").html(usercode);
+		if(vip == 0) {
+			$(".c-top .vip").html("无");
+		} else {
+			$(".c-top .vip").html("VIP " + vip);
+		}
+		$(".c-bottom .tel-num").text(phone);
+	/*	
     var ownUrl="http://118.31.45.231/api.php/Home/Userinfo/index";
     if(window.localStorage) {
         var loginName = localStorage.getItem("loginName");
@@ -256,5 +275,6 @@
             })
         })($);
     }
+	*/
 </script>
 </html>

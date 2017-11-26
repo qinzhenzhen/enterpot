@@ -12,7 +12,7 @@ $(function(){
 		//支付订单 ".qzzOrderId"
 	$('.qzzOrderId').on('click', function() {
 	
-		var loginName = localStorage.getItem("loginName") ,
+		var loginName = JSON.parse(localStorage.getItem("user")).id, //localStorage.getItem("loginName") ,
 			orderno = localStorage.getItem("orderno") ;
 			$("#cartList .list").each(function(index){
 				console.log(index+" --- "+ $(this).find("input.mui-input-clear").val());
@@ -32,7 +32,7 @@ var notarizeOrder = {
 
 	getNotarizeOrderData : function(url){
 		var orderno = localStorage.getItem("orderno") ;
-		var loginName = localStorage.getItem("loginName") ;
+		var loginName = JSON.parse(localStorage.getItem("user")).id;//localStorage.getItem("loginName") ;
 		$.ajax({
 			type: "POST",
 			url: url,

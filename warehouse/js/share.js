@@ -2,10 +2,10 @@ var shares = null;
 var name = "";
 var orderId = "";
 var way = 0;
-var loginName = localStorage.getItem("loginName");
+var user = JSON.parse(localStorage.getItem("user")); //localStorage.getItem("loginName");
 $(function() {
 	$(document).on("click", ".shareId", function() {
-		if(!loginName) {
+		if(!user.id) {
 			var btnArray = ['取消', '前往'];
 			mui.confirm('您还未登录，请前往登录', '登录', btnArray, function(e) {
 				if(e.index == 1) {
@@ -17,8 +17,9 @@ $(function() {
 		}
 		var parents = $(this).parent().parent().children();
 		for(var i = 0; i < parents.length; i++) {
-			if($(parents[i]).attr("class") == "display") {
-				//getShareImg(parents[i]);
+			if($(parents[i]).attr("class").indexOf("display")>=0) {
+				getShareImg(parents[i]);
+				break;
 			}
 		}
 
@@ -33,6 +34,7 @@ function getShareImg(data) {
 	var imgUrl, len = dataList.length;
 	for(var i = 0; i < len; i++) {
 		imgUrl = $(dataList[i]).find("img").attr("src");
+		//console.log(imgUrl);
 		setImg(imgUrl, len);
 	}
 
@@ -179,8 +181,8 @@ function shareMessage(msg, s) {
 function shareSystem(data) {
 	
 	//alert('调用系统分享');
-	alert(shares['weixin']);
-	alert(shares['qq']);
+	//alert(shares['weixin']);
+	//alert(shares['qq']);
 	var msg = {
 		content: name
 	};
@@ -236,14 +238,14 @@ function shareSystemNativeJS() {
 
 function shareOk() {
 	var url = "http://118.31.45.231/api.php/Home/Share/index";
-	if(!!orderId && !!loginName) {
+	if(!!orderId && !!user.id) {
 		$.ajax({
 			type: "POST",
 			url: url,
 			dataType: 'json',
 			data: {
 				"productid": orderId,
-				"loginName": loginName,
+				"loginName": user.id,
 				"way": way
 			},
 			success: function(data) {

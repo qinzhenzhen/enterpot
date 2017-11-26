@@ -18,12 +18,12 @@
         },
         proDetail: function() {
             var _t = this;
-            var mobile = window.localStorage ? localStorage.getItem('loginName') : null;
+            var user = JSON.parse(localStorage.getItem("user")); //window.localStorage ? localStorage.getItem('loginName') : null;
             $.ajax({
                 type: 'post',
                 url: collectionUrl,
                 data: {
-                    "loginName": mobile
+                    "loginName": user.id
                 }
             })
                 .done(function(data) {
@@ -39,7 +39,7 @@
                         var description = "<div class='con'><span><a href='#'>" + favoriteQuality[i].description + "</a></span></div>";
                         //图片详情
                         var brandDetail = "<ul class='display'><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img1 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img2 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img3 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img4 + "' alt='' id='img'></li></ul>";
-                        //市场价  会员价
+                         //市场价  会员价
                         var marketPrice = "<div class='act'><div id='prices'><div class='original'><div class='img iconfont icon-qian' style='font-size: 0.45rem;font-weight: 700'></div><span>" + favoriteQuality[i].marketprice + "</span></div>" + "<div class='count'><span>会员价：" + favoriteQuality[i].marketprice + "</span></div></div>" + "<div class='img iconfont icon-fenxiang'style='margin-left: 0.58rem'></div><span id='share'>分享</span></div></div>";
                         var pushTime = "<div id='times'>上午&nbsp;&nbsp;11.00</div>";
                         var remarks = "<div class='remarks'><span>该商品已售完下架</span></div>";
@@ -154,7 +154,7 @@
                     if($(".all:has(li)").length == 0) {
                         $(".all").html("还没有关注商品哦").css({"text-align": "center","font-size":"0.24rem"});
                     }
-                    //展开全文
+                   //展开全文
                     $(".con span").each(function() {
                         var cur_status = "less";
                         var charNumbers=$(this).html().length;//总字数
@@ -165,7 +165,7 @@
                             var showText = orgText.substring(0, limit);//最终显示的文本
                             $(this).html(showText);
                             var contentHeight = $(this).height();//截取内容后的高度
-                            var a="<a href='javascript:;' style='color:#6b78a2;font-size: 0.24rem;float:left'> 展开全文</a>"; //如果字数超过最大字数，超出部分用...代替，并且在后面加上点击展开的链接；
+                            var a="<a href=javascript:;' style='color:#6b78a2;font-size: 0.24rem;float:left'>展开全文</a>"; //如果字数超过最大字数，超出部分用...代替，并且在后面加上点击展开的链接；
                             $(this).parent().append(a)
                             $(this).parent().find("a").click(function () {
                                 if (cur_status == "less") {

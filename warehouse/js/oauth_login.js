@@ -80,6 +80,7 @@ function userinfo(a) {
 		user.login_img = userImg;
 		user.id = loginName;
 		user.phone = "";
+		user.userForm = userForm;
 		localStorage.setItem("user", JSON.stringify(user));
 		
 		addLogin(userImg , loginName ,userForm ,nickname);
@@ -109,7 +110,7 @@ function logout(auth) {
 }
 
 function addLogin(userImg,loginName , userForm, nickname) {
-	alert("userImg = "+userImg+ "  loginName="+loginName);
+	//alert("userImg = "+userImg+ "  loginName="+loginName);
 	//outLine("userImg = "+userImg+ "  loginName="+loginName);
 
 	$.ajax({

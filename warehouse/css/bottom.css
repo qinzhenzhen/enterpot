@@ -41,21 +41,25 @@ footer {
 
 }
 .footer-main .setting .a.active{
+	font-size: 0;
     background: url('../images/tab_button_home_selected.png')center center no-repeat;
     background-size: 100%;
 
 }
 .footer-main .setting .b.active{
+		font-size: 0;
     background: url('../images/tab_button_follow_selected.png')center center no-repeat;
     background-size: 100%;
 
 }
 .footer-main .setting .c.active{
+		font-size: 0;
     background: url('../images/tab_button_Shoppingcart_selected.png')center center no-repeat;
     background-size: 100%;
 
 }
 .footer-main .setting .d.active{
+		font-size: 0;
     background: url('../images/tab_my_selected.png')center center no-repeat;
     background-size: 100%;
 

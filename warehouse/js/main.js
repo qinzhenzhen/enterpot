@@ -4,8 +4,11 @@ $(function() {
 	    shopUrl = "http://118.31.45.231/api.php/Home/Shopdetail/index",
 	    joinUrl = "http://118.31.45.231/api.php/Home/Shopcart/doshopcart", //加入购物车成功
 	    doOrder = "http://118.31.45.231/api.php/Home/Order/do_order"; //添加到确认订单
+	    
+	var loginName = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")).id : null;
+	
 	$(document).on('click', '.perfom .change', function() {
-		var loginName = window.localStorage ? localStorage.getItem('loginName') : null;
+
 		if(loginName == null) {
 			if(!mui) {
 				console.log("请引用mui.js文件");
@@ -123,6 +126,7 @@ $(function() {
 			}
 		}).done(function(data) {
 			var data = JSON.parse(data)
+			console.log(data);
 			if(data.code == 000008 && !!data.orderno) {
 				//alert("您的商品已成功加入购物车哦！");
 				localStorage.setItem("orderno", data.orderno);

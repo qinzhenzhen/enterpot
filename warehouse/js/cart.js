@@ -66,13 +66,13 @@ $(function() {
 
 var cart = {
 	getCartData: function(url) {
-		var loginName = localStorage.getItem("loginName") ;
+		var user = JSON.parse(localStorage.getItem("user"));
 		$.ajax({
 			type: "POST",
 			url: url,
 			dataType: 'json',
 			data: {
-				"loginName": loginName
+				"loginName": user.id
 			},
 			success: function(data) {
 				console.log(data);

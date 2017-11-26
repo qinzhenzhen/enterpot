@@ -182,7 +182,7 @@ $(function() {
 var setLocation = {
 
 	setHref: function(id) {
-		var loginName = localStorage.getItem("loginName");
+		var user = JSON.parse(localStorage.getItem("user")) ;//localStorage.getItem("loginName");
 		var url = "",
 			type = false;
 		switch(parseInt(id)) {
@@ -204,7 +204,7 @@ var setLocation = {
 
 		}
 
-		if(!loginName && type) {
+		if(!user && type) {
 			var btnArray = ['取消', '前往'];
 			mui.confirm('您还未登录，请前往登录', '登录', btnArray, function(e) {
 				if(e.index == 1) {

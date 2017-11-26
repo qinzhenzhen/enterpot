@@ -45,8 +45,10 @@
         var r = window.location.search.substr(1).match(reg);
         if(r!=null)return  unescape(r[2]); return null;
     }
-    var usermoney= localStorage.getItem("usermoney");
-   $(".balance .residus span").text(usermoney);
+    var user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    //var usermoney= localStorage.getItem("usermoney");
+   $(".balance .residus span").text(user.usermoney);
    
    	   //品牌专区 ".special"
     $('.qzzPayId').on('click', function() {

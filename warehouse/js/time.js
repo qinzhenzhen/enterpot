@@ -1,5 +1,4 @@
-$(function() {
-    //秒杀
+   //秒杀
     function leftTimer(year, month, day, hour, minute, second) {
         var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
         //var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
@@ -8,7 +7,7 @@ $(function() {
         var seconds = parseInt(leftTime / 1000 % 60, 10); //计算剩余的秒数
         var h1, h2, s1, s2;
         //days = checkTime(days);
-        hour = checkTime(hours);
+        //hour = checkTime(hours);
         minutes = checkTime(minutes);
         seconds = checkTime(seconds);
         if (seconds >= 0) {
@@ -16,7 +15,7 @@ $(function() {
         } else {
             alert("请求超时");
         }
-        hours = hour.toString();
+       // hours = hour.toString();
         minutes = minutes.toString();
         h1 = minutes.substring(0, 1);
         h2 = minutes > 0 ? minutes.substring(1, 2) : 0;
@@ -33,4 +32,3 @@ $(function() {
         }
         return i;
     }
-})

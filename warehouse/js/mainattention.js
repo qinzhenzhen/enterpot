@@ -2,7 +2,8 @@
 var attentionUrl="http://118.31.45.231/api.php/Home/Favorites/doFavorite";
 var cancelAttentionUrl="http://118.31.45.231/api.php/Home/Favorites/cancel";
 $(document).on('click', "#one .coll .col", function() {
-    var loginName = window.localStorage ? localStorage.getItem('loginName') : null;
+    //var loginName = window.localStorage ? localStorage.getItem('loginName') : null;
+    var loginName =  JSON.parse(localStorage.getItem("user")).id;
     console.log("className = "+$(this).attr("class"));
     var thisObj = $(this);
     if(loginName==null){

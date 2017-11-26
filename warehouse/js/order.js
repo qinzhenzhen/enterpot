@@ -14,7 +14,7 @@ var item1 = [] ,
         },
         tab:function () {
             var _t=this;
-            var mobile=window.localStorage ? localStorage.getItem('loginName'):null;
+            var mobile= JSON.parse(localStorage.getItem("user")).id;//window.localStorage ? localStorage.getItem('loginName'):null;
             var typeName = ""; //
             $.ajax({
                 type: 'post',
@@ -23,6 +23,7 @@ var item1 = [] ,
             })
                 .done(function (data) {
                     var data=JSON.parse(data);
+                    console.log(data);
                    var d=data.orderinfo;
                    _t.dom(d , "item1");
                      for(var i=0;i<d.length;i++){

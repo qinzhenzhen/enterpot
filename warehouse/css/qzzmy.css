@@ -15,6 +15,7 @@ header .phone{
      bottom:-0.37rem;
      margin:auto;
      z-index: 999;
+     border-radius:100%;
  }
 header .setup{
     width: 0.65rem;

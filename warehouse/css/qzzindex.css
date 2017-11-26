@@ -49,9 +49,9 @@
     border-left: 0.02rem solid #333333;
 }
 .announce .anRight p{
-    height:0.24rem ;
+    height:0.26rem ;
     width: 100%;
-    line-height: 0.24rem;
+    line-height: 0.3rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space:nowrap;

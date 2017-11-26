@@ -121,7 +121,7 @@
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
 			"plugins": {
-				"oauth": {"qq":{"appid":""},"sina":{"appkey":"","appsecret":"","redirect_uri":""},"weixin":{"appid":"wx6aacc074a6c12d13","appsecret":" 14fb29bc7789bd4e670f36e1cd4a2062"}
+				"oauth": {"qq":{"appid":"wx6aacc074a6c12d13"},"weixin":{"appid":"wx6aacc074a6c12d13","appsecret":" 14fb29bc7789bd4e670f36e1cd4a2062"}
 					
 					
 				},

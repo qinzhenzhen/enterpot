@@ -1,3 +1,5 @@
+var user = JSON.parse(localStorage.getItem("user"));
+
 $(function() {
 
 	var urlList = {
@@ -240,7 +242,7 @@ var addressData = {
 	 * 测试：名17317317668 
 	 */
 	addAddress: function(url) {
-		var loginName = localStorage.getItem("loginName"),
+		var loginName =  user.id, //localStorage.getItem("loginName"),
 			userName = $("#userName").val(),
 			userPhone = $("#userPhone").val(),
 			provinceid = $("#province").find("option:selected").attr("region_id"),
@@ -302,7 +304,7 @@ var addressData = {
 	 *修改地址
 	 */
 	updataAddress: function(url, id) {
-		var loginName = localStorage.getItem("loginName"),
+		var loginName = user.id,
 			addressid = id,
 			userName = $("#userName").val(),
 			userPhone = $("#userPhone").val(),
@@ -365,7 +367,7 @@ var addressData = {
 	 *获取地址列表
 	 */
 	getAddressList: function(url) {
-		var loginName = localStorage.getItem("loginName") ;
+		var loginName = user.id;//localStorage.getItem("loginName") ;
 		$.ajax({
 			type: "POST",
 			url: url,
@@ -423,7 +425,7 @@ var addressData = {
 	 *删除地址
 	 * */
 	deleteAddress: function(url, id) {
-		var loginName = localStorage.getItem("loginName") ;
+		var loginName = user.id;//localStorage.getItem("loginName") ;
 		return;
 		$.ajax({
 			type: "POST",
