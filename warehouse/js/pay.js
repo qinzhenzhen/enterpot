@@ -18,11 +18,11 @@ $(function() {
 					console.log("目前只支持钱包支付");
 				});
 				return;
-			} 
+			}
 			$(".choose").filter(".active").removeClass('active').end().eq(index).addClass('active');
 			console.log(index);
 		});
-		
+
 		//支付 ".qzzPayId"
 		$('.qzzPayId').on('click', function() {
 			//window.location.href = "qzzPay.html";
@@ -50,13 +50,19 @@ $(function() {
 		//充值
 		$("#payBtn").on("click", function() {
 			var sum = $("#payId").val();
-			console.log(sum + "----" + type);
-			if(!sum) {
-				alert("请填写金额");
+			//console.log(isNaN(parseInt(sum)));
+			if(isNaN(parseInt(sum))) {
+				mui.alert('充值金额只能填写数字', '', function() {
+
+				});
 				return;
 			}
+			console.log(sum + "----" + type);
+			//return;
+
 			//支付
 			pay(sum, type);
+			
 		});
 	}
 
@@ -80,25 +86,25 @@ function ok() {
 		},
 		success: function(data) {
 			console.log(data);
-			if(data.code == "000002"){
+			if(data.code == "000002") {
 				var btnArray = ['否', '是'];
 				mui.confirm('用户账户金额不足！是否前往充值', '', btnArray, function(e) {
-					if (e.index == 1) {
+					if(e.index == 1) {
 						setLocation.openWindow("qzzmyWallet.html");
 					} else {
 						console.log("不删除收货地址");
 					}
 				})
-			}else if(data.code == "000008"){
+			} else if(data.code == "000008") {
 				mui.alert('商品已购物成功，请耐心等待发货', '', function() {
 					setLocation.openWindow("order.html");
 				});
-			}else{
+			} else {
 				mui.alert('支付失败，请重新支付', '', function() {
-					
+
 				});
 			}
-			
+
 		}
 	});
 }
@@ -152,7 +158,8 @@ function checkServices(pc) {
 }
 
 var w = null;
-var ALIPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/alipay.php?total='; //支付宝
+//var ALIPAYSERVER = 'http://demo.dcloud.net.cn/payment/alipay/?total=0.01'; //支付宝
+var ALIPAYSERVER = 'http://118.31.45.231/api.php/Home/Recharge/zfbrecharge?total=0.01'; //支付宝
 var WXPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/wxpay.php?total=';
 // 支付
 function pay(sum, id) {
@@ -195,16 +202,19 @@ function pay(sum, id) {
 					console.log('----- 请求订单成功 -----');
 					console.log(xhr.responseText);
 					var order = xhr.responseText;
+					//alert("请求订单成功：" + xhr.responseText);
+
 					plus.payment.request(pays[id], order, function(result) {
 						console.log('----- 支付成功 -----');
-						console.log(JSON.stringify(result));
+						//alert(JSON.stringify(result));
 						plus.nativeUI.alert('支付金额' + sum + "元", function() {
 							back();
 						}, '支付成为');
 					}, function(e) {
 						console.log('----- 支付失败 -----');
-						console.log('[' + e.code + ']：' + e.message);
-						plus.nativeUI.alert('请重新支付', null, '支付失败');
+						//alert('[' + e.code + ']：' + e.message);
+						//plus.nativeUI.alert('请重新支付', null, '支付失败');
+
 					});
 				} else {
 					console.log('----- 请求订单失败 -----');
@@ -216,7 +226,7 @@ function pay(sum, id) {
 				break;
 		}
 	}
-	xhr.open('GET', url + sum);
-	console.log('请求支付订单：' + url + sum);
+	xhr.open('GET', url);
+	alert('请求支付订单：' + url);
 	xhr.send();
 }

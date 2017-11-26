@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>target-div</title>
+</head>
+<body>
+    <!-- 1. Define some markup -->
+    <div>hello 110</div>
+    <div class="btn" data-clipboard-action="copy" data-clipboard-target="div">Copy</div>
+
+    <!-- 2. Include library -->
+    <script src="libs/clipboard.min.js"></script>
+
+    <!-- 3. Instantiate clipboard -->
+    
+    <!-- Target -->
+<input id="foo" value="https://github.com/zenorocha/clipboard.js.git">
+
+<!-- Trigger -->
+<button class="btn" data-clipboard-target="#foo">
+
+</button>
+<span >Copy to clipboard1133</span>
+<!-- Trigger -->
+<div class="btn" data-clipboard-target=".span" data-clipboard-action="copy">
+	<span class="span">Copy to clipboard</span>
+    
+</div>
+<span >Copy to clipboard11</span>
+    <script>
+    var clipboard = new Clipboard('.btn');
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
+</body>
+</html>

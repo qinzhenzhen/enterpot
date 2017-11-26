@@ -54,28 +54,34 @@ var item1 = [] ,
             var everyPrice= 0;
             var num= 0;
             var typeName = "";
+            var typeMethod="";
             for(var i=0 ; i< len ; i++){
                 everyPrice=d[i].goods_price;
                 num=d[i].num;
                 switch (parseInt(d[i].orderstatus)){
                     case 0:
                         typeName = "待支付";
+                        typeMethod="付款";
                         break;
                     case 1:
                         typeName = "待发货";
+                        typeMethod="提醒发货";
                         break;
                     case 2:
                         typeName = "拣货中";
+                        typeMethod="查看物流";
                         break;
                     case 3:
                         typeName = "已发货";
+                        typeMethod="确认收货";
                         break;
                     default:
                         typeName = "已取消";
+                        typeMethod="付款";
                 }
 
                 list +="<div class='list' type='"+d[i].orderstatus+" '><div class='list-head display_flex'><div class='flex_1'><h1 class='title'>"+d[i].brandname+"</h1></div><div class='flex_1'><h1 class='text nav-name'>"+typeName+"</h1></div></div><ul class='mui-table-view up-table-wiew'><li class='my-table-view-cell mui-media'><a href='javascript:;'><div class='row display_flex'><div class='content flex_4'><img class='mui-media-object mui-pull-left' src='"+imgUrl+d[i].goods_display_img
-                    +"'><div class='mui-media-body'><h1 class='title mui-ellipsis-2'>"+d[i].name+"</h1><p class='mui-ellipsis style'><span>"+d[i].spec2+"</span><span>"+d[i].spec2+"</span></p></div></div><div class='flex_1 price-group order-price-group'><h1 class='price'><i class='price-icon'>￥</i>"+d[i].goods_price+"</h1><h1 class='price order-price'><i class=\"price-icon\">￥</i>"+d[i].marketprice+"</h1><p class=\"sum order-sum\">x<span>"+d[i].num+"</span></p></div></div></a></li><li class=\"order-table-view-cell\"><h2 class=\"order-title\"><em>(含运费<span>20</span>元 共<span>"+d[i].num+"</span>件商品)</em> 合计：<i class=\"price-icon\">￥</i><span class=\"price\">"+everyPrice * num+"</span></h2></li><li class=\"order-table-view-cell clearfix\"><a class=\"service-btn\">在线客服</a></li></ul></div>";
+                    +"'><div class='mui-media-body'><h1 class='title mui-ellipsis-2'>"+d[i].name+"</h1><p class='mui-ellipsis style'><span>"+d[i].spec2+"</span><span>"+d[i].spec2+"</span></p></div></div><div class='flex_1 price-group order-price-group'><h1 class='price'><i class='price-icon'>￥</i>"+d[i].goods_price+"</h1><h1 class='price order-price'><i class=\"price-icon\">￥</i>"+d[i].marketprice+"</h1><p class=\"sum order-sum\">x<span>"+d[i].num+"</span></p></div></div></a></li><li class=\"order-table-view-cell\"><h2 class=\"order-title\"><em>(含运费<span>20</span>元 共<span>"+d[i].num+"</span>件商品)</em> 合计：<i class=\"price-icon\">￥</i><span class=\"price\">"+everyPrice * num+"</span></h2></li><li class=\"order-table-view-cell clearfix\"><a class=\"service-btn method-btn methodId\" style='color: #fff;margin-left: 0.2rem'>"+typeMethod+"</a><a class=\"service-btn customerId\">在线客服</a></li></ul></div>";
             }
             $("#"+id).html(list);
         }

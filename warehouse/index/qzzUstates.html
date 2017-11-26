@@ -38,8 +38,7 @@
              background-size: cover;
          }
         .uState li.u{
-            background: url("../images/mg_button_selected.png")center center no-repeat;
-            background-size: cover;
+            background:#233;
         }
        .uState li h5{
            color: #fff;
@@ -127,5 +126,10 @@
         var index=$(this).index();
         $(".choose").filter(".active").removeClass('active').end().eq(index).addClass('active');
     })
+    $(".uState li").click(function () {
+        var index=$(this).index();
+        $(".uState li").filter(".u").removeClass('u').end().eq(index).addClass('u');
+    })
+
 </script>
 </html>

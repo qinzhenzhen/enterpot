@@ -605,6 +605,9 @@ em {
 	top:114px;
 }
 
+.customerId ,.methodId{
+	cursor:pointer;
+}
 .display_flex {
 	display: -webkit-box;
 	display: -ms-flexbox;

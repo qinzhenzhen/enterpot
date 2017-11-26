@@ -116,11 +116,11 @@ $(document).on('click', ".specialId", function() {
 						}
 						var brandName = "<ul class='coll'><li class='brand'>" + brandQuality[i].brandname + "</li><li class='col " + className + "' type='" + brandQuality[i].is_favorite + "' productid='" + brandQuality[i].id + "'></li></ul>";
 						//描述
-						var description = "<div class='con'><span>" + brandQuality[i].description + "</span></div>";
+						var description = "<div class='con copyId'><span>" + brandQuality[i].description + "</span></div>";
 						//图片详情
 						var brandDetail = "<ul class='display display_1'><li><img src='" + imgUrl + brandQuality[i].goods_other_img1 + "' alt='' id='img'></li><li><img src='" + imgUrl + brandQuality[i].goods_other_img2 + "' alt='' id='img'></li><li><img src='" + imgUrl + brandQuality[i].goods_other_img3 + "' alt='' id='img'></li><li><img src='" + imgUrl + brandQuality[i].goods_other_img4 + "' alt='' id='img'></li></ul>";
 						//市场价  会员价
-						var marketPrice = "<div class='act'><div id='prices'><div class='original'><div class='img iconfont icon-qian' style='font-size: 0.45rem;font-weight: 700'></div><span>" + brandQuality[i].marketprice + "</span></div>" + "<div class='count'><span>会员价：" + brandQuality[i].marketprice + "</span></div></div>" + "<div class=\"shareId\"><div class='img iconfont icon-fenxiang'></div><span  sid="+brandQuality[i].id+">分享</span></div></div>";
+						var marketPrice = "<div class='act'><div id='prices'><div class='original'><div class='img iconfont icon-qian' style='font-size: 0.45rem;font-weight: 700'></div><span>" + brandQuality[i].marketprice + "</span></div>" + "<div class='count'><span>会员价：" + brandQuality[i].marketprice + "</span></div></div>" + "<div class=\"shareId\" onClick = 'addShare(this)'><div class='img iconfont icon-fenxiang'></div><span  sid="+brandQuality[i].id+">分享</span></div></div>";
 						var pushTime = "<div id='times'>上午&nbsp;&nbsp;11.00</div>";
 						var remarks = "<div class='remarks'><span>心外膜额个我旁边看热不寂寞</span><span>发布和人力，】【 管理【人，太难【他</span></div>";
 						var perfom = "<div class='perfom'><div id='joinShop' class='change' gid='" + brandQuality[i].id + " '>加入购物车</div><div class='special change' gid='" + brandQuality[i].id + " '>购买</div></div>";
@@ -144,6 +144,10 @@ $(document).on('click', ".specialId", function() {
 
 						$(".all").append(li);
 					}
+					
+					
+										
+			
 					if($(".being:has(li)").length == 0) {
 						$(".being").html("还没有即将开抢的商品哦").css({
 							"text-align": "center",

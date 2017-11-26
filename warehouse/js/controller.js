@@ -179,6 +179,8 @@ $(function() {
 	});
 })
 
+	
+
 var setLocation = {
 
 	setHref: function(id) {
@@ -223,7 +225,17 @@ var setLocation = {
 	openWindow: function(url) {
 		mui.openWindow({
 			url: url,
-			id: url
+			id: new Date().getTime()
 		})
 	}
 }
+
+/*//设置
+function addOpenSetting(){
+		alert("设置");
+		//setLocation.openWindow("qzzSetting.html");
+		mui.openWindow({
+			url: "qzzSetting.html",
+			id: "qzzSetting.html1"
+		})
+	}*/

@@ -92,14 +92,15 @@
                         }
                         var brandName="<ul class='coll'><li class='brand'>"+brandQuality[i].brandname+"</li><li class='col " + className + "' type='"+brandQuality[i].is_favorite+" ' productid='"+brandQuality[i].id+"'></li></ul>";
                         //描述
-                        var description="<div class='con'><span>"+brandQuality[i].description+"</span></div>";
+                         var description = "<div class='con copyId'><span>" + brandQuality[i].description + "</span></div>";
                         //图片详情
                         var brandDetail="<ul class='display'><li><img src='"+imgUrl+brandQuality[i].goods_other_img1+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img2+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img3+"' alt='' id='img'></li><li><img src='"+imgUrl+brandQuality[i].goods_other_img4+"' alt='' id='img'></li></ul>";
-                         //市场价  会员价
-                        var marketPrice="<div class='act'><div id='prices'><div class='original'><img src='../images/icon_01.png' alt=''><span>"+brandQuality[i].marketprice+"</span></div>"+"<div class='count'><span>会员价："+brandQuality[i].marketprice+"</span></div></div>"+"<div class=\"shareId\"><img src='../images/button_share.png' alt=''><span  sid='+brandQuality[i].id+'>分享</span></div></div>";
+                        //市场价  会员价
+                        var marketPrice = "<div class='act'><div id='prices'><div class='original'><div class='img iconfont icon-qian' style='font-size: 0.45rem;font-weight: 700'></div><span>" + brandQuality[i].marketprice + "</span></div>" + "<div class='count'><span>会员价：" + brandQuality[i].goods_price + "</span></div></div>" + "<div class=\"shareId\"><div class='img iconfont icon-fenxiang'></div><span  sid="+brandQuality[i].id+">分享</span></div></div>";
                         var pushTime="<div id='times'>上午&nbsp;&nbsp;11.00</div>";
                         var remarks="<div class='remarks'><span>心外膜额个我旁边看热不寂寞</span><span>发布和人力，】【 管理【人，太难【他</span></div>";
-                        var detail=logoImg+brandName+description+brandDetail+marketPrice+pushTime;
+                        var perfom = "<div class='perfom'><div id='joinShop' class='change' gid='" + brandQuality[i].id + " '>加入购物车</div><div class='special change' gid='" + brandQuality[i].id + " '>购买</div></div>";
+                        var detail=logoImg+brandName+description+brandDetail+marketPrice+pushTime+remarks+perfom;
                         var li="<li class='one'id='one'>"+detail+"</li>";
                         $(".doing").append(li)
                         $(".all").append(li);
@@ -111,7 +112,7 @@
                         $(".doing").html("还没有商品哦").css({"text-align": "center","font-size":"0.24rem"});
                     }
                    //展开全文
-                    $(".con span").each(function() {
+                    $(".con .span").each(function() {
                         var cur_status = "less";
                         var charNumbers=$(this).html().length;//总字数
                         var limit=80;//显示字数
@@ -138,6 +139,17 @@
                             $(this).find("a").hide();
                         }
                     })
+                    // 复制文本
+                    var copybtn=$(".con .span");
+                    var clipboard = new Clipboard(copybtn);
+                    clipboard.on('success', function(e) {
+                        alert('复制成功!')
+                        e.clearSelection();
+                    });
+
+                    clipboard.on('error', function(e) {
+                        alert('请选择“拷贝”进行复制!')
+                    });
                 })
         }
     };

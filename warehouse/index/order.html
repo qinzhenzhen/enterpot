@@ -10,6 +10,14 @@
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/header.css" />
 		<link rel="stylesheet" href="../css/recycle_inventory.css" />
+		<style>
+			.service-btn{
+				margin-left: 0.2rem;
+			}
+			.method-btn{
+				background-color: #090723;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -45,42 +53,7 @@
 				</div>
 
 				<div class="cart-list-group mui-control-content mui-active" id="item3">
-					<!--<div class="list">
-						<div class="list-head display_flex">
-							<div class="flex_1">
-								<h1 class="title">ZARA</h1>
-							</div>
-							<div class="flex_1">
-								<h1 class="text nav-name">待发货</h1>
-							</div>
-						</div>
-						<ul class="mui-table-view up-table-wiew">
-							<li class="my-table-view-cell mui-media">
-								<a href="javascript:;">
-									<div class="row display_flex">
-										<div class="content flex_4">
-											<img class="mui-media-object mui-pull-left" src="../images/cart/image1.png">
-											<div class="mui-media-body">
-												<h1 class="title mui-ellipsis-2">ZARA 2017秋冬新品全场免运费 浏览时下流行趋势，购购买1000件</h1>
-												<p class="mui-ellipsis style"><span>XXL</span><span>绿色（3个仓库发货）</span></p>
-											</div>
-										</div>
-										<div class="flex_1 price-group order-price-group">
-											<h1 class="price"><i class="price-icon">￥</i>1811.00</h1>
-											<h1 class="price order-price"><i class="price-icon">￥</i>8811.00</h1>
-											<p class="sum order-sum">x<span>200</span></p>
-										</div>
-									</div>
-								</a>
-							</li>
-							<li class="order-table-view-cell">
-								<h2 class="order-title"><em>(含运费<span>20</span>元 共<span>50</span>件商品)</em> 合计：<i class="price-icon">￥</i><span class="price">9020.00</span></h2>
-							</li>
-							<li class="order-table-view-cell clearfix">
-								<a class="service-btn">在线客服</a>
-							</li>
-						</ul>
-					</div>-->
+
 				</div>
 
 				<div class="cart-list-group mui-control-content mui-active" id="item4">
@@ -100,6 +73,7 @@
 	<script src="../js/rem.js"></script>
 	<script src="../js/jQuery.js"></script>
 	<script src="../js/order.js"></script>
+	<script src="../js/common.js"></script>
 	<script type="text/javascript">
 		mui.init();
 		(function($) {
@@ -109,6 +83,43 @@
 			});
 
 		})(mui);
+        //获取地址栏参数
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+	/*	var par=GetQueryString("type");
+		var pars=parseInt(par);
+		var navs=$("#segmentedControl a"),
+		    cons=$(".mui-control-content");
+        navs.filter(".mui-active").removeClass("mui-active");
+        cons.filter(".mui-active").removeClass("mui-active");
+		if(pars==2){
+		    $("#segmentedControl a[href='#item2']").addClass("mui-active");
+		    $("#item2").addClass("mui-active");
+		}else if(pars==3){
+            $("#segmentedControl a[href='#item3']").addClass("mui-active");
+            $("#item3").addClass("mui-active");
+		}else if(pars==4){
+            $("#segmentedControl a[href='#item4']").addClass("mui-active");
+            $("#item4").addClass("mui-active");
+        }else if(pars==5){
+            $("#segmentedControl a[href='#item5']").addClass("mui-active");
+            $("#item5").addClass("mui-active");
+        }else if(pars==6){
+            $("#segmentedControl a[href='#item6']").addClass("mui-active");
+            $("#item6").addClass("mui-active");
+        }*/
+        //点击跳转
+		$(document).on('click',".customerId",function () {
+            alert("正在建议中。。。");
+        })
+        $(document).on('click',".methodId",function () {
+            alert("正在建议中。。。");
+        })
+
 	</script>
 
 </html>

@@ -36,13 +36,14 @@
                         //品牌名称
                         var brandName = "<ul class='coll'><li class='brand'>" + favoriteQuality[i].brandname + "</li><li class='col col_img' type='" + favoriteQuality[i].is_favorite + " ' productid='" + favoriteQuality[i].id + "'></li></ul>";
                         //描述
-                        var description = "<div class='con'><span><a href='#'>" + favoriteQuality[i].description + "</a></span></div>";
+                        var description = "<div class='con copyId'><span>" + favoriteQuality[i].description + "</span></div>";
                         //图片详情
-                        var brandDetail = "<ul class='display'><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img1 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img2 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img3 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img4 + "' alt='' id='img'></li></ul>";
-                         //市场价  会员价
-                        var marketPrice = "<div class='act'><div id='prices'><div class='original'><div class='img iconfont icon-qian' style='font-size: 0.45rem;font-weight: 700'></div><span>" + favoriteQuality[i].marketprice + "</span></div>" + "<div class='count'><span>会员价：" + favoriteQuality[i].marketprice + "</span></div></div>" + "<div class='img iconfont icon-fenxiang'style='margin-left: 0.58rem'></div><span id='share'>分享</span></div></div>";
+                        var brandDetail = "<ul class='display display_1'><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img1 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img2 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img3 + "' alt='' id='img'></li><li><img src='" + imgUrl + favoriteQuality[i].goods_other_img4 + "' alt='' id='img'></li></ul>";
+                        //市场价  会员价
+                        var marketPrice = "<div class='act'><div id='prices'><div class='original'><div class='img iconfont icon-qian' style='font-size: 0.45rem;font-weight: 700'></div><span>" + favoriteQuality[i].marketprice + "</span></div>" + "<div class='count'><span>会员价：" + favoriteQuality[i].marketprice + "</span></div></div>" + "<div class=\"shareId\" onClick = 'addShare(this)'><div class='img iconfont icon-fenxiang'></div><span  sid="+favoriteQuality[i].id+">分享</span></div></div>";
                         var pushTime = "<div id='times'>上午&nbsp;&nbsp;11.00</div>";
                         var remarks = "<div class='remarks'><span>该商品已售完下架</span></div>";
+                        var perfom = "<div class='perfom'><div id='joinShop' class='change' gid='" + favoriteQuality[i].id + " '>加入购物车</div><div class='special change' gid='" + favoriteQuality[i].id + " '>购买</div></div>";
                         var endtime = favoriteQuality[i].enddate;
                         //定义日期格式
                         Date.prototype.Format = function(format) {
@@ -90,11 +91,11 @@
                         if(
                             (new Date(endtime.replace(/-/g, "\/"))) < (new Date(currentTime.replace(/-/g, "\/")))
                         ) {
-                            var detail = logoImg + brandName + description + brandDetail + marketPrice + pushTime + remarks;
+                            var detail = logoImg + brandName + description + brandDetail + marketPrice + pushTime + remarks+perfom;
                             var li = "<li class='one'id='one'>" + detail + "</li>";
                             $(".doing").append(li);
                         }
-                        var detail = logoImg + brandName + description + brandDetail + marketPrice + pushTime;
+                        var detail = logoImg + brandName + description + brandDetail + marketPrice + pushTime+perfom;
                         var li = "<li class='one'id='one'>" + detail + "</li>";
                         $(".all").append(li);
                     }
@@ -103,53 +104,11 @@
                         "background-size": "100%"
                     })
                     //品牌详情
-                    //定义日期格式
-                    Date.prototype.Format = function(format) {
-
-                        var o = {
-
-                            "M+": this.getMonth() + 1, //month
-
-                            "d+": this.getDate(), //day
-
-                            "h+": this.getHours(), //hour
-
-                            "m+": this.getMinutes(), //minute
-
-                            "s+": this.getSeconds(), //second
-
-                            "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
-
-                            "S": this.getMilliseconds() //millisecond
-
-                        }
-
-                        if(/(y+)/.test(format)) {
-
-                            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-
-                        }
-
-                        for(var k in o) {
-
-                            if(new RegExp("(" + k + ")").test(format)) {
-
-                                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
-
-                            }
-
-                        }
-
-                        return format;
-
-                    }
-                    var date = new Date();
-                    var currentTime = date.Format("yyyy-MM-dd hh:mm:ss");
                     if($(".being:has(li)").length == 0) {
-                        $(".being").html("还没有关注商品哦").css({"text-align": "center","font-size":"0.24rem"});
+                        $(".being").html("还没有即将开抢的商品哦").css({"text-align": "center","font-size":"0.24rem"});
                     }
                     if($(".doing:has(li)").length == 0) {
-                        $(".doing").html("还没有关注商品哦").css({"text-align": "center","font-size":"0.24rem"});
+                        $(".doing").html("还没有正在抢的商品哦").css({"text-align": "center","font-size":"0.24rem"});
                     }
                     if($(".all:has(li)").length == 0) {
                         $(".all").html("还没有关注商品哦").css({"text-align": "center","font-size":"0.24rem"});

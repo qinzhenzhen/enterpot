@@ -13,27 +13,29 @@ $(function() {
 		})
 	}
 
-	if(!user.vip || !user.usermoney || !user.usercode ||true) {
-		var ownUrl = "http://118.31.45.231/api.php/Home/Userinfo/index";
-		$.ajax({
-				type: 'post',
-				url: ownUrl,
-				data: {
-					loginName: user.id
-				}
-			})
-			.done(function(data) {
-				var data = JSON.parse(data);
-				console.log(data)
-				if(data.code == 000008) {
-					user.vip = data.userinfo.vip;
-					user.usermoney = data.userinfo.usermoney;
-					user.usercode = data.usercode;
-					//alert(data.usercode);
-					localStorage.setItem("user", JSON.stringify(user));
+	if(!!user) {
+		if(!user.vip || !user.usermoney || !user.usercode) {
+			var ownUrl = "http://118.31.45.231/api.php/Home/Userinfo/index";
+			$.ajax({
+					type: 'post',
+					url: ownUrl,
+					data: {
+						loginName: user.id
+					}
+				})
+				.done(function(data) {
+					var data = JSON.parse(data);
+					console.log(data)
+					if(data.code == 000008) {
+						user.vip = data.userinfo.vip;
+						user.usermoney = data.userinfo.usermoney;
+						user.usercode = data.usercode;
+						//alert(data.usercode);
+						localStorage.setItem("user", JSON.stringify(user));
 
-				}
-			})
+					}
+				})
+		}
 	}
 
 })

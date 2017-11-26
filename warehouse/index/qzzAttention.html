@@ -88,6 +88,9 @@
 			.mui-content{
 				background-color: #fff;
 			}
+			.copyId{
+				cursor:pointer;
+			}
 		</style>
 	</head>
 
@@ -273,8 +276,14 @@
 		<!--join shopping cart end-->
 	</body>
 	<script src="../js/common.js"></script>
-	<script type="text/javascript" src="../js/controller.js"></script>
+	<script type="text/javascript" src="../js/controller.js"></script>	
 	<script src="../js/attention.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/removeAttention.js"></script>
+	<script type="text/javascript" src="../js/user.js"></script>
+	<script type="text/javascript" src="../libs/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/downloader_file.js"></script>
+	<script type="text/javascript" src="../js/share.js"></script>
 	<script>
 		mui.init();
 		(function($) {
@@ -283,9 +292,14 @@
 				indicators: false, //是否显示滚动条,默认是true
 			});
 		})(mui);
+		new Clipboard('.copyId', {
+			text: function(trigger) {
+				//console.log(trigger.childNodes[0].innerHTML);
+				mui.alert("复制成功", '', function() {
+				});
+				return trigger.childNodes[0].innerHTML;
+			}
+		});
 	</script>
-	<script src="../js/main.js"></script>
-	<script src="../js/removeAttention.js"></script>
-	<script type="text/javascript" src="../js/user.js"></script>
 
 </html>

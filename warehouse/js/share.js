@@ -3,31 +3,34 @@ var name = "";
 var orderId = "";
 var way = 0;
 var user = JSON.parse(localStorage.getItem("user")); //localStorage.getItem("loginName");
-$(function() {
-	$(document).on("click", ".shareId", function() {
-		if(!user.id) {
-			var btnArray = ['取消', '前往'];
-			mui.confirm('您还未登录，请前往登录', '登录', btnArray, function(e) {
-				if(e.index == 1) {
-					window.location.href = "qzzlogin.html";
-				} else {
-					console.log("取消前往登录页面");
-				}
-			})
-		}
-		var parents = $(this).parent().parent().children();
-		for(var i = 0; i < parents.length; i++) {
-			if($(parents[i]).attr("class").indexOf("display")>=0) {
-				getShareImg(parents[i]);
-				break;
-			}
-		}
 
-		name = $(parents).find(".brand").text();
-		orderId = $(parents).find(".col").attr("productid");
-		console.log("name:"+name+" orderId:"+orderId);
-	})
-})
+function addShare(obj) {
+	//alert("addShare");
+	if(!user) {
+		var btnArray = ['取消', '前往'];
+		mui.confirm('您还未登录，请前往登录', '登录', btnArray, function(e) {
+			if(e.index == 1) {
+				window.location.href = "qzzlogin.html";
+			} else {
+				console.log("取消前往登录页面");
+				return;
+			}
+		})
+	}
+	//console.log($(obj).parent().parent().children());
+	var parents = $(obj).parent().parent().children();
+	for(var i = 0; i < parents.length; i++) {
+		if($(parents[i]).attr("class").indexOf("display") >= 0) {
+			getShareImg(parents[i]);
+			break;
+		}
+	}
+
+	name = $(parents).find(".brand").text();
+	orderId = $(parents).find(".col").attr("productid");
+	console.log("name:" + name + " orderId:" + orderId);
+
+}
 
 function getShareImg(data) {
 	var dataList = $(data).children();
@@ -179,7 +182,7 @@ function shareMessage(msg, s) {
  * 调用系统分享
  */
 function shareSystem(data) {
-	
+
 	//alert('调用系统分享');
 	//alert(shares['weixin']);
 	//alert(shares['qq']);
@@ -251,9 +254,9 @@ function shareOk() {
 			success: function(data) {
 				console.log(data);
 				if(data.code == "000008") {
-					mui.alert(data.msg, '', function() {
+					/*mui.alert(data.msg, '', function() {
 						console.log("分享");
-					});
+					});*/
 				} else {
 					mui.alert(data.msg, '', function() {
 						console.log("请重新分享");

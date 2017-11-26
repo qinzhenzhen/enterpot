@@ -24,6 +24,7 @@ header .setup{
     right:0.21rem;
     top:0.65rem;
     z-index: 999;
+    cursor:pointer;
 }
 header .new{
     width: 0.58rem;

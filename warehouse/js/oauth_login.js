@@ -43,7 +43,7 @@ function login(id) {
 			w && w.close();
 			w = null;
 			//alert("登录认证失败：");
-			console.log("[" + e.code + "]：" + e.message);
+			alert("[" + e.code + "]：" + e.message);
 			plus.nativeUI.alert("登录认证失败,", null, "登录失败");
 			//plus.nativeUI.alert("详情错误信息请参考授权登录(OAuth)规范文档：http://www.html5plus.org/#specification#/specification/OAuth.html",null,"登录失败["+e.code+"]："+e.message);
 		});
@@ -61,19 +61,19 @@ function userinfo(a) {
 		//alert(JSON.stringify(a.userInfo));
 		var nickname = a.userInfo.nickname || a.userInfo.name || a.userInfo.miliaoNick;
 		//plus.nativeUI.alert("欢迎“" + nickname + "”登录！");
-		
+
 		var userImg = a.userInfo.headimgurl || a.userInfo.figureurl || a.userInfo.profile_image_url || "0";
-		var loginName =  a.userInfo.openid || a.userInfo.id;
+		var loginName = a.userInfo.openid || a.userInfo.id;
 		var userForm = 0;
-			
-		if(loginId == "weixin"){
-			userForm = 1 ;
-		}else if(loginId == "qq"){
-			userForm = 2 ;
-		}else if(loginId == "sinaweibo"){
-			userForm = 3 ;
-		}else if(loginId == "alipay"){
-			userForm = 4 ;
+
+		if(loginId == "weixin") {
+			userForm = 1;
+		} else if(loginId == "qq") {
+			userForm = 2;
+		} else if(loginId == "sinaweibo") {
+			userForm = 3;
+		} else if(loginId == "alipay") {
+			userForm = 4;
 		}
 		var user = {};
 		user.name = nickname;
@@ -82,9 +82,9 @@ function userinfo(a) {
 		user.phone = "";
 		user.userForm = userForm;
 		localStorage.setItem("user", JSON.stringify(user));
-		
-		addLogin(userImg , loginName ,userForm ,nickname);
-			
+
+		addLogin(userImg, loginName, userForm, nickname);
+
 	}, function(e) {
 		//alert("获取用户信息失败：");
 		console.log("[" + e.code + "]：" + e.message);
@@ -109,7 +109,7 @@ function logout(auth) {
 	});
 }
 
-function addLogin(userImg,loginName , userForm, nickname) {
+function addLogin(userImg, loginName, userForm, nickname) {
 	//alert("userImg = "+userImg+ "  loginName="+loginName);
 	//outLine("userImg = "+userImg+ "  loginName="+loginName);
 
@@ -117,11 +117,11 @@ function addLogin(userImg,loginName , userForm, nickname) {
 			url: curpath,
 			type: "post",
 			data: {
-				"userphoto":userImg,
+				"userphoto": userImg,
 				"loginName": loginName,
 				"loginMsgCode": "",
 				"userForm": userForm,
-				"nickname":nickname
+				"nickname": nickname
 			},
 			dataType: "json",
 		})
@@ -137,9 +137,13 @@ function addLogin(userImg,loginName , userForm, nickname) {
 					//$('.error').text(error_4);
 					//location.href = "index.html";
 					mui.alert("欢迎“" + nickname + "”登录！", '', function() {
-						console.log("请重新分享");
-						location.href = "index.html";
-					});
+							console.log("请重新分享");
+							location.href = "index.html";
+						});
+				/*	setTimeout(function() {
+						
+					}, 2000);
+*/
 				}
 			} else {
 				//$(".erron_alert").show();

@@ -66,7 +66,12 @@ $(function() {
 					var repertory = goodsinfo.once_shop_maxnum;
 					$(".repertory").html("库存&nbsp;&nbsp;：&nbsp;&nbsp;" + repertory);
 					$(".qua .mui-numbox").attr("data-number-max",repertory);
-					console.log(1)
+					$(".mui-numbox input").blur(function () {
+						var num=$(this).val();
+						if(num>repertory){
+							alert("库存不足！")
+						}
+                    })
 					//尺码  颜色
 					var size = data.speca,
 					    color = data.specb;
