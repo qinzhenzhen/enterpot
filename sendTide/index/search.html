@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>送潮</title>
+    <link rel="stylesheet" href="../css/mui.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/iconfont.css" />
+    <script src="../js/rem.js"></script>
+    <script src="../js/mui.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bottom.css">
+    <style>
+        body{
+           background: #fff;
+        }
+        .search{
+            width: 5rem;
+            height: 0.6rem;
+            background: #f2f2f2;
+            border-radius: 0.4rem;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            padding: 0.13rem 0.4rem;
+        }
+        .mui-bar{
+            background: #fff;
+            box-shadow: none;
+        }
+        .search span{
+            float: left;
+        }
+        .search input{
+            float: left;
+            width: 3.5rem;
+            height: 100%;
+            border: none;
+            color: #999;
+            background: none;
+            font-size: 0.24rem;
+        }
+        input[type='button'], input[type='submit'], input[type='reset'], button, .mui-btn{
+            padding: 0;
+        }
+        .like{
+            width: 100%;
+            height: auto;
+            float: left;
+            padding: 0.4rem 0.24rem;
+        }
+        .like .tab{
+            width: 100%;
+            height: 0.3rem;
+            border-left: 0.05rem solid #c444ff;
+            font-size: 0.3rem;
+            color: #000;
+            padding: 0 0.15rem;
+            line-height: 0.3rem;
+        }
+        .like .pro{
+            width: 100%;
+            height: auto;
+            float: left;
+            margin-top: 0.22rem;
+            display: flex;
+            justify-content: space-between;
+            border-top:0.01rem solid #c444ff;
+        }
+        .like .pro .same{
+            width: 100%;
+        }
+
+        .mui-content{
+            background: #fff;
+        }
+        .mui-icon-closeempty{
+            width: 0.38rem;
+            height: 0.38rem;
+            border-radius: 50%;
+            background: #c444ff;
+            float: right;
+            font-size: 0.3rem;
+            color: #fff;
+            text-align: center;
+            line-height: 0.38rem;
+        }
+        .pro .same .kind{
+            float: left;
+            padding: 0.4rem 0;
+        }
+        .pro .same .kind li{
+            float: left;
+            margin-right: 0.18rem;
+            margin-bottom: 0.2rem;
+            width: 1.5rem;
+            height: 0.5rem;
+            border-radius: 0.5rem;
+            border: 0.01rem solid #dcdcdc;
+            text-align: center;
+            line-height: 0.5rem;
+            color: #666;
+            font-size: 0.24rem;
+        }
+        .pro .same .kind li.active{
+            background: #333333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <div class="search">
+            <span class="iconfont icon-sousuo"></span>
+            <input type="text" placeholder="输入关键词">
+        </div>
+    </header>
+    <div class=" mui-content mui-scroll-wrapper" style="margin-top: 0.37rem">
+        <div class="mui-scroll">
+           <div class="like likes">
+                <div class="tab tabs">
+                    <span>最近搜索</span>
+                    <div class="mui-icon mui-icon-closeempty"></div>
+                </div>
+                <ul class="pro pros">
+                <li class="same">
+                    <ul class="kind">
+                        <li>运动鞋</li>
+                        <li>帽子</li>
+                        <li>运动鞋</li>
+                        <li>帽子</li>
+                        <li>运动鞋</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+                <div class="like likes">
+                    <div class="tab tabs">
+                        <span>热搜品牌</span>
+                        <div class="mui-icon mui-icon-closeempty"></div>
+                    </div>
+                    <ul class="pro pros">
+                        <li class="same">
+                            <ul class="kind">
+                                <li>运动鞋</li>
+                                <li>帽子</li>
+                                <li>运动鞋</li>
+                                <li>帽子</li>
+                                <li>运动鞋</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <footer>
+        <div class="footer-main">
+            <a href="javascript:;" class="setting">
+                <div class="pics a">
+                    <img src="../images/home_btn_guanzhu@2x.png" alt="">
+                </div>
+                <div class="intros">关注</div>
+            </a>
+            <a href="javascript:;" class="setting">
+                <div class="pics b">
+                    送潮
+                </div>
+            </a>
+            <a href="javascript:;" class="setting">
+                <div class="pics c">
+                    <img src="../images/home_btn_wode@2x.png" alt="">
+                </div>
+                <div class="intros">我的</div>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

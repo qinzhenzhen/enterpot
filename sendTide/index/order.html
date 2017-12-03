@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>我的订单</title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+		<link rel="stylesheet" href="../css/recycle_inventory.css" />
+		<script src="../js/rem.js"></script>
+		<style>
+			.service-btn{
+				margin-left: 0.2rem;
+			}
+			.method-btn{
+				background-color: #c444ff;
+			}
+			.mui-control-content{
+				margin-top: -10px;
+			}
+			.flex_0 span{
+				display:block;line-height: 0.6rem;
+			}
+			.mui-ellipsis-2{
+				margin-top: 0.4rem;
+			}
+			.mui-ellipsis-2{
+				margin-top: 0;
+			}
+			.num{
+				height: 0.31rem;
+				width: 0.34rem;
+				font-size: 0.3rem;
+				color: #1b1b1b;
+				float: left;
+			}
+			.num img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--header start-->
+		<header class="mui-bar mui-bar-nav up-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title up-title">我的订单</h1>
+			<a class=" nav_button_search" style="display:none"></a>
+		</header>
+		<!--header end-->
+		<!--cont start-->
+		<div class="mui-content my-cart-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div class="order-nav">
+					<div class="nav">
+						<div id="segmentedControl" class="mui-segmented-control">
+							<a class="mui-control-item mui-active" href="#item1">全部</a>
+							<a class="mui-control-item" href="#item2">待支付</a>
+							<a class="mui-control-item" href="#item3">待发货</a>
+							<a class="mui-control-item" href="#item4">拣货中</a>
+							<a class="mui-control-item" href="#item5">已发货</a>
+							<a class="mui-control-item" href="#item6">已取消</a>
+						</div>
+					</div>
+				</div>
+				<!--cont-list start-->
+				<div class="cart-list-group mui-control-content mui-active" id="item1">
+					<div class="list" type="0 ">
+						<div class="list-head display_flex">
+							<div class="flex_1">
+								<h1 class="title">
+									<div class="num">
+										<img src="../images/icon_order@2x.png" alt="">
+									</div>
+									<span style="float: left;margin-left: 0.2rem">订单编号:523123</span>
+								</h1>
+							</div>
+							<div class="flex_1">
+								<h1 class="text nav-name">待支付</h1>
+							</div>
+						</div>
+						<ul class="mui-table-view up-table-wiew">
+							<li class="my-table-view-cell mui-media">
+								<a href="javascript:;">
+									<div class="row display_flex">
+										<div class="content flex_4">
+											<img class="mui-media-object mui-pull-left" src="http://118.31.45.231:8081/2017-11-24/5a17fb9f8176a.jpg"><div class="mui-media-body">
+											<h1 class="title mui-ellipsis-2">Daphne/达芙妮2017冬新款马丁靴工装靴系带英伦风休闲短靴女</h1>
+											<div class="special">
+												已选：<span>灰色</span> <span>36码</span>
+											</div>
+											<div class="nums">
+												<div class="all">
+													市场价:&nbsp;&nbsp;
+													<span class="iconfont icon-qian" style="color: #c444ff;font-size: 0.32rem;">1504</span>
+												</div>
+												<div class="done">
+																<span>
+																	<img src="" alt="">
+																</span>
+													<span style="font-size: 0.18rem;">&nbsp;免费送</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								  </a>
+							</li>
+							<li class="order-table-view-cell">
+								<h2 class="order-title">
+									<em>(含运费<span>20</span>元 共<span>1</span>件商品)</em> 实付：<i class="price-icon">￥</i><span class="price">0</span></h2></li><li class="order-table-view-cell clearfix"><a class="service-btn method-btn methodId" style="color: #fff;margin-left: 0.2rem">付款</a><a class="service-btn customerId" style="background: #f0f0f0;border-color: #f0f0f0;color: #777">取消</a></li></ul>
+					</div>
+				</div>
+
+				<div class="cart-list-group mui-control-content mui-active" id="item2">
+
+				</div>
+
+				<div class="cart-list-group mui-control-content mui-active" id="item3">
+
+				</div>
+
+				<div class="cart-list-group mui-control-content mui-active" id="item4">
+				</div>
+
+				<div class="cart-list-group mui-control-content mui-active" id="item5">
+
+				</div>
+				<div class="cart-list-group mui-control-content mui-active" id="item6">
+
+				</div>
+			</div>
+		</div>
+		<!--cont end-->
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/rem.js"></script>
+	<script src="../js/jQuery.js"></script>
+	<!--<script src="../js/order.js"></script>-->
+	<!--<script src="../js/common.js"></script>-->
+	<script type="text/javascript">
+		mui.init();
+		(function($) {
+			$(".mui-scroll-wrapper").scroll({
+				bounce: false, //滚动条是否有弹力默认是true
+				indicators: false, //是否显示滚动条,默认是true
+			});
+
+		})(mui);
+        //获取地址栏参数
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)return  unescape(r[2]); return null;
+        }
+	/*	var par=GetQueryString("type");
+		var pars=parseInt(par);
+		var navs=$("#segmentedControl a"),
+		    cons=$(".mui-control-content");
+        navs.filter(".mui-active").removeClass("mui-active");
+        cons.filter(".mui-active").removeClass("mui-active");
+		if(pars==2){
+		    $("#segmentedControl a[href='#item2']").addClass("mui-active");
+		    $("#item2").addClass("mui-active");
+		}else if(pars==3){
+            $("#segmentedControl a[href='#item3']").addClass("mui-active");
+            $("#item3").addClass("mui-active");
+		}else if(pars==4){
+            $("#segmentedControl a[href='#item4']").addClass("mui-active");
+            $("#item4").addClass("mui-active");
+        }else if(pars==5){
+            $("#segmentedControl a[href='#item5']").addClass("mui-active");
+            $("#item5").addClass("mui-active");
+        }else if(pars==6){
+            $("#segmentedControl a[href='#item6']").addClass("mui-active");
+            $("#item6").addClass("mui-active");
+        }*/
+        //点击跳转
+		$(document).on('click',".customerId",function () {
+            alert("正在建议中。。。");
+        })
+        $(document).on('click',".methodId",function () {
+            alert("正在建议中。。。");
+        })
+
+	</script>
+
+</html>
