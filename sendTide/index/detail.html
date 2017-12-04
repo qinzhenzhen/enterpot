@@ -185,19 +185,19 @@
     </div>
      <!--footer start-->
     <footer>
-                <a href="javascript:;" class="setting">
+                <a href="index.html" class="setting  indexId">
                     <div class="iconfont icon-shouye"></div>
                     <div class="intros">首页</div>
                 </a>
-                <a href="javascript:;" class="setting">
+                <a href="attention.html" class="setting attentionId">
                     <div class="iconfont icon-guanzhu"></div>
                     <div class="intros">关注</div>
                 </a>
-                <a href="javascript:;" class="setting">
+                <a href="sustom.html" class="setting kefuId">
                     <div class="iconfont icon-kefu"></div>
                     <div class="intros">客服</div>
                 </a>
-                <a href="javascript:;" class="set">
+                <a href="notarize_order.html" class="set">
                     免费领
                 </a>
     </footer>
@@ -372,6 +372,7 @@
 <script src="../js/swiper-3.4.2.jquery.min.js"></script>
 <script src="../js/result.js"></script>
 <script src="../js/method.js"></script>
+<script src="../js/controller.js"></script>
 <script>
     mui.init();
     (function($) {
@@ -388,17 +389,25 @@
             observer: true, //修改swiper自己或子元素时，自动初始化swiper
             observeParents: true, //修改swiper的父元素时，自动初始化swiper
         })
+    //返回
+    $(".back").click(function () {
+        window.history.go(-1);
+    })
     $(".roblist .attention").click(function () {
-           $(".mask").css("display","block");
-         $(".url").css("display","block");
+           $(".mask").show();
+         $(".url").show();
+    })
+    $(".mask").click(function () {
+        $(".url").hide();
+        $(this).hide();
     })
     $(".set").click(function () {
-        $(".mask").css("display", "block");
-        $(".join").css("display", "block");
+        $(".mask").show();
+        $(".join").show();
     })
     $(".join .error span").click(function() {
-        $(".mask").css("display", "none");
-        $(".join").css("display", "none");
+        $(".mask").hide();
+        $(".join").hide();
     })
     $(".join .size .kind li").each(function(index, element) {
         var i = index;

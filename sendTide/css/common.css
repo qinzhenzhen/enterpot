@@ -260,7 +260,7 @@
 }
 .join .same .kind li.active{
     background: #0c0c0c;
-    color: #2f2f2f;
+    color: #fff;
 }
 .join .cancel{
     position: absolute;
