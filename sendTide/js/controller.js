@@ -31,14 +31,14 @@ var setLocation = {
 			type = false;
 		switch(parseInt(id)) {
 			case 0:
-                type = true;
+                 type = true;
 				url = "attention.html";
 				break;
 			case 1:
 				url = "index.html";
 				break;
 			default:
-				type = true;
+				 type = true;
 				url = "sign_in.html";
 
 		}

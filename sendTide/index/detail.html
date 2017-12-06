@@ -6,14 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>送潮</title>
-    <link rel="stylesheet" href="../css/mui.css" />
+    <link rel="stylesheet" href="../css/mui.min.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/iconfont.css" />
     <link rel="stylesheet" href="../css/detail.css">
     <link rel="stylesheet" href="../css/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="../css/detailbottomn.css">
     <script src="../js/rem.js"></script>
-    <script src="../js/mui.js"></script>
+    <script src="../js/mui.min.js"></script>
     <script src="../js/jQuery.js"></script>
     <link rel="stylesheet" href="../css/common.css">
     <style>
@@ -44,7 +44,7 @@
 </head>
 <body>
     <!--header start-->
-    <header>
+    <header class="mui-bar-transparent">
         <div class="header-main">
             <span class="back iconfont icon-fanhuiico" style="font-size: 0.4rem;"></span>
             <span class="iconfont service icon-kefu1"></span>
@@ -201,7 +201,7 @@
                     免费领
                 </a>
     </footer>
-       <!--footer end-->
+    <!--footer end-->
     <!--mask start-->
     <div class="mask">
     </div>
@@ -371,9 +371,9 @@
 </body>
 <script src="../js/swiper-3.4.2.jquery.min.js"></script>
 <script src="../js/result.js"></script>
-<script src="../js/method.js"></script>
 <script src="../js/controller.js"></script>
 <script>
+
     mui.init();
     (function($) {
         $(".mui-scroll-wrapper").scroll({
@@ -389,10 +389,24 @@
             observer: true, //修改swiper自己或子元素时，自动初始化swiper
             observeParents: true, //修改swiper的父元素时，自动初始化swiper
         })
+    //
+    if($("header").hasClass('mui-active')){
+        console.log(111)
+        $(".header-main span").css({"background":"none","color":"#000"});
+    }
+    //顶部nav  透明渐变
+    mui('.mui-bar-transparent').transparent({
+        top: 0,
+        offset: 150,
+        duration: 16,
+        scrollby: document.querySelector('.mui-scroll-wrapper')
+    })
+
     //返回
     $(".back").click(function () {
         window.history.go(-1);
     })
+    //更多名单
     $(".roblist .attention").click(function () {
            $(".mask").show();
          $(".url").show();
@@ -401,6 +415,7 @@
         $(".url").hide();
         $(this).hide();
     })
+    //免费领
     $(".set").click(function () {
         $(".mask").show();
         $(".join").show();

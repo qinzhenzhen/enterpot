@@ -33,9 +33,50 @@
            width: 100%;
            height: 100%;
        }
+       .nav-box{
+           position:fixed;
+           top: 0px;
+           left:0px;
+           right:0px;
+           height: 50px;
+           background: #FFFFFF;
+           z-index: 600;
+           padding-top:10px;
+       }
+       .to-top-group{
+           position: fixed;
+           bottom:70px;
+           right:10px;
+           z-index: 99;
+           width:20px;
+           height: 20px;
+       }
+       .to-top-group .to-top-icon{
+           width:100%;
+           height:100%;
+       }
     </style>
 </head>
 <body>
+        <!--<div class="to-top-group">-->
+            <!--<img class="to-top-icon" src="../images/to-top.png">-->
+        <!--</div>-->
+        <!--<div class="nav-box">-->
+            <!--<ul class="navs tabUl navs1">-->
+                <!--<li class="one">-->
+                    <!--<a href="javascript:;" class="active">-->
+                        <!--<div class="img pic2 active"></div>-->
+                        <!--<span>免费送</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="one">-->
+                    <!--<a href="javascript:;">-->
+                        <!--<div class="img pic1"></div>-->
+                        <!--<span>免费抢</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
 	 <!--header start-->
    	<header>
             <div class="header-main">
@@ -90,19 +131,20 @@
             </div>
             <!--announce end-->
             <div class="main">
-                <ul class="navs tabUl">
-                    <li class="one active">
-                        <a href="javascript:;">
-                            <img src="../images/free_hua@2x.png" alt="">
-                            免费送
+                <ul class="navs tabUl isScroll">
+                    <li class="one">
+                        <a href="javascript:;" class="active">
+                            <div class="img pic2 active"></div>
+                            <span>免费送</span>
                         </a>
                     </li>
                     <li class="one">
                         <a href="javascript:;">
-                            <img src="../images/free_shantian@2x.png" alt="">
-                            免费抢
+                            <div class="img pic1"></div>
+                            <span>免费抢</span>
                         </a>
                     </li>
+                </ul>
                 </ul>
                 <div class="list">
                     <div class="every">
@@ -446,8 +488,8 @@
                             <ul class="commidity">
                                 <li class="every">
                                     <ul class="timecommidity  active">
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -475,8 +517,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -504,8 +546,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -535,8 +577,8 @@
                                         </li>
                                     </ul>
                                     <ul class="timecommidity">
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -564,8 +606,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -593,97 +635,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
-                                                <img src="../images/banner@2x.png" alt="">
-                                            </div>
-                                            <div class="right">
-                                                <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
-                                                <!--已搶   地址-->
-                                                <div class="buyingMes">
-                                                    <div class='buyProgress'>
-                                                        <div class='buyContent'></div>
-                                                    </div>
-                                                    <div class="num">
-                                                        <div class="all">
-                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
-                                                        </div>
-                                                        <div class="done">
-                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
-                                                        </div>
-                                                        <div class="share iconfont icon-zhuanfa01" style="margin-left: 0.5rem;color: #c444ff"></div>
-                                                        <div class="attention iconfont icon-guanzhu" style="margin-left: 0.15rem;color: #c444ff"></div>
-                                                    </div>
-                                                </div>
-                                                <!--市场价  免费抢-->
-                                                <ul class="price">
-                                                    <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
-                                                    <li class="purchase">免费抢</li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="timecommidity">
-                                        <li class="pur purId">
-                                            <div class="left">
-                                                <img src="../images/banner@2x.png" alt="">
-                                            </div>
-                                            <div class="right">
-                                                <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
-                                                <!--已搶   地址-->
-                                                <div class="buyingMes">
-                                                    <div class='buyProgress'>
-                                                        <div class='buyContent'></div>
-                                                    </div>
-                                                    <div class="num">
-                                                        <div class="all">
-                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
-                                                        </div>
-                                                        <div class="done">
-                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
-                                                        </div>
-                                                        <div class="share iconfont icon-zhuanfa01" style="margin-left: 0.5rem;color: #c444ff"></div>
-                                                        <div class="attention iconfont icon-guanzhu" style="margin-left: 0.15rem;color: #c444ff"></div>
-                                                    </div>
-                                                </div>
-                                                <!--市场价  免费抢-->
-                                                <ul class="price">
-                                                    <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
-                                                    <li class="purchase">免费抢</li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="pur purId">
-                                            <div class="left">
-                                                <img src="../images/banner@2x.png" alt="">
-                                            </div>
-                                            <div class="right">
-                                                <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
-                                                <!--已搶   地址-->
-                                                <div class="buyingMes">
-                                                    <div class='buyProgress'>
-                                                        <div class='buyContent'></div>
-                                                    </div>
-                                                    <div class="num">
-                                                        <div class="all">
-                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
-                                                        </div>
-                                                        <div class="done">
-                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
-                                                        </div>
-                                                        <div class="share iconfont icon-zhuanfa01" style="margin-left: 0.5rem;color: #c444ff"></div>
-                                                        <div class="attention iconfont icon-guanzhu" style="margin-left: 0.15rem;color: #c444ff"></div>
-                                                    </div>
-                                                </div>
-                                                <!--市场价  免费抢-->
-                                                <ul class="price">
-                                                    <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
-                                                    <li class="purchase">免费抢</li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -713,8 +666,8 @@
                                         </li>
                                     </ul>
                                     <ul class="timecommidity">
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -742,8 +695,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -771,8 +724,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -802,8 +755,8 @@
                                         </li>
                                     </ul>
                                     <ul class="timecommidity">
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -831,8 +784,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -860,8 +813,8 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="pur purId">
-                                            <div class="left">
+                                        <li class="pur">
+                                            <div class="left  purId">
                                                 <img src="../images/banner@2x.png" alt="">
                                             </div>
                                             <div class="right">
@@ -890,7 +843,95 @@
                                             </div>
                                         </li>
                                     </ul>
-
+                                    <ul class="timecommidity">
+                                        <li class="pur">
+                                            <div class="left  purId">
+                                                <img src="../images/banner@2x.png" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                <!--已搶   地址-->
+                                                <div class="buyingMes">
+                                                    <div class='buyProgress'>
+                                                        <div class='buyContent'></div>
+                                                    </div>
+                                                    <div class="num">
+                                                        <div class="all">
+                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                        </div>
+                                                        <div class="done">
+                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                        </div>
+                                                        <div class="share iconfont icon-zhuanfa01" style="margin-left: 0.5rem;color: #c444ff"></div>
+                                                        <div class="attention iconfont icon-guanzhu" style="margin-left: 0.15rem;color: #c444ff"></div>
+                                                    </div>
+                                                </div>
+                                                <!--市场价  免费抢-->
+                                                <ul class="price">
+                                                    <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                    <li class="purchase">免费抢</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="pur">
+                                            <div class="left  purId">
+                                                <img src="../images/banner@2x.png" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                <!--已搶   地址-->
+                                                <div class="buyingMes">
+                                                    <div class='buyProgress'>
+                                                        <div class='buyContent'></div>
+                                                    </div>
+                                                    <div class="num">
+                                                        <div class="all">
+                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                        </div>
+                                                        <div class="done">
+                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                        </div>
+                                                        <div class="share iconfont icon-zhuanfa01" style="margin-left: 0.5rem;color: #c444ff"></div>
+                                                        <div class="attention iconfont icon-guanzhu" style="margin-left: 0.15rem;color: #c444ff"></div>
+                                                    </div>
+                                                </div>
+                                                <!--市场价  免费抢-->
+                                                <ul class="price">
+                                                    <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                    <li class="purchase">免费抢</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="pur">
+                                            <div class="left  purId">
+                                                <img src="../images/banner@2x.png" alt="">
+                                            </div>
+                                            <div class="right">
+                                                <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                <!--已搶   地址-->
+                                                <div class="buyingMes">
+                                                    <div class='buyProgress'>
+                                                        <div class='buyContent'></div>
+                                                    </div>
+                                                    <div class="num">
+                                                        <div class="all">
+                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                        </div>
+                                                        <div class="done">
+                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                        </div>
+                                                        <div class="share iconfont icon-zhuanfa01" style="margin-left: 0.5rem;color: #c444ff"></div>
+                                                        <div class="attention iconfont icon-guanzhu" style="margin-left: 0.15rem;color: #c444ff"></div>
+                                                    </div>
+                                                </div>
+                                                <!--市场价  免费抢-->
+                                                <ul class="price">
+                                                    <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                    <li class="purchase">免费抢</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </li>
 
                             </ul>
@@ -1028,7 +1069,7 @@
         paginationClickable: true,
         autoplay: 5000,
         observer: true, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+        observeParents: true //修改swiper的父元素时，自动初始化swiper
     })
     //轮播
     $(function(){
@@ -1037,5 +1078,25 @@
         <!--调用插件-->
         $('.winId').lSlide({nTop:liHeight});
     })
+    //回到顶部
+//    $(".nav-box").hide();
+//    $(".to-top-group").hide();
+//    var scroll = mui('.mui-scroll-wrapper').scroll();
+//    document.querySelector('.mui-scroll-wrapper' ).addEventListener('scroll', function (e ) {
+//        //console.log(scroll.y);
+//        if(scroll.y >-200){
+//            $(".nav-box").fadeOut(300);
+//            $(".isScroll").fadeIn(300);
+//            $(".to-top-group").fadeOut(300);
+//        }else{
+//            $(".to-top-group").fadeIn(300);
+//            $(".nav-box").fadeIn(300);
+//            $(".isScroll").fadeOut(300);
+//        }
+//
+//    })
+//    mui(document).on("tap",".to-top-group",function(){
+//        mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,500);
+//    })
 </script>
 </html>
