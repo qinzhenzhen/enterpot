@@ -13,107 +13,8 @@
     <script src="../js/mui.js"></script>
     <script src="../js/jQuery.js"></script>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="../css/bottom.css">
-    <style>
-        body{
-           background: #fff;
-        }
-        .search{
-            width: 5rem;
-            height: 0.6rem;
-            background: #f2f2f2;
-            border-radius: 0.4rem;
-            position: absolute;
-            top:0;
-            bottom:0;
-            left:0;
-            right:0;
-            margin:auto;
-            padding: 0.13rem 0.4rem;
-        }
-        .mui-bar{
-            background: #fff;
-            box-shadow: none;
-        }
-        .search span{
-            float: left;
-        }
-        .search input{
-            float: left;
-            width: 3.5rem;
-            height: 100%;
-            border: none;
-            color: #999;
-            background: none;
-            font-size: 0.24rem;
-        }
-        input[type='button'], input[type='submit'], input[type='reset'], button, .mui-btn{
-            padding: 0;
-        }
-        .like{
-            width: 100%;
-            height: auto;
-            float: left;
-            padding: 0.4rem 0.24rem;
-        }
-        .like .tab{
-            width: 100%;
-            height: 0.3rem;
-            border-left: 0.05rem solid #c444ff;
-            font-size: 0.3rem;
-            color: #000;
-            padding: 0 0.15rem;
-            line-height: 0.3rem;
-        }
-        .like .pro{
-            width: 100%;
-            height: auto;
-            float: left;
-            margin-top: 0.22rem;
-            display: flex;
-            justify-content: space-between;
-            border-top:0.01rem solid #c444ff;
-        }
-        .like .pro .same{
-            width: 100%;
-        }
-
-        .mui-content{
-            background: #fff;
-        }
-        .mui-icon-closeempty{
-            width: 0.38rem;
-            height: 0.38rem;
-            border-radius: 50%;
-            background: #c444ff;
-            float: right;
-            font-size: 0.3rem;
-            color: #fff;
-            text-align: center;
-            line-height: 0.38rem;
-        }
-        .pro .same .kind{
-            float: left;
-            padding: 0.4rem 0;
-        }
-        .pro .same .kind li{
-            float: left;
-            margin-right: 0.18rem;
-            margin-bottom: 0.2rem;
-            width: 1.5rem;
-            height: 0.5rem;
-            border-radius: 0.5rem;
-            border: 0.01rem solid #dcdcdc;
-            text-align: center;
-            line-height: 0.5rem;
-            color: #666;
-            font-size: 0.24rem;
-        }
-        .pro .same .kind li.active{
-            background: #333333;
-            color: #fff;
-        }
-    </style>
 </head>
 <body>
     <header class="mui-bar mui-bar-nav">
@@ -125,24 +26,25 @@
     </header>
     <div class=" mui-content mui-scroll-wrapper" style="margin-top: 0.37rem">
         <div class="mui-scroll">
-           <div class="like likes">
-                <div class="tab tabs">
-                    <span>最近搜索</span>
-                    <div class="mui-icon mui-icon-closeempty"></div>
-                </div>
-                <ul class="pro pros">
-                <li class="same">
-                    <ul class="kind">
-                        <li>运动鞋</li>
-                        <li>帽子</li>
-                        <li>运动鞋</li>
-                        <li>帽子</li>
-                        <li>运动鞋</li>
+            <div class="search-con">
+                   <div class="like likes">
+                        <div class="tab tabs">
+                            <span>最近搜索</span>
+                            <div class="mui-icon mui-icon-closeempty"></div>
+                        </div>
+                        <ul class="pro pros">
+                        <li class="same">
+                            <ul class="kind">
+                                <li>运动鞋</li>
+                                <li>帽子</li>
+                                <li>运动鞋</li>
+                                <li>帽子</li>
+                                <li>运动鞋</li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            </div>
-                <div class="like likes">
+                    </div>
+                   <div class="like likes">
                     <div class="tab tabs">
                         <span>热搜品牌</span>
                         <div class="mui-icon mui-icon-closeempty"></div>
@@ -160,6 +62,800 @@
                     </ul>
                 </div>
             </div>
+            <div class="result-con">
+                <!--announce start-->
+                <div class="announce">
+                    <ul class="cons  winId">
+                        <li class="con">
+                            <div class="anLeft">
+                                <img src="../images/home_Headpic@2x.png" />
+                            </div>
+                            <div class="anRight">
+                                <div class="rcon">恭喜会员 <span>55413/lisi</span>抢到免费 <span>xx</span>产品</div>
+                            </div>
+                        </li>
+                        <li class="con">
+                            <div class="anLeft">
+                                <img src="../images/home_Headpic@2x.png" />
+                            </div>
+                            <div class="anRight">
+                                <div class="rcon">恭喜会员 <span>55413/张三</span>抢到免费 <span>xx</span>产品</div>
+                            </div>
+                        </li>
+                        <li class="con">
+                            <div class="anLeft">
+                                <img src="../images/home_Headpic@2x.png" />
+                            </div>
+                            <div class="anRight">
+                                <div class="rcon">恭喜会员 <span>55413/王五</span>抢到免费 <span>xx</span>产品</div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!--announce end-->
+                <div class="main">
+                    <ul class="navs tabUl">
+                        <li class="one active">
+                            <a href="javascript:;" class="active">
+                                <div class="img pic2 active"></div>
+                                <span>免费送</span>
+                            </a>
+                        </li>
+                        <li class="one">
+                            <a href="javascript:;">
+                                <div class="img pic1"></div>
+                                <span>免费抢</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="list">
+                        <div class="every">
+                            <p class="intro">每天商品会在24点整刷新</p>
+                            <ul class="all style active rob">
+                                <!--免费送-->
+                                <ul class="times">
+                                    <li class="t">
+                                        <span>11点档</span>
+                                        <span>11:00:00</span>
+                                    </li>
+                                    <li class="t active">
+                                        <span>16点档</span>
+                                        <span>16:00:00</span>
+                                    </li>
+                                    <li class="t">
+                                        <span>21点档</span>
+                                        <span>21:00:00</span>
+                                    </li>
+                                </ul>
+                                <!--倒计时-->
+                                <div class="countdown">
+                                    <p>本档结束倒计时</p>
+                                    <div class="down">
+                                        <span class="hour">10</span>
+                                        &nbsp;:&nbsp;
+                                        <span class="hour">10</span>
+                                        &nbsp;:&nbsp;
+                                        <span class="hour">10</span>
+                                    </div>
+                                </div>
+                                <!--商品-->
+                                <ul class="commidity">
+                                    <li class="every">
+                                        <ul class="timecommidity">
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="timecommidity   active">
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="timecommidity">
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur purId">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </ul>
+                            <ul class="doing style present">
+                                <!--免费抢-->
+                                <div class="time">
+                                    <div class="left">
+                                        <img src="../images/dangqiandang@2x.png" alt="">
+                                        <span>10:00:00</span>
+                                    </div>
+                                    <ul class="mui-table-view right">
+                                        <li class="mui-table-view-cell">
+                                            <span class="mui-icon mui-icon-plusempty" id="add"></span>
+                                            <a class="mui-navigate-right" href="#" style="">
+                                                <span class="active">10:00:00</span>
+                                                <span>13:00:00</span>
+                                                <span>21:00:00</span>
+                                            </a>
+                                            <div class="mui-collapse-content">
+                                                <span>10:00:00</span>
+                                                <span>13:00:00</span>
+                                                <span>21:00:00</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--倒计时-->
+                                <div class="countdown">
+                                    <p>本档结束倒计时</p>
+                                    <div class="down">
+                                        <span class="hour">10</span>
+                                        &nbsp;:&nbsp;
+                                        <span class="hour">10</span>
+                                        &nbsp;:&nbsp;
+                                        <span class="hour">10</span>
+                                    </div>
+                                </div>
+                                <!--商品-->
+                                <ul class="commidity">
+                                    <li class="every">
+                                        <ul class="timecommidity  active">
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="timecommidity">
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="timecommidity">
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="timecommidity">
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="timecommidity">
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="pur">
+                                                <div class="left">
+                                                    <img src="../images/banner@2x.png" alt="">
+                                                </div>
+                                                <div class="right">
+                                                    <p class="productName">潮流运动鞋潮流运动鞋潮流运动鞋</p>
+                                                    <!--已搶   地址-->
+                                                    <div class="buyingMes">
+                                                        <div class='buyProgress'>
+                                                            <div class='buyContent'></div>
+                                                        </div>
+                                                        <div class="num">
+                                                            <div class="all">
+                                                                <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            </div>
+                                                            <div class="done">
+                                                                <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--市场价  免费抢-->
+                                                    <ul class="price">
+                                                        <li class="sale">市场价 <span class="iconfont icon-qian"></span><span style="color:#c444ff;font-size: 0.26rem">899</span></li>
+                                                        <li class="purchase">免费抢</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <div class="footer-main">
@@ -183,4 +879,40 @@
         </div>
     </footer>
 </body>
+<script src="../js/l-slide.js"></script>
+<script src="../js/result.js"></script>
+<script src="../js/controller.js"></script>
+<script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
+    })(mui);
+    //轮播
+    $(function(){
+        <!--获取li每行的高度，动画移动的高度-->
+        var liHeight = $('li').height();
+        <!--调用插件-->
+        $('.winId').lSlide({nTop:liHeight});
+    })
+    //关闭推荐
+    $(".mui-icon-closeempty").click(function () {
+        $(this).parent().parent().hide();
+    })
+    //搜索模块切换
+    var flag=true;
+    $(".icon-sousuo").click(function () {
+        var searchcon=$(".search input").val();
+        console.log(searchcon)
+        if(!searchcon){
+            $(".search-con").show();
+            $(".result-con").hide();
+        }else{
+            $(".search-con").hide();
+            $(".result-con").show();
+        }
+    })
+</script>
 </html>

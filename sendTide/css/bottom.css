@@ -8,7 +8,7 @@ footer {
     marign: auto;
     padding: 0.06rem 0;
     z-index: 99;
-    box-shadow: 1px 1px 1px #c444ff;
+    box-shadow: 1px 0px 1px #c444ff;
 }
 
 .footer-main {

@@ -18,6 +18,10 @@ $(function() {
 		location.href="detail.html";
 		// setLocation.openWindow("detail.html");
     })
+	//搜索  searchId
+	$(".searchId").click(function () {
+        location.href="search.html";
+    })
 })
 
 	

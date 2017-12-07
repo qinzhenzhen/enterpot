@@ -2,8 +2,9 @@ $(function () {
     $(".navs li").click(function() {
         var index = $(this).index();
         $(".navs li a").filter(".active").removeClass('active').end().eq(index).addClass('active');
-        $(".navs li ").find(".img").removeClass('active');
-        $(this).find(".img").addClass("active");
+        $(".isScroll li a").filter(".active").removeClass('active').end().eq(index).addClass('active');
+        $(".navs li ").find(".img").removeClass('active').end().eq(index).find(".img").addClass('active');
+        $(".isScroll li").find('.img').removeClass('active').end().eq(index).find(".img").addClass('active');
         $(".main .list .every .style").filter(".active").removeClass('active').end().eq(index).addClass('active');
     })
     $(".rob .times li").click(function() {

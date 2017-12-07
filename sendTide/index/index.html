@@ -55,33 +55,39 @@
            width:100%;
            height:100%;
        }
+       .share{
+       	display: none;
+       }
+       .attention{
+       	display: none;
+       }
     </style>
 </head>
 <body>
-        <!--<div class="to-top-group">-->
-            <!--<img class="to-top-icon" src="../images/to-top.png">-->
-        <!--</div>-->
-        <!--<div class="nav-box">-->
-            <!--<ul class="navs tabUl navs1">-->
-                <!--<li class="one">-->
-                    <!--<a href="javascript:;" class="active">-->
-                        <!--<div class="img pic2 active"></div>-->
-                        <!--<span>免费送</span>-->
-                    <!--</a>-->
-                <!--</li>-->
-                <!--<li class="one">-->
-                    <!--<a href="javascript:;">-->
-                        <!--<div class="img pic1"></div>-->
-                        <!--<span>免费抢</span>-->
-                    <!--</a>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
+        <div class="to-top-group">
+            <img class="to-top-icon" src="../images/to-top.png">
+        </div>
+        <div class="nav-box">
+            <ul class="navs tabUl navs1">
+                <li class="one">
+                    <a href="javascript:;" class="active">
+                        <div class="img pic2 active"></div>
+                        <span>免费送</span>
+                    </a>
+                </li>
+                <li class="one">
+                    <a href="javascript:;">
+                        <div class="img pic1"></div>
+                        <span>免费抢</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 	 <!--header start-->
    	<header>
             <div class="header-main">
                 <h1 class="mui-title">送潮</h1>
-                <a class="search iconfont icon-sousuo" id="search" href="search.html">
+                <a href="javascript:;" class="search iconfont icon-sousuo searchId">
                 </a>
             </div>
    		</header>
@@ -193,10 +199,10 @@
                                                     </div>
                                                     <div class="num">
                                                         <div class="all">
-                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff">1504</span>份</p>
+                                                            <p><span class="iconfont icon-song" style="color: #c444ff;font-size: 0.32rem"></span><span style="font-size: 0.18rem;color: #c444ff;">1504</span>份</p>
                                                         </div>
                                                         <div class="done">
-                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff">50</span>份</p>
+                                                            <p style="margin-left: 0.1rem">已抢<span style="font-size: 0.18rem;color: #c444ff;">50</span>份</p>
                                                         </div>
                                                         <div class="share iconfont icon-zhuanfa01" style="margin-left: 0.5rem;color: #c444ff"></div>
                                                         <div class="attention iconfont icon-guanzhu" style="margin-left: 0.15rem;color: #c444ff"></div>
@@ -454,7 +460,8 @@
                             <!--免费抢-->
                             <div class="time">
                                 <div class="left">
-                                        <img src="../images/dangqiandang@2x.png" alt="">
+                                        <span class="font">距抢购结束</span>
+                                        <!--<img src="../images/dangqiandang@2x.png" alt="" class="font">-->
                                         <span>10:00:00</span>
                                 </div>
                                 <ul class="mui-table-view right">
@@ -475,7 +482,7 @@
                             </div>
                             <!--倒计时-->
                             <div class="countdown">
-                                <p>本档结束倒计时</p>
+                                <p>开始倒计时</p>
                                 <div class="down">
                                     <span class="hour">10</span>
                                         &nbsp;:&nbsp;
@@ -1079,24 +1086,24 @@
         $('.winId').lSlide({nTop:liHeight});
     })
     //回到顶部
-//    $(".nav-box").hide();
-//    $(".to-top-group").hide();
-//    var scroll = mui('.mui-scroll-wrapper').scroll();
-//    document.querySelector('.mui-scroll-wrapper' ).addEventListener('scroll', function (e ) {
-//        //console.log(scroll.y);
-//        if(scroll.y >-200){
-//            $(".nav-box").fadeOut(300);
-//            $(".isScroll").fadeIn(300);
-//            $(".to-top-group").fadeOut(300);
-//        }else{
-//            $(".to-top-group").fadeIn(300);
-//            $(".nav-box").fadeIn(300);
-//            $(".isScroll").fadeOut(300);
-//        }
-//
-//    })
-//    mui(document).on("tap",".to-top-group",function(){
-//        mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,500);
-//    })
+    $(".nav-box").hide();
+    $(".to-top-group").hide();
+    var scroll = mui('.mui-scroll-wrapper').scroll();
+    document.querySelector('.mui-scroll-wrapper' ).addEventListener('scroll', function (e ) {
+        //console.log(scroll.y);
+        if(scroll.y >-200){
+            $(".nav-box").fadeOut(300);
+            $(".isScroll").fadeIn(300);
+            $(".to-top-group").fadeOut(300);
+        }else{
+            $(".to-top-group").fadeIn(300);
+            $(".nav-box").fadeIn(300);
+            $(".isScroll").fadeOut(300);
+        }
+
+    })
+    mui(document).on("tap",".to-top-group",function(){
+        mui('.mui-scroll-wrapper').scroll().scrollTo(0,0,500);
+    })
 </script>
 </html>
