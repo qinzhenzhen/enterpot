@@ -179,8 +179,10 @@ header .header-main {
 .doing .time{
     width: 100%;
     height: auto;
+    min-height: 50px;
     float: left;
-    padding: 0 0.24rem;
+    padding: 0 10px;
+    
 
 }
 .doing .time .left{
@@ -197,7 +199,7 @@ header .header-main {
     position: absolute;
     font-size: 0.18rem;
     text-align: center;
-    top:0.18rem;
+    top:0.1rem;
     left:0;
     right:0;
     margin:auto;
@@ -206,7 +208,7 @@ header .header-main {
     width: 100%;
     position: absolute;
     font-size: 0.18rem;
-    top:0.48rem;
+    top:0.4rem;
     left:0;
     right:0;
     margin:auto;
@@ -286,6 +288,9 @@ header .header-main {
     padding: 0.03rem;
     text-align: center;
 }
+.countdown .c66 span{
+	background: #666666;
+}
 .commidity{
     width: 100%;
     height: auto;
@@ -361,7 +366,7 @@ header .header-main {
 }
 .commidity li .right .price{
     width: 100%;
-    height: 0.53rem;
+    height: 30px;
     float: left;
     margin-top: 0.5rem;
     border-radius: 0.3rem 0 0 0.3rem;
@@ -370,16 +375,16 @@ header .header-main {
 }
 .commidity li .right .price .sale{
     width: 60%;
-    height: 0.53rem;
+    height: 30px;
     text-align: center;
-    line-height: 0.53rem;
+    line-height: 30px;
     float: left;
 }
 .commidity li .right .price .purchase{
     width: 40%;
-    height: 0.53rem;
+    height: 30px;
     text-align: center;
-    line-height: 0.53rem;
+    line-height: 30px;
     float: right;
     background: #a0a0a0;
     cursor: pointer;
@@ -394,7 +399,7 @@ header .header-main {
 }
 .rob .times{
     width: 100%;
-    height:0.93rem;
+    height:50px;
     display: flex;
     justify-content: space-between;
     background: #000;
@@ -419,9 +424,10 @@ header .header-main {
 #add{
     position: absolute;
     top:0;
-    right: 0.15rem;
+    right: 0;
     z-index: 999;
-    width: 10%;
+    padding-left:5px;
+    width: 34px;
     height: 0.8rem;
     line-height: 0.8rem;
     border: 0.01rem solid #333;

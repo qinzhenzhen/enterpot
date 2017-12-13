@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>签到</title>
+		<title>我的</title>
 		<link rel="stylesheet" href="../css/base.css" />
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/other.css" />
@@ -13,9 +13,10 @@
 	</head>
 	<body>
 		<header class="top-header ">
-			<a class=" mui-icon mui-icon-search sign_glass" href="search.html"></a>
+			<!--<a class=" mui-icon mui-icon-search sign_glass" href="search.html"></a>-->
 			<a class="mui-icon mui-icon-gear sign-set" href="qzzSetting.html"></a>
-			<p class="sign-signin"><img src="../images/sign/sign-1.png" class="registration"></p>
+			<!--签到-->
+			<!--<p class="sign-signin"><img src="../images/sign/sign-1.png" class="registration"></p>-->
 		</header>
 		<div class=" mui-content mui-scroll-wrapper" style="margin-top: 50px;padding-bottom: 40px">
 			<div class="mui-scroll">
@@ -37,30 +38,30 @@
 			<div class="sign-content">
 				<div class="sign-menu ">
 					<p class="sign-free clearfix">
-						<span class="free-left"><img src="../images/sign/sign-4.png" /><a href="send.html">我的免费送</a></span>
-						<span class="free-right"><img src="../images/sign/sign-5.png" /><a href="free.html">我的免费抢</a></span>
+						<span class="free-left"><img src="../images/sign/sign-4.png" /><a href="">我的免费送</a></span>
+						<span class="free-right"><img src="../images/sign/sign-5.png" /><a href="">我的免费抢</a></span>
 					</p>
 					<ul class="conter-bottom">
-						<li class="conter-list">
-							<a href="qzzaddress.html">
+						<li class="conter-list" type="qzzaddress">
+							<a>
 								<img src="../images/sign/sign-7.png" />
 								<p>地址</p>
 							</a>
 						</li>
-						<li class="conter-list">
-							<a href="purse.html">
+						<li class="conter-list" type="purse">
+							<a>
 								<img src="../images/sign/sign-8.png" />
 								<p>乾坤袋</p>
 							</a>
 						</li>
-						<li class="conter-list">
-							<a href="qzzmember.html">
+						<li class="conter-list" type="qzzmember">
+							<a>
 								<img src="../images/sign/sign-9.png" />
 								<p>会员</p>
 							</a>
 						</li>
-						<li class="conter-list">
-							<a href="sustom.html">
+						<li class="conter-list" type="sustom">
+							<a>
 								<img src="../images/sign/sign-6.png" />
 								<p>客服</p>
 							</a>
@@ -139,7 +140,7 @@
 		</footer>
 		<!--footer end-->
 		<!-- 签到弹窗 -->
-		<div class="mui-registration">
+		<!--<div class="mui-registration">
 			<div class="mui-meb"></div>
 			<div>
 				<img src="../images/icon-back.png" alt="" class="sign-back">
@@ -174,12 +175,14 @@
 					<span>已经续签到<i>3</i>天，加油</span>
 				</div>
 			</div>
-		</div>
+		</div>-->
+	
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script src="../js/rem.js"></script>
 	<script src="../js/jQuery.js"></script>
 	<script src="../js/controller.js"></script>
+	<script type="text/javascript" src="../js/sign_in.js" ></script>
 	<script>
         mui.init();
         (function($) {
@@ -188,11 +191,12 @@
                 indicators: false, //是否显示滚动条,默认是true
             });
         })(mui);
-        $(".registration").click(function() {
+        //签到
+    /*    $(".registration").click(function() {
             $(".mui-registration").show()
         });
         $(".sign-back").click(function() {
             $(".mui-registration").hide()
-        });
+        });*/
 	</script>
 </html>

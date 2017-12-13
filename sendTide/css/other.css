@@ -1145,7 +1145,7 @@ body{
     height: 125px;
     float: left;
     display: block;
-    width: 30%;
+    width: 125px;
 
 }
 .free-down .free-left img{
@@ -1153,38 +1153,47 @@ body{
     width: 100%;
 }
 .free-down .free-right{
-    width: 66.66%;
-    height: 100%;
-    float: left;
+    width: 100%;
+    height: 125px;
     display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-left:135px;
 }
 .free-down .free-right .free-right-top{
     font-size: 15px;
-    padding: 10px 5px 5px 10px;
+    padding-top:5px;
+    padding-bottom: 10px;
+    margin:0;
     color: #595959;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
 }
 .free-down .free-right .free-right-p{
-    padding: 0 5px 0 10px;
+    padding: 0;
     margin-bottom: 0;
+    line-height: 25px;
+    font-size: .24rem;
 }
 .free-down .free-right .free-right-p .free-span1{
     color: #3d3d3d;
-    font-size: 14px;
+    font-size: .24rem;
 }
 .free-down .free-right .free-right-p .free-span2{
     color: #595959;
-    font-size: 14px;
+    font-size: .24rem;
 }
 .free-down .free-right .free-right-p .free-span3{
     color: #c24cfa;
-    font-size: 16px;
+    font-size: .24rem;
 }
 .free-down .free-right .free-right-p .free-span4{
     width: 66px;
     height: 18px;
     background-color: #C24CFA;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: .24rem;
     padding: 2px 5px;
     margin-left: 15px;
 }
@@ -1203,19 +1212,46 @@ body{
     margin-left: 5px;
 }
 .free-down .free-right .free-right-p3{
-    width: 60%;
-    height: 26px;
+    width: 100%;
+    height: 30px;
     border: 1px solid #626262;
-    border-radius: 10px 0  0 10px;
-    margin-left: 10px;
-    float: left;
+    border-radius: 15px 0  0 15px;
+    margin-top:10px;
+    position:relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 .free-down .free-right .free-right-p3 .free-from{
+	display: block;
+	line-height: 28px;
     font-size: 12px;
     color: #000000;
     margin-left: 5px;
+    float:left;
 }
+
+.free-right .free-right-p3 .free-from2{
+	display: block;
+	line-height: 28px;
+	float:left;
+	font-size: .24rem;
+    margin-left: 5px;
+}
+
+.free-right-p3  .send-btn{
+	display: block;
+	line-height: 28px;
+	font-size: .25rem;
+	float:right;
+	padding-right:10px;
+	padding-left:10px;
+	background:#000000;
+	color:#FFFFFF;
+}
+
 .comment-tupian .free-down .free-right .free-right-p3 .free-from2{
+	display: block;
+	float:left;
     font-size: 15px;
     color: #000000;
     margin-left: 5px;
@@ -1263,11 +1299,11 @@ body{
 }
 .comment-pingjia .free-down .free-right .free-right-p .free-span1{
     color: #3d3d3d;
-    font-size: 14px;
+    font-size: .24rem;
 }
 .comment-pingjia .free-down .free-right .free-right-p .free-span2{
     color: #595959;
-    font-size: 14px;
+    font-size: .24rem;
 }
 .comment-pingjia .free-down .free-right .free-right-p .free-span3{
     color: #c24cfa;
@@ -1278,7 +1314,7 @@ body{
     height: 18px;
     background-color: #C24CFA;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: .24rem;
     padding: 2px 5px;
     margin-left: 15px;
 }

@@ -27,13 +27,13 @@
 <!--header start-->
 <header class="mui-bar mui-bar-nav header" style="background: #fff;box-shadow: none">
     <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-    <h1 class="mui-title">添加地址</h1>
+    <h1 class="mui-title">修改地址</h1>
     <a class="save addAddress" href="qzzaddress.html">保存</a>
 </header>
 <!--header end-->
 <!--保存并使用开始-->
 <a class="add" id="addAddress">
-    保存并使用
+     修改并使用
 </a>
 <!--保存并使用结束-->
 <!--内容开始-->
@@ -92,12 +92,11 @@
     })(mui);
     
     $(function(){
-    
-    	//获取省份
-    	address.getProvinceData(1);
-    	
+    	//获取修改地址
+    	var addressid = localStorage.getItem("addressid");
+    		address.getUpdataAddress(addressid);
+
     	//获取市级
-    		//获取市级
     	$("#province").change(function() {
     		//初始化
 			$("#area").html("<option region_id='0'>请选择</option>");
@@ -111,13 +110,13 @@
 			address.getCountyData(countyId); 
 		});
 		
-		//添加并使用
+		//修改收货地址并保存
 		mui(document).on('tap','#addAddress',function(){
-			address.addAddress(true);
+			address.updataAddress(addressid, true);
 		});
-		//添加
+		//保存收货地址
 		mui(document).on('tap','.addAddress',function(){
-			address.addAddress(true);
+			address.updataAddress(addressid, false);
 		});
 		
     })

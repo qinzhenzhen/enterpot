@@ -6,11 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>login</title>
 	<link rel="stylesheet" href="../css/base.css" />
-    <script src="../js/rem.js"></script>
-    <script src="../js/jQuery.js"></script>
 	<link rel="stylesheet" href="../css/qzzlogin.css">
 	<link rel="stylesheet" href="../css/iconfont.css">
-	<script type="text/javascript" src="../js/mui.min.js" ></script>
+	<link rel="stylesheet" href="../css/mui.min.css" />
 	<style>
 		#cord.login-a{
 			width: 30%;
@@ -21,36 +19,79 @@
 		.error{
 			font-size: 0.24rem;
 		}
+		.con .mui-input-group{
+			padding-left: 20px;
+			padding-right:20px;
+		}
+		.con .mui-input-group button{
+			margin-top:50px;
+			padding:10px 0;
+			border-radius:50px;
+			color:#FFFFFF;
+			background-color: #090723;
+			border:none;
+		}
+		.con .mui-input-group:before ,.con .mui-input-group:after{
+			background-color:#FFFFFF;
+		}
+		.con .mui-input-row label{
+			width:20%;
+			color:#c444ff;
+		}
+		.con .mui-input-row label~input{
+			width:80%;
+		}
+		.con .mui-input-group .mui-input-row{
+			margin-top:10px;
+			margin-right:10px;
+		}
+		.con .code label~input{
+			width:40%;
+			float:left;
+		}
+		.con .mui-input-row .mui-btn{
+			width:initial;
+			line-height: 1;
+			border:none;
+			border-radius:32px;
+			background-color: #090723;
+			color:#FFFFFF;
+		}
+		.other{
+			width:100%;
+			position:absolute;
+			bottom: 10%;
+		}
+	
 	</style>
 </head>
-<body>
-	<div class="box">
-		<header>
+<body style="background:#FFFFFF;">
+	<div class="box" style="background:#FFFFFF;">
+		<header style="background:#FFFFFF;">
 			<img src="../images/icon_logo@2x.png" alt="">
-			<span>登录</span>
 		</header>
 		<div class="con">
-			<form action="" id="login-form" method="post">
-				<div class="user">
-					<span class="iconfont icon-yonghuming"></span>
-					<input type="tel" placeholder="请输入手机号码" id="txtUser" name="txtUser">
-				</div>
-				<div class="pass user user1">
-					<span class="iconfont icon-mima"></span>
-					<input type="tel" placeholder="请输入验证码" id="txtCode" name="txtCode">
-					<input type="button" value="发送验证码" id="cord">
-				</div>
-				<div class="error_alert erron_alert" style="display: none">
-					<img src="../images/icon_zuowu_note@2x.png" alt="">
-				</div>
-				<div class="login-btn">
-					<input type="button" value="登录">
-				</div>
+	
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+			        <label><span class="iconfont icon-yonghuming"></span></span></label>
+			        <input type="tel" class="mui-input-clear" placeholder="请输入手机号码" id="txtUser">
+			    </div>
+			    <div class="mui-input-row code">
+			        <label><span class="iconfont icon-mima"></span></label>
+			        <input type="tel"  placeholder="请输入验证码" id="txtCode">
+			      	<a class="mui-btn" id="cord">获取验证码</a>
+			    </div>
+			    <div style="padding:0 10px;">
+			    	 <button type="button" class="mui-btn mui-btn-block" id="userInfo">登录</button>
+			    </div>
+			   
 			</form>
+			
 			<div class="other" >
 				<span>第三方登录</span>
 				<ul class="list" id = "oauthId">
-					<li class="o" typeid="weixin">
+					<!--<li class="o" typeid="weixin">
 						<img src="../images/button_wechat.png" alt="">
 					</li>
 					<li class="o" typeid="qq">
@@ -61,129 +102,21 @@
 					</li>
 					<li class="o" typeid="sinaweibo">
 						<img src="../images/button_weibo.png" alt="">
-					</li>
+					</li>-->
 				</ul>
 			</div>
 		
 		</div>
 	</div>
 </body>
-<!--<script type="text/javascript" src="../js/immersed.js"></script>-->
-<!--<script type="text/javascript" src="../js/common_login.js"></script>-->
-<!--<script type="text/javascript" src="../js/oauth_login.js" ></script>-->
-<script>
-	var regCode="http://118.31.45.231:8084/api.php/Home/Getmsgcode/index";
-	var curpath="http://118.31.45.231:8084/api.php/Home/Login/index";
-    var User= /^1[3-9]\d{9}$/;    //手机号
-    var Code= /^[0-9]{4,8}$/;    //验证码
-    //验证码
-    $("#txtCode").blur(function(){
-        var txtCode = $("#txtCode").val();
-        if(!txtCode.match(Code)){
-            $(".erron_alert").show();
-            return;
-         }
-         $(".erron_alert").hide();// 隐藏
-    })
-    $('#cord').click(function() {
-        var txtUser = $("#txtUser").val();
-
-        if(!txtUser.match(User)){
-            $(".erron_alert").show();
-            $("#txtUser").focus();
-            return false;
-        }
-
-        if(!$(this).hasClass('login-a')){
-            clearInterval(resend);
-            var btn=$(this);
-            var count=60;
-            btn.val(count+'S获取').addClass('login-a');
-           
-            var resend=setInterval(function(){
-                count--;
-                if(count>0){
-                    btn.val(count+'S获取');                
-                    return false;
-	
-                }else{
-                    clearInterval(resend);
-                    btn.val('获取验证码').removeClass('login-a');
-                }
-            },1000);
-            $.ajax({
-                url: regCode,
-                type: "post",
-                data: {"mobile": txtUser},
-                dataType: "json",
-            })
-                .done(function(d){
-                    if(d.code == 000007){
-                        $(".erron_alert").show();
-                    }else if(d.code == 000008){
-                        console.log("获取验证码成功");
-                        //clearInterval(resend);
-                        //btn.val('获取验证码').removeClass('login-a');
-                    }
-                })
-        }
-    })
-	$('.login-btn input').click(function () {
-        var txtUser = $("#txtUser").val();
-        if(window.localStorage) {
-            localStorage.setItem("loginName", txtUser)
-            var user = {};
-			user.name = txtUser;
-			user.login_img = "";
-			user.id = txtUser;
-			user.phone = txtUser;
-            user.nickname = txtUser;
-			localStorage.setItem("user", JSON.stringify(user));
-		
-            var txtCode = $("#txtCode").val();
-            if (!txtUser.match(User)) {
-                $(".erron_alert").show();
-                return;
-            }
-            //验证码
-            if (!txtCode.match(Code)) {
-                $(".erron_alert").show();
-                return;
-            }
-            if (txtUser && txtCode) {
-                $.ajax({
-                    url: curpath,
-                    type: "post",
-                    data: {"loginName": txtUser, "loginMsgCode": txtCode, "userForm": 0,"userphoto":"","nickname": txtUser},
-                    dataType: "json",
-                })
-                    .done(function (d) {
-                        console.log(d)
-                        if (d) {
-                            if (d.code == 000007) {
-                                $(".erron_alert").show();
-                                console.log(d.msg)
-                            } else if (d.code == 000008) {
-                                console.log(d.msg);
-                                location.href = "index.html";
-                            }
-                        } else {
-                            $(".erron_alert").show();
-                            return;
-                        }
-                    })
-            }
-        }
-    })
-
-
-//调用授权登录
-$("#oauthId .o").on("click",function(){
-	var typeid = $(this).attr("typeid");
-	console.log(typeid);
-	logoutAll();
-	login(typeid);
-})
-
+<script src="../js/rem.js"></script>
+<script src="../js/jQuery.js"></script>
+<script type="text/javascript" src="../js/mui.min.js" ></script>
+<script type="text/javascript" src="../js/url_list.js" ></script>
+<script type="text/javascript" src="../js/tools.js" ></script>
+<script type="text/javascript" src="../js/user_info.js" ></script>
+<script type="text/javascript" src="../js/controller.js" ></script>
+<script type="text/javascript">
+	 mui.init();
 </script>
 </html>

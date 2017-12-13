@@ -1,6 +1,7 @@
 var auths = {};
 
 function plusReady() {
+
 	// 获取登录认证通道
 	plus.oauth.getServices(function(services) {
 		for(var i in services) {
@@ -41,13 +42,7 @@ function login(id) {
 		var w = null;
 		if(plus.os.name == "Android") {
 			w = plus.nativeUI.showWaiting();
-			if(loginId == "weixin") {
-				options.appid = "wx6aacc074a6c12d13"
-				//options.appsecret = "14fb29bc7789bd4e670f36e1cd4a2062"
-			} else if(loginId == "qq") {
-				options.appid = "101444882"
-				//options.appkey = "84b1e8c65917a4662bbcb7eb9d87a988"
-			}
+
 		}
 		document.addEventListener("pause", function() {
 			setTimeout(function() {
@@ -110,7 +105,7 @@ function userinfo(a) {
 		user.userForm = userForm;
 		localStorage.setItem("user", JSON.stringify(user));
 
-		addLogin(userImg, loginName, userForm, nickname);
+		//addLogin(userImg, loginName, userForm, nickname);
 
 	}, function(e) {
 		//alert("获取用户信息失败：");
@@ -173,3 +168,11 @@ function addLogin(userImg, loginName, userForm, name) {
 			}
 		})
 }
+
+/*mui(document).on('tap','#oauthId .o',function(){
+		var id = this.getAttribute('typeid');
+		console.log(id);
+		if(!auths){
+			login(id);
+		}
+	})*/
