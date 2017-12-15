@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/mui.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/qzzmember.css" />
+    <script src="../js/mui.js"></script>
+    <script src="../js/rem.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <style>
+        .mui-content{
+            background: #fff;
+        }
+        .mui-bar{
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+<!--头部开始-->
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">会员</h1>
+</header>
+<!--头部结束-->
+<div class=" mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+<!--头像部分开始-->
+<div class="member">
+    <img src="" alt="" class="phone">
+    <p class="name">Mike Dese</p>
+    <div class="level">
+        <div class="vip">VIP2</div>
+        <div class="hua">
+            <img src="../images/hua.png" alt="">
+            <img src="../images/hua.png" alt="">
+            <img src="../images/hua.png" alt="">
+            <img src="../images/hua.png" alt="">
+        </div>
+    </div>
+</div>
+<!--头像部分结束-->
+<!--积分开始-->
+<div class="jifen">
+    <div class="ji-left">
+        <span class="span-up">5020</span>
+        <span class="span-down">会员积分</span>
+    </div>
+    <div class="ji-center">
+        <img src="../images/linkjt.png" alt="" class="linkjt">
+        <span class="shji">升级所需</span>
+    </div>
+    <div class="ji-right">
+        <span class="span-up">6000</span>
+        <span class="span-down">VIP3积分</span>
+    </div>
+</div>
+<!--积分结束-->
+<!--会员权利开始-->
+<div class="power">
+    <a href="qzzusert.html">
+        <img src="../images/power.jpg" alt="" style="width: 0.32rem;height:0.28rem;float: left;margin-top: 0.36rem;margin-left:0.24rem;">
+        <span>等级特权</span>
+        <img src="../images/jiantou.png" alt="">
+    </a>
+    <a href="qzzuserc.html" style="border-top:1px solid #efeff4">
+        <img src="../images/flwor.jpg" alt="" style="width: 0.24rem;height:0.27rem;float: left;margin-top: 0.36rem;margin-left:0.28rem;">
+        <span>会员成长</span>
+        <img src="../images/jiantou.png" alt="">
+    </a>
+</div>
+<!--会员权利结束-->
+<!--积分记录开始-->
+<div class="record">
+    <div class="title">
+        <div class="t-logo"></div>
+        <span>积分获取记录</span>
+    </div>
+    <div class="line"></div>
+    <ul class="require">
+        <li>
+            <span class="time">2017-11-23</span>
+            <p class="jifen">获得<span>20积分</span></p>
+            <img src="../images/edit.jpg" alt="" class="edit">
+            <span class="aim">签到</span>
+
+        </li>
+        <li>
+            <span class="time">2017-11-23</span>
+            <p class="jifen">获得<span>20积分</span></p>
+            <img src="../images/record.jpg" alt="" class="edit" style="margin-left: 2.7rem;width: 0.25rem;height: 0.26rem">
+            <span class="aim">免费送下单</span>
+        </li>
+        <li>
+            <span class="time">2017-11-23</span>
+            <p class="jifen">获得<span>20积分</span></p>
+            <span class="aim">登录</span>
+        </li>
+    </ul>
+</div>
+<!--积分记录结束-->
+    </div>
+</div>
+</body>
+<script>
+    mui.init();
+    (function($) {
+        $(".mui-scroll-wrapper").scroll({
+            bounce: false, //滚动条是否有弹力默认是true
+            indicators: false, //是否显示滚动条,默认是true
+        });
+    })(mui);
+
+</script>
+</html>
