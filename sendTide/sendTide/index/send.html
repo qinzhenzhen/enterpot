@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>我的免费抢</title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/other.css" />
+		<script src="../js/rem.js"></script>
+
+		<style>
+			.mui-bar {
+				background-color: #fff;
+				box-shadow: none;
+				border-bottom: 0.01rem solid #efefef;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+				background: #000;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				color: #000;
+				border-bottom-color: #000;
+			}
+			
+			.mui-table-view:before {
+				background: #fff;
+			}
+			
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+				border-top: none;
+				border-bottom: none;
+			}
+			
+			.mui-slider-indicator.mui-segmented-control {
+				background: #fff;
+				position: fixed;
+				top: 44px;
+				z-index: 99;
+			}
+			
+			.mui-table-view-cell:after {
+				background: #efefef;
+				height: 20px;
+				left: 0;
+			}
+			
+			.mui-content.active {
+				background-color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的免费送</h1>
+		</header>
+		<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<a class="mui-control-item mui-active" href="#item1">马上领</a>
+			<a class="mui-control-item" href="#item2">已失效</a>
+		</div>
+		<div class=" mui-content mui-scroll-wrapper" style="padding-top:84px;">
+			<div class="mui-scroll">
+
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group">
+					<div id="item1" class="mui-slider-item mui-control-content mui-active">
+
+						<ul class="up-table-view" id="sendCont">
+							<!--
+								<li class="free-down">
+									<a href="notarize_order.html">
+										<div class="free-left">
+											<img src="../images/icon.png" />
+										</div>
+										<div class="free-right">
+											<h1 class="free-right-top">曼斯布莱顿西服套装男修身羊</h1>
+											<p class="free-right-p">
+												<span class="free-span1">市场价</span><i class="free-span2">￥</i>
+												<span class="free-span3" style="text-decoration:line-through;">849.50</span><span class="free-span4">免费领</span>
+											</p>
+
+											<p class="free-right-p3" style="margin-top:40px;">
+												<span class="free-from">倒计时</span>
+												<i class="free-from2">23:59:59</i>
+												<span class="send-btn">马上领</span>
+											</p>
+
+										</div>
+									</a>
+								</li>-->
+						</ul>
+
+					</div>
+					<div id="item2" class="mui-slider-item mui-control-content">
+
+						<ul class="up-table-view" id="sendCont1">
+
+							<!--<li class="free-down">
+									<a href="notarize_order.html">
+										<div class="free-left">
+											<img src="../images/icon.png" />
+										</div>
+										<div class="free-right">
+											<h1 class="free-right-top">曼斯布莱顿西服套装男修身羊</h1>
+											<p class="free-right-p">
+												<span class="free-span1">市场价</span><i class="free-span2">￥</i>
+												<span class="free-span3" style="text-decoration:line-through;">849.50</span><span class="free-span4">免费领</span>
+											</p>
+
+											<p class="free-right-p3" style="margin-top:40px;">
+												<span class="free-from">礼品过时失效</span>									
+												<span class="send-btn">去领其他的</span>
+											</p>
+
+										</div>
+									</a>
+								</li>-->
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script src="../js/mui.js"></script>
+	<script src="../js/jQuery.js"></script>
+	<script type="text/javascript" src="../js/controller.js" ></script>
+	<script type="text/javascript" src="../js/user_order.js"></script>
+	<script type="text/javascript" src="../js/time_group.js"></script>
+	<script>
+		mui.init();
+		(function($) {
+			$(".mui-scroll-wrapper").scroll({
+				bounce: false, //滚动条是否有弹力默认是true
+				indicators: false, //是否显示滚动条,默认是true
+			});
+		})(mui);
+
+		$(function() {
+			userOrder.getSendOrderData();
+
+			//切换
+			mui(document).on('tap', '.mui-slider-indicator .mui-control-item', function() {
+				var type = this.getAttribute('href');
+				if(type == "#item1") {
+					//马上领
+					userOrder.addSendOrderDom("", "sendCont");
+				} else if(type == "#item2") {
+					//已失效
+					userOrder.addSendOrderDom("", "sendCont1");
+				}
+			})
+			
+			//查看详情
+			mui(document).on('tap','.free-down',function(){
+				console.log("详情")
+				setLocation.openWindow("detail.html");
+				return false;
+			})
+			
+			//马上领
+			mui(document).on('tap','.free-down .send-btn',function(){
+				console.log("马上领");
+				var type = this.innerHTML;
+				if(type == "马上领"){
+					setLocation.openWindow("notarize_order.html");
+				}else{
+					setLocation.openWindow("index.html");
+				}
+				return false;
+			})
+		})
+	</script>
+
+</html>

@@ -1,0 +1,213 @@
+{
+	"index/qzzlogin.html": {
+		"href": "index/qzzlogin.html",
+		"resources": [
+			"js/rem.js",
+			"js/jQuery.js",
+			"js/mui.min.js",
+			"js/url_list.js",
+			"js/tools.js",
+			"js/user.js",
+			"images/button_wechat.png",
+			"images/button_qq.png",
+			"css/base.css",
+			"css/qzzlogin.css",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"images/icon_logo@2x.png",
+			"js/user_info.js",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"index/index.html"
+		],
+		"priority": 0
+	},
+	"index.html": {
+		"href": "index.html",
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"index/index.html"
+		],
+		"refer": [
+			"index/qzzlogin.html",
+			"index/index.html"
+		],
+		"priority": 0
+	},
+	"index/index.html": {
+		"resources": [
+			"images/free_shantian@2x.png",
+			"css/base.css",
+			"images/home_btn_wode@2x.png",
+			"js/time.js",
+			"js/jQuery.js",
+			"images/banner@2x.png",
+			"css/mui.css",
+			"js/rem.js",
+			"css/swiper-3.4.2.min.css",
+			"js/result.js",
+			"css/index.css",
+			"images/home_btn_guanzhu@2x.png",
+			"images/free_hua@2x1.png",
+			"images/icon_weikaishi_laba@2x.png",
+			"css/common.css",
+			"images/to-top.png",
+			"css/iconfont.css",
+			"images/home_btn_zhongjian@2x.png",
+			"images/home_headpic_233.png",
+			"js/controller.js",
+			"js/l-slide.js",
+			"js/mui.js",
+			"js/swiper-3.4.2.jquery.min.js",
+			"js/index.js",
+			"css/bottom.css",
+			"fonts/mui.ttf",
+			"images/free_hua@2x.png",
+			"images/free_shantian@2x1.png",
+			"images/bg_zhibao.png",
+			"index/qzzlogin.html",
+			"index/attention.html",
+			"index/sign_in.html"
+		],
+		"refer": [
+			"index/detail.html",
+			"index/qzzlogin.html",
+			"index/attention.html",
+			"index/sign_in.html"
+		]
+	},
+	"index/detail.html": {
+		"resources": [
+			"css/detailbottomn.css",
+			"css/base.css",
+			"css/common.css",
+			"js/mui.min.js",
+			"js/user_share.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/detail.css",
+			"js/detail.js",
+			"css/swiper-3.4.2.min.css",
+			"images/home_headpic_233.png"
+		],
+		"refer": [
+			"index/index.html"
+		]
+	},
+	"index/attention.html": {
+		"resources": [
+			"css/index.css",
+			"css/mui.css",
+			"css/bottom.css",
+			"index/search.html",
+			"css/base.css",
+			"css/common.css",
+			"css/iconfont.css",
+			"index/index.html",
+			"index/sign_in.html"
+		],
+		"refer": [
+			"index/search.html",
+			"index/index.html",
+			"index/sign_in.html"
+		]
+	},
+	"index/search.html": {
+		"resources": [
+			"css/index.css",
+			"css/search.css",
+			"images/bg_zhibao.png",
+			"css/mui.css",
+			"css/bottom.css",
+			"css/base.css",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"index/attention.html"
+		],
+		"refer": [
+			"index/attention.html"
+		]
+	},
+	"index/sign_in.html": {
+		"resources": [
+			"images/sign/sign-4.png",
+			"images/sign/sign-2.png",
+			"css/base.css",
+			"images/sign/sign-7.png",
+			"images/sign/sign-3.png",
+			"images/sign/sign-6.png",
+			"images/sign/sign-5.png",
+			"css/mui.min.css",
+			"js/sign_in.js",
+			"css/other.css",
+			"images/sign/sign-9.png",
+			"images/sign/sign-8.png",
+			"css/bottom.css",
+			"index/attention.html",
+			"fonts/mui.ttf",
+			"js/mui.min.js"
+		],
+		"refer": [
+			"index/attention.html",
+			"index/qzzaddress.html",
+			"index/purse.html",
+			"index/free.html",
+			"index/send.html"
+		]
+	},
+	"index/qzzaddress.html": {
+		"resources": [
+			"js/tools.js",
+			"css/qzzaddress.css",
+			"css/base.css",
+			"css/iconfont.css",
+			"js/url_list.js",
+			"css/mui.css",
+			"js/add_user_address.js"
+		]
+	},
+	"index/purse.html": {
+		"resources": [
+			"js/base.js",
+			"images/sign/icon_Kyanite.png",
+			"images/sign/icon_amethyst.png",
+			"images/sign/icon_citrine.png",
+			"images/sign/bg_card@1x.png",
+			"css/mui.min.css",
+			"images/sign/bg_card_picture.png",
+			"images/sign/icon_balas@1x.png",
+			"css/other.css",
+			"images/sign/icon_greenstone.png",
+			"css/base.css"
+		]
+	},
+	"index/free.html": {
+		"resources": [
+			"js/user_order.js",
+			"images/icon.png",
+			"css/mui.min.css",
+			"js/time_group.js",
+			"css/other.css"
+		]
+	},
+	"index/send.html": {
+		"resources": [
+			"css/mui.min.css",
+			"css/other.css"
+		],
+		"refer": [
+			"index/notarize_order.html"
+		]
+	},
+	"index/notarize_order.html": {
+		"resources": [
+			"images/icon_free@2x.png",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/recycle_inventory.css",
+			"css/header.css"
+		]
+	}
+}

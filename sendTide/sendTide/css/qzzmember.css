@@ -1,0 +1,237 @@
+.member{
+    width: 100%;
+    height:4.86rem;
+    float: left;
+    background: #fff;
+    position: relative;
+    z-index: 999;
+}
+.member .phone{
+    width:2rem;
+    height:2rem;
+    position: absolute;
+    left: 0;
+    right:0;
+    top:0.95rem;
+    margin: auto;
+    border: 1px solid #cccccc;
+}
+.member .name{
+    width: 1.28rem;
+    height:0.22rem;
+    float: left;
+    margin-top: 3.25rem;
+    margin-left: 3.16rem;
+    margin-right: 3.06rem;
+    font-size: 0.2rem;
+    color:#000;
+}
+.member .level{
+    width: 100%;
+    height:0.22rem;
+    float: left;
+    margin-top: 0.2rem;
+}
+.member .level .vip{
+    width: 0.55rem;
+    height: 100%;
+    font-size: 0.2rem;
+    color:#c444ff;
+    float: left;
+    margin-left: 2.68rem;
+    line-height: 0.22rem;
+}
+.member .level .hua{
+    width: 1.31rem;
+    height: 100%;
+    float: left;
+    margin-left: 0.29rem;
+    display: flex;
+    justify-content: space-between;
+}
+.member .level .hua img{
+    width: 0.2rem;
+    height: 100%;
+}
+.jifen{
+    width: 100%;
+    height:1.67rem;
+    float: left;
+    background: #fff;
+}
+.jifen .ji-left{
+    width:1.1rem;
+    height: 0.87rem;
+    float: left;
+    margin-left: 1.2rem;
+    margin-top: 0.4rem;
+}
+.jifen .span-up{
+    display: block;
+    width: 100%;
+    height: 0.32rem;
+    color: #b169ef;
+    font-size: 0.3rem;
+    float: left;
+    line-height:0.32rem;
+    text-align: center;
+}
+.jifen .span-down{
+    float: left;
+    display: block;
+    width: 100%;
+    height: 0.25rem;
+    color: #999999;
+    font-size: 0.23rem;
+    line-height:0.25rem;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+.jifen .ji-center{
+    width: 1.36rem;
+    height: 0.52rem;
+    float: left;
+    margin-left: 0.84rem;
+    margin-top:0.57rem;
+    margin-right: 0.81rem;
+}
+.jifen .ji-center .linkjt{
+    width: 1.36rem;
+    height:0.2rem;
+    float: left;
+    margin-bottom: 0.08rem;
+}
+.jifen .ji-center .shji{
+    float: left;
+    display: block;
+    width: 100%;
+    height: 0.24rem;
+    color: #b169ef;
+    font-size: 0.22rem;
+    line-height:0.24rem;
+    text-align: center;
+}
+.jifen .ji-right{
+    width:1.1rem;
+    height: 0.87rem;
+    float: left;
+    margin-top: 0.4rem;
+}
+.power{
+    width: 100%;
+    height: 2rem;
+    float: left;
+    margin-top: 0.2rem;
+    background: #fff;
+}
+.power a{
+    display: block;
+    width: 100%;
+    height:1rem;
+    float: left;
+}
+.power a span{
+    display: block;
+    width: 1.21rem;
+    height:100%;
+    float: left;
+    line-height: 1rem;
+    margin-left: 0.3rem;
+    color:#000;
+    font-size: 0.3rem;
+}
+.power a img{
+    width: 0.15rem;
+    height:0.27rem;
+    float: right;
+    margin-right: 0.24rem;
+    margin-top: 0.36rem;
+}
+.record{
+    width: 100%;
+    height:3.13rem;
+    overflow: hidden;
+    float: left;
+    margin-top: 0.2rem;
+    background: #fff;
+}
+.record .title{
+    width: 100%;
+    height:1.04rem;
+    float: left;
+}
+.record .title .t-logo{
+    width: 0.04rem;
+    height: 0.3rem;
+    background: #c444ff;
+    float: left;
+    margin-left: 0.24rem;
+    margin-top: 0.37rem;
+}
+.record .title span{
+    width: 1.8rem;
+    height: 100%;
+    display: block;
+    font-size: 0.3rem;
+    color:#000;
+    float: left;
+    margin-left: 0.31rem;
+    line-height: 1.04rem;
+}
+.record .line{
+    width: 7.26rem;
+    height:0.01rem;
+    background-color: #efefef;
+    float: left;
+    margin-left: 0.24rem;
+}
+.record .require{
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    margin-top: 0.41rem;
+    padding: 0 0.24rem 0 0.26rem;
+}
+.record .require li{
+    width: 7rem;
+    height:0.26rem;
+    margin-bottom: 0.32rem;
+}
+.record .require li .time{
+    width: auto;
+    display: block;
+    height: 100%;
+    font-size: 0.24rem;
+    color:#999;
+    float: left;
+    line-height: 0.26rem;
+}
+.record .require li .jifen{
+    width: auto;
+    display: block;
+    height: 100%;
+    font-size: 0.24rem;
+    color:#999;
+    float: right;
+    line-height: 0.26rem;
+}
+.record .require li .jifen span{
+    color:#c444ff;
+}
+.record .require li .edit{
+    display:block;;
+    width: 0.34rem;
+    height: 0.26rem;
+    float: left;
+    margin-left:3.4rem;
+}
+.record .require li .aim{
+    width: auto;
+    display: block;
+    height: 100%;
+    font-size: 0.24rem;
+    color:#999;
+    float: right;
+    margin-right: 0.15rem;
+    line-height: 0.26rem;
+}

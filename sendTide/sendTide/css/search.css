@@ -1,0 +1,110 @@
+body{
+    background: #fff;
+}
+.search{
+    width: 5rem;
+    height: 0.6rem;
+    background: #f2f2f2;
+    border-radius: 0.4rem;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    padding: 0.13rem 0.4rem;
+}
+.mui-bar{
+    background: #fff;
+    box-shadow: none;
+}
+.search span{
+    float: left;
+}
+.search input{
+    float: left;
+    width: 3.5rem;
+    height: 100%;
+    border: none;
+    color: #999;
+    background: none;
+    font-size: 0.24rem;
+}
+input[type='button'], input[type='submit'], input[type='reset'], button, .mui-btn{
+    padding: 0;
+}
+.like{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 0.4rem 0.24rem;
+}
+.like .tab{
+    width: 100%;
+    height: 0.3rem;
+    border-left: 0.05rem solid #c444ff;
+    font-size: 0.3rem;
+    color: #000;
+    padding: 0 0.15rem;
+    line-height: 0.3rem;
+}
+.like .pro{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 0.22rem;
+    display: flex;
+    justify-content: space-between;
+    border-top:0.01rem solid #c444ff;
+}
+.like .pro .same{
+    width: 100%;
+}
+
+.mui-content{
+    background: #fff;
+}
+.mui-icon-closeempty{
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 50%;
+    background: #c444ff;
+    float: right;
+    font-size: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.38rem;
+}
+.pro .same .kind{
+    float: left;
+    padding: 0.4rem 0;
+}
+.pro .same .kind li{
+    float: left;
+    margin-right: 0.18rem;
+    margin-bottom: 0.2rem;
+    width: 1.5rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.01rem solid #dcdcdc;
+    text-align: center;
+    line-height: 0.5rem;
+    color: #666;
+    font-size: 0.24rem;
+}
+.pro .same .kind li.active{
+    background: #333333;
+    color: #fff;
+}
+.search-con{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.result-con{
+    width: 100%;
+    height: auto;
+    float: left;
+    display: none;
+    margin-top: 20px;
+}

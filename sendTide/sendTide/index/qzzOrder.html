@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>送潮-订单详情</title>
+		<link rel="stylesheet" href="../css/mui.css" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/qzzOrder.css">
+	</head>
+
+	<body>
+		<!--header start-->
+		<header class="mui-bar mui-bar-nav" style="box-shadow: none;height: 1rem;background: #fff">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#1b1835"></a>
+			<h1 class="mui-title" style="color:#1b1835;">支付订单</h1>
+		</header>
+		<!--header end-->
+				<!--main start-->
+				<div class="pay">
+					<h5 style=" text-align: center;margin-top: 0.3rem;">充值剩余时间</h5>
+					<div class="pays">
+						<div class="time setTimeId">
+							<span>1</span>&nbsp;<span>0</span>&nbsp;:&nbsp;<span>1</span>&nbsp;<span>5</span>
+						</div>
+						<p class="sum">￥<span id="orderSum">90000</span></p>
+					</div>
+					<ul class="number">
+						<li class="num">订单编号：&nbsp;<span id="orderno">120035384004</span></li>
+						<li class="num">X <span id="quantity">0</span></li>
+					</ul>
+				</div>
+				<div class="payStyle">
+					<h5>充值方式</h5>
+					<ul class="payMethod">
+						<li class="wechat method">
+							<img src="../images/icon_payment_wechat.png" alt="" class="icon">
+							<div class="pays">
+								<p style="color: #333333;font-size: 0.32rem">微信支付</p>
+								<p>推荐已安装微信的用户使用</p>
+							</div>
+							<div class="choose"></div>
+						</li>
+						<li class="zhi method">
+							<img src="../images/icon_payment_alipay.png" alt="" class="icon">
+							<div class="pays">
+								<p style="color:#333333;font-size: 0.32rem">支付宝支付</p>
+								<p>推荐已安装支付宝的用户使用</p>
+							</div>
+							<div class="choose"></div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<p id="info" style="padding: 0 1em;text-align:left;">支付通道信息：
+					</p>
+				</div>
+		<a class="paycode qzzPayId">
+			<span>支付</span>
+		</a>
+		<!--main end-->
+	</body>
+	<script src="../js/rem.js"></script>
+	<script src="../js/jQuery.js"></script>
+	<script src="../js/mui.js"></script>
+	<!--<script type="text/javascript" src="../js/controller.js" ></script>-->
+	<!--<script type="text/javascript" src="../js/pay.js" ></script>-->
+	<script type="text/javascript" src="../js/time.js" ></script>
+	<script>
+		mui.init();
+		//获取当前时间
+		var now = new Date();
+		var	year = now.getFullYear();
+		var	month = now.getMonth()+1;		
+		now.setMinutes(now.getMinutes()+15);
+		var day = now.getDate();
+		var	hour = now.getHours();
+		var	minute = now.getMinutes();
+		var	second = now.getSeconds();
+		leftTimer(year, month, day, hour, minute, second);
+		
+	</script>
+
+</html>
